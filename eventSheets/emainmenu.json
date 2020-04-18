@@ -1,0 +1,82 @@
+{
+	"name": "eMainMenu",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "pick-by-comparison",
+					"objectClass": "System",
+					"sid": 918840589126950,
+					"parameters": {
+						"object": "SpriteFont",
+						"expression": "SpriteFont.Type",
+						"comparison": 0,
+						"value": "\"PlayButton\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 699155183077369,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 901682137497972,
+							"parameters": {
+								"object": "SpriteFont"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-scale",
+							"objectClass": "SpriteFont",
+							"sid": 736936991639130,
+							"parameters": {
+								"scale": "1.2"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 307284346365596,
+							"parameters": {
+								"seconds": "0.2"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "SpriteFont",
+							"sid": 806416510229421,
+							"parameters": {
+								"scale": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 861433133520806,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 526300889106479,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 754954741617339
+				}
+			]
+		}
+	],
+	"sid": 360384029801467
+}

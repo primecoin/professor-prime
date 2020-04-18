@@ -1,0 +1,27 @@
+{
+	"name": "SpriteFont",
+	"plugin-id": "Spritefont2",
+	"sid": 290961003224323,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"sid": 636686818634255
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 1024,
+		"height": 512,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 10,
+		"useCollisionPoly": true
+	}
+}

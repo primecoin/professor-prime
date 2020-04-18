@@ -1,0 +1,54 @@
+{
+	"name": "eGameOver",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 539796364262212,
+					"parameters": {
+						"object": "HomeButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 781154117424195,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 190145250746096
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 421118842278683,
+					"parameters": {
+						"object": "RestartButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 698602193627102,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 553024453838581
+		}
+	],
+	"sid": 199764342477297
+}

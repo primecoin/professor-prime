@@ -1,0 +1,225 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 18902,
+	"name": "Professor Prime",
+	"runtime": "c3",
+	"useWorker": true,
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r189.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r189.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"version": "r189.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r189.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"version": "r189.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r189.2",
+			"bundled": false
+		}
+	],
+	"uniqueId": "wq99fd5920g",
+	"objectTypes": {
+		"items": [
+			"Player",
+			"Touch",
+			"Browser",
+			"Background",
+			"DeadlyCog",
+			"DeathTop",
+			"RestartButton",
+			"HomeButton"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"SpriteFont"
+				],
+				"subfolders": [],
+				"name": "Fonts"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Game",
+			"GameOver",
+			"MainMenu"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"eGame",
+			"eGameOver",
+			"eMainMenu"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 470331125010150
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 679366989213298
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 804977553055707
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 864903941151998
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 422667612587791
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 414094777734669
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 713907876901058
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": true,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useHighDpi": true,
+		"orientations": "portrait",
+		"enableWebGL": true,
+		"gpuPreference": "high-performance",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "nearest",
+		"downscaling": "medium",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "splash",
+		"preloadSounds": true,
+		"clearBackground": true,
+		"enhancedAccelerationPrecision": true
+	},
+	"viewportWidth": 480,
+	"viewportHeight": 854,
+	"firstLayout": "MainMenu"
+}

@@ -1,0 +1,121 @@
+{
+	"name": "MainMenu",
+	"layers": [
+		{
+			"name": "UI",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "SpriteFont",
+					"properties": {
+						"text": "Proffesor Prime",
+						"enable-bbcode": true,
+						"character-width": 49,
+						"character-height": 58,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[18,\" \"],[11,\"Ii.,;:!'|`\"],[20,\"1()[]\\/\"],[29,\"Jj\\\"°*<>%\"],[38,\"ABCDEFGHKLNOPQRSTUVXYZabcdefghklnopqrstuvxyz023456789?-=\"],[47,\"MWmw_~#&@+$£€\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 19,
+					"instanceVariables": {
+						"Type": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 239,
+						"y": 87,
+						"width": 479,
+						"height": 140,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SpriteFont",
+					"properties": {
+						"text": "play",
+						"enable-bbcode": true,
+						"character-width": 49,
+						"character-height": 58,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[18,\" \"],[11,\"Ii.,;:!'|`\"],[20,\"1()[]\\/\"],[29,\"Jj\\\"°*<>%\"],[38,\"ABCDEFGHKLNOPQRSTUVXYZabcdefghklnopqrstuvxyz023456789?-=\"],[47,\"MWmw_~#&@+$£€\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 20,
+					"instanceVariables": {
+						"Type": "PlayButton"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 238,
+						"y": 428,
+						"width": 479,
+						"height": 179,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 176943717678552,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		}
+	],
+	"sid": 936997743079932,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 480,
+	"height": 854,
+	"unboundedScrolling": false,
+	"eventSheet": "eMainMenu"
+}
