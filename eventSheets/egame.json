@@ -175,171 +175,6 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Cog Animation",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 344191340752946
-						}
-					],
-					"actions": [
-						{
-							"id": "rotate-clockwise",
-							"objectClass": "DeadlyCog",
-							"sid": 126665245751723,
-							"parameters": {
-								"degrees": "5"
-							}
-						}
-					],
-					"sid": 469560852129173
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 876381114172483
-						}
-					],
-					"actions": [
-						{
-							"id": "set-angle-of-motion",
-							"objectClass": "DeadlyCog",
-							"sid": 489370657955217,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"angle": "180"
-							}
-						}
-					],
-					"sid": 606777768778977
-				}
-			],
-			"sid": 110066060011161
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Destroy Cog",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-nth-instance",
-							"objectClass": "System",
-							"sid": 881676945754157,
-							"parameters": {
-								"object": "DeadlyCog",
-								"instance": "0"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 118558148971295,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-x",
-									"objectClass": "DeadlyCog",
-									"sid": 245674653013718,
-									"parameters": {
-										"comparison": 3,
-										"x-co-ordinate": "-(DeadlyCog.Width/2)"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "DeadlyCog",
-									"sid": 778691690138154
-								}
-							],
-							"sid": 304801636247485
-						}
-					]
-				}
-			],
-			"sid": 842906246997421
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Create Cog",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 882534834262354
-						}
-					],
-					"actions": [],
-					"sid": 187833339826128,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 363613212964213,
-									"parameters": {
-										"first-value": "DeadlyCog(-1).X + (DeadlyCog.Width / 2)",
-										"comparison": 3,
-										"second-value": "LayoutWidth"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 677885800026561,
-									"parameters": {
-										"object-to-create": "DeadlyCog",
-										"layer": "\"Game\"",
-										"x": "DeadlyCog(-1).X + DeadlyCog.Width",
-										"y": "DeadlyCog(-1).Y"
-									}
-								},
-								{
-									"id": "set-angle-of-motion",
-									"objectClass": "DeadlyCog",
-									"sid": 682123987380342,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"angle": "180"
-									}
-								}
-							],
-							"sid": 123697787214370
-						}
-					]
-				}
-			],
-			"sid": 286683037645265
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
 			"title": "Player Death",
 			"description": "",
 			"isActiveOnStart": true,
@@ -367,9 +202,334 @@
 						}
 					],
 					"sid": 850857585892217
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Player",
+							"sid": 117113624816971,
+							"parameters": {
+								"comparison": 5,
+								"y-co-ordinate": "LayoutHeight + 200"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 458641125384401,
+							"parameters": {
+								"layout": "GameOver"
+							}
+						}
+					],
+					"sid": 255622838801972
 				}
 			],
 			"sid": 262280398409290
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Cogs",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Cog Animation",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 747846055118602
+								}
+							],
+							"actions": [
+								{
+									"id": "rotate-clockwise",
+									"objectClass": "DeadlyCog",
+									"sid": 282219846468901,
+									"parameters": {
+										"degrees": "5"
+									}
+								}
+							],
+							"sid": 289034101814088
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 704698424864780
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "DeadlyCog",
+									"sid": 465079504523127,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 653826968849480
+						}
+					],
+					"sid": 223813401674907
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Create Cog",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 804959732610597
+								}
+							],
+							"actions": [],
+							"sid": 494050873624029,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 902746053041816,
+											"parameters": {
+												"first-value": "DeadlyCog(-1).X + (DeadlyCog.Width / 2)",
+												"comparison": 3,
+												"second-value": "LayoutWidth"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 289385971289978,
+											"parameters": {
+												"object-to-create": "DeadlyCog",
+												"layer": "\"Game\"",
+												"x": "DeadlyCog(-1).X + DeadlyCog.Width",
+												"y": "DeadlyCog(-1).Y"
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "DeadlyCog",
+											"sid": 872480481944007,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "180"
+											}
+										}
+									],
+									"sid": 514428560103052
+								}
+							]
+						}
+					],
+					"sid": 637115969491485
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Destroy Cog",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-nth-instance",
+									"objectClass": "System",
+									"sid": 471857254003404,
+									"parameters": {
+										"object": "DeadlyCog",
+										"instance": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 134208798229974,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-x",
+											"objectClass": "DeadlyCog",
+											"sid": 712910047054184,
+											"parameters": {
+												"comparison": 3,
+												"x-co-ordinate": "-(DeadlyCog.Width/2)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "DeadlyCog",
+											"sid": 502490945678469
+										}
+									],
+									"sid": 514134672777433
+								}
+							]
+						}
+					],
+					"sid": 791754969835194
+				}
+			],
+			"sid": 518720813135393
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Spikes",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 352442769192190
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Spikes",
+							"sid": 358959758869259,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "180"
+							}
+						}
+					],
+					"sid": 371682792676389
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 441993699175695
+						}
+					],
+					"actions": [],
+					"sid": 699147726201240,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 100809590396490,
+									"parameters": {
+										"first-value": "Spikes(-1).X + (Spikes.Width / 2)",
+										"comparison": 3,
+										"second-value": "LayoutWidth"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 237144776507465,
+									"parameters": {
+										"object-to-create": "Spikes",
+										"layer": "\"Game\"",
+										"x": "Spikes(-1).X + Spikes.Width",
+										"y": "Spikes(-1).Y"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "Spikes",
+									"sid": 728158681152994,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 976703799027941
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-nth-instance",
+							"objectClass": "System",
+							"sid": 873434954812874,
+							"parameters": {
+								"object": "Spikes",
+								"instance": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 815228828524127,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 151007163280241,
+									"parameters": {
+										"first-value": "Spikes.X + Spikes.Width",
+										"comparison": 3,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Spikes",
+									"sid": 490865572551253
+								}
+							],
+							"sid": 123205083858352
+						}
+					]
+				}
+			],
+			"sid": 695491539009096
 		}
 	],
 	"sid": 621482238303227
