@@ -76,6 +76,45 @@
 					"sid": 754954741617339
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 458199974180203
+				}
+			],
+			"actions": [],
+			"sid": 489718643100525,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 186206119113165,
+							"parameters": {
+								"object": "SpriteFont",
+								"expression": "SpriteFont.Type = \"Version\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "SpriteFont",
+							"sid": 224436784934650,
+							"parameters": {
+								"text": "\"v\"&projectversion"
+							}
+						}
+					],
+					"sid": 268492741804487
+				}
+			]
 		}
 	],
 	"sid": 360384029801467

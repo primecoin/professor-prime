@@ -92,6 +92,50 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "SpriteFont",
+					"properties": {
+						"text": "v0.0.0",
+						"enable-bbcode": true,
+						"character-width": 49,
+						"character-height": 58,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[18,\" \"],[11,\"Ii.,;:!'|`\"],[20,\"1()[]\\/\"],[29,\"Jj\\\"°*<>%\"],[38,\"ABCDEFGHKLNOPQRSTUVXYZabcdefghklnopqrstuvxyz023456789?-=\"],[47,\"MWmw_~#&@+$£€\"]]",
+						"scale": 0.5,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 37,
+					"instanceVariables": {
+						"Type": "Version"
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 241,
+						"y": 804,
+						"width": 479,
+						"height": 44,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 176943717678552,

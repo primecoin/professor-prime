@@ -32,6 +32,26 @@
 			"sid": 171757536822332
 		},
 		{
+			"eventType": "variable",
+			"name": "MinSpeed",
+			"type": "number",
+			"initialValue": "60",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 987954254553044
+		},
+		{
+			"eventType": "variable",
+			"name": "MaxSpeed",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 124705635224020
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Player Jump",
@@ -694,9 +714,9 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 991205591197909,
+							"sid": 339497813250727,
 							"parameters": {
-								"interval-seconds": "random(1.5,  3.5)"
+								"interval-seconds": "random(1,  3.5)"
 							}
 						}
 					],
@@ -704,10 +724,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 496801525571118,
+							"sid": 418761481635490,
 							"parameters": {
 								"variable": "SelectedInstance",
-								"value": "choose(0,0, 0,1,1,1,1,1)"
+								"value": "choose(0,0, 0,1,1,1,1)"
 							}
 						}
 					],
@@ -730,9 +750,10 @@
 							"actions": [
 								{
 									"callFunction": "create_coins",
-									"sid": 951306401031061,
+									"sid": 629761527893128,
 									"parameters": [
-										"random(64, LayoutHeight-64)"
+										"random(64, LayoutHeight-64)",
+										"random(MinSpeed, MaxSpeed)"
 									]
 								}
 							],
@@ -750,9 +771,10 @@
 							"actions": [
 								{
 									"callFunction": "create_hash",
-									"sid": 912053994442070,
+									"sid": 536497747442539,
 									"parameters": [
-										"random(64, LayoutHeight-64)"
+										"random(64, LayoutHeight-64)",
+										"random(MinSpeed, MaxSpeed)"
 									]
 								}
 							],
@@ -947,6 +969,13 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 458030486575364
+						},
+						{
+							"name": "startSpeed",
+							"type": "number",
+							"initialValue": "60",
+							"comment": "",
+							"sid": 719645952057669
 						}
 					],
 					"eventType": "function-block",
@@ -975,10 +1004,10 @@
 						{
 							"id": "set-speed",
 							"objectClass": "Hash",
-							"sid": 722969703701692,
+							"sid": 720901136588551,
 							"behaviorType": "Bullet",
 							"parameters": {
-								"speed": "Speed"
+								"speed": "startSpeed"
 							}
 						}
 					],
@@ -997,6 +1026,13 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 709311367851586
+						},
+						{
+							"name": "startSpeed",
+							"type": "number",
+							"initialValue": "60",
+							"comment": "",
+							"sid": 931463825160636
 						}
 					],
 					"eventType": "function-block",
@@ -1025,10 +1061,10 @@
 						{
 							"id": "set-speed",
 							"objectClass": "Coin",
-							"sid": 326366237317691,
+							"sid": 829030331676478,
 							"behaviorType": "Bullet",
 							"parameters": {
-								"speed": "Speed"
+								"speed": "startSpeed"
 							}
 						},
 						{

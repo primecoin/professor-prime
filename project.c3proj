@@ -228,8 +228,8 @@
 		]
 	},
 	"properties": {
-		"description": "",
-		"version": "1.0.0.0",
+		"description": "Collect the Prime Coins and avoid being sucked up by the cooling system for the other cryptocoins.",
+		"version": "1.0.0.1",
 		"author": "",
 		"authorEmail": "",
 		"authorWebsite": "",
