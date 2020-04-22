@@ -1,21 +1,21 @@
 {
-	"name": "SpriteFont",
+	"name": "CoinFont",
 	"plugin-id": "Spritefont2",
-	"sid": 290961003224323,
+	"sid": 702662157284061,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
 			"name": "Type",
 			"type": "string",
 			"desc": "",
-			"sid": 636686818634255
+			"sid": 683451894212748
 		}
 	],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Flash",
-			"name": "Flash",
-			"sid": 963813243951664
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 314022798592213
 		}
 	],
 	"effectTypes": [],
@@ -27,7 +27,7 @@
 		"originalSource": "",
 		"exportFormat": "png",
 		"exportQuality": 0.8,
-		"imageSpriteId": 10,
+		"imageSpriteId": 4,
 		"useCollisionPoly": true
 	}
 }

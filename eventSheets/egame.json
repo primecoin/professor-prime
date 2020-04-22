@@ -22,6 +22,16 @@
 			"sid": 982588017441852
 		},
 		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 171757536822332
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Player Jump",
@@ -242,17 +252,9 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 279672755869440,
-							"parameters": {
-								"layout": "GameOver"
-							}
-						}
-					],
-					"sid": 850857585892217
+					"actions": [],
+					"sid": 850857585892217,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -260,7 +262,7 @@
 						{
 							"id": "compare-y",
 							"objectClass": "Player",
-							"sid": 117113624816971,
+							"sid": 923917294725839,
 							"parameters": {
 								"comparison": 5,
 								"y-co-ordinate": "LayoutHeight + 200"
@@ -271,13 +273,14 @@
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 458641125384401,
+							"sid": 538543185517432,
 							"parameters": {
 								"layout": "GameOver"
 							}
 						}
 					],
-					"sid": 255622838801972
+					"sid": 330597416567081,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -285,7 +288,7 @@
 						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "Player",
-							"sid": 656484273513816,
+							"sid": 848185356696068,
 							"parameters": {
 								"object": "Hash"
 							}
@@ -295,13 +298,75 @@
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 745391596478968,
+							"sid": 337437451590817,
 							"parameters": {
 								"layout": "GameOver"
 							}
 						}
 					],
-					"sid": 198595091481147
+					"sid": 876262459352698,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 971163793429612,
+							"parameters": {
+								"object": "DeathTop"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 981144284976541,
+							"parameters": {
+								"object": "Hash"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "Player",
+							"sid": 227313392274340,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "Player",
+							"sid": 408613437764622,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.2",
+								"off-time": "0.2",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 184106734624115,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 253571692952407,
+							"parameters": {
+								"layout": "GameOver"
+							}
+						}
+					],
+					"sid": 279210287551114,
+					"isOrBlock": true
 				}
 			],
 			"sid": 262280398409290
@@ -609,7 +674,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Hash Spawner",
+			"title": "Hash Coin Spawner",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -637,14 +702,63 @@
 					],
 					"actions": [
 						{
-							"callFunction": "create_hash",
-							"sid": 211848109509063,
-							"parameters": [
-								"random(64, LayoutHeight-64)"
-							]
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 496801525571118,
+							"parameters": {
+								"variable": "SelectedInstance",
+								"value": "choose(0,0, 0,1,1,1,1,1)"
+							}
 						}
 					],
-					"sid": 352166284680236
+					"sid": 352166284680236,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 276652042173164,
+									"parameters": {
+										"first-value": "SelectedInstance",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "create_coins",
+									"sid": 951306401031061,
+									"parameters": [
+										"random(64, LayoutHeight-64)"
+									]
+								}
+							],
+							"sid": 710818735141730
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 326119633901989
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "create_hash",
+									"sid": 912053994442070,
+									"parameters": [
+										"random(64, LayoutHeight-64)"
+									]
+								}
+							],
+							"sid": 405964201883686
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -673,54 +787,302 @@
 			"sid": 294943104620289
 		},
 		{
-			"functionName": "create_hash",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Collect Coins",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"name": "YPosition",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 458030486575364
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 491387117064081,
-					"parameters": {
-						"object-to-create": "Hash",
-						"layer": "\"Game\"",
-						"x": "LayoutWidth + 50",
-						"y": "random(0+Hash.Height, LayoutHeight-Hash.Height)"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 155430174968566,
+							"parameters": {
+								"object": "Coin"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 322604834629027,
+							"parameters": {
+								"variable": "Score",
+								"value": "Score + Coin.Points"
+							}
+						}
+					],
+					"sid": 908215795632571,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 794016440708719,
+									"parameters": {
+										"object": "SpriteFont",
+										"expression": "SpriteFont.Type",
+										"comparison": 0,
+										"value": "\"Score\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "SpriteFont",
+									"sid": 711558527924951,
+									"parameters": {
+										"text": "\"[offsetx=16]\"&Score&\"[\\offsetx]\""
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "SpriteFont",
+									"sid": 152522181335674,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1.0"
+									}
+								}
+							],
+							"sid": 884889789401535
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 872791397943328,
+									"parameters": {
+										"object": "CoinFont",
+										"expression": "CoinFont.Pin.PinnedUID = Coin.UID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "CoinFont",
+									"sid": 897091271133847
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Coin",
+									"sid": 442571889294835
+								}
+							],
+							"sid": 216901538133030
+						}
+					]
 				},
 				{
-					"id": "set-angle-of-motion",
-					"objectClass": "Hash",
-					"sid": 144753243226901,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"angle": "180"
-					}
-				},
-				{
-					"id": "set-speed",
-					"objectClass": "Hash",
-					"sid": 440923420962924,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"speed": "Speed"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Coin",
+							"sid": 490348551296126
+						}
+					],
+					"actions": [],
+					"sid": 125899227523373,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 235050041594789,
+									"parameters": {
+										"first-value": "CoinFont.Pin.PinnedUID",
+										"comparison": 0,
+										"second-value": "Coin.UID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "CoinFont",
+									"sid": 455978415936092
+								}
+							],
+							"sid": 667275597769057,
+							"disabled": true
+						}
+					]
 				}
 			],
-			"sid": 705365601037690
+			"sid": 341073147928074
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game Functions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "create_hash",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "YPosition",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 458030486575364
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 164919940262613,
+							"parameters": {
+								"object-to-create": "Hash",
+								"layer": "\"Game\"",
+								"x": "LayoutWidth + 50",
+								"y": "random(0+Hash.Height, LayoutHeight-Hash.Height)"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Hash",
+							"sid": 707107770250764,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "180"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Hash",
+							"sid": 722969703701692,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "Speed"
+							}
+						}
+					],
+					"sid": 744698692582005
+				},
+				{
+					"functionName": "create_coins",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "YPosition",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 709311367851586
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 927833726323155,
+							"parameters": {
+								"object-to-create": "Coin",
+								"layer": "\"Game\"",
+								"x": "LayoutWidth + 50",
+								"y": "YPosition"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Coin",
+							"sid": 396871117990340,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "180"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Coin",
+							"sid": 326366237317691,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "Speed"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Coin",
+							"sid": 313565911700051,
+							"parameters": {
+								"instance-variable": "Points",
+								"value": "choose(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107)"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 999188952486922,
+							"parameters": {
+								"object-to-create": "CoinFont",
+								"layer": "\"Game\"",
+								"x": "Coin.X",
+								"y": "Coin.Y"
+							}
+						},
+						{
+							"id": "pin-to-object",
+							"objectClass": "CoinFont",
+							"sid": 644989654265501,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Coin",
+								"mode": "position-only"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "CoinFont",
+							"sid": 940262518694059,
+							"parameters": {
+								"text": "Coin.Points"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 834836777456635,
+							"parameters": {
+								"type": "log",
+								"message": "\"CoinFont position: \" & Coin.X & \" \" & Coin.Y"
+							}
+						}
+					],
+					"sid": 965631724764622
+				}
+			],
+			"sid": 162674197488483
 		}
 	],
 	"sid": 621482238303227

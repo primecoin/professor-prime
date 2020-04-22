@@ -27,7 +27,11 @@
 					"instanceVariables": {
 						"Type": ""
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 239,
 						"y": 87,
@@ -67,7 +71,11 @@
 					"instanceVariables": {
 						"Type": "PlayButton"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 238,
 						"y": 428,

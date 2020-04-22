@@ -3,32 +3,45 @@
 	"plugin-id": "Sprite",
 	"sid": 129026536606146,
 	"isGlobal": false,
-	"instanceVariables": [],
-	"behaviorTypes": [],
+	"instanceVariables": [
+		{
+			"name": "Points",
+			"type": "number",
+			"desc": "",
+			"sid": 514336375879847
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 618079151572707
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5151515151515151,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3,
+						"imageSpriteId": 12,
 						"collisionPoly": {
 							"points": [
-								0.28437500000000016,
-								0.2921875,
-								0.715625,
-								0.2921874999999999,
-								0.715625,
-								0.7140624999999999,
-								0.2749999999999997,
-								0.7109374999999997
+								0.09375,
+								0.0953125,
+								0.9046875,
+								0.09375,
+								0.90625,
+								0.90625,
+								0.0984375,
+								0.9078125
 							]
 						},
 						"useCollisionPoly": true,

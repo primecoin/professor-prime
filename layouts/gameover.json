@@ -27,7 +27,11 @@
 					"instanceVariables": {
 						"Type": ""
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 239.5,
 						"y": 133.5,
