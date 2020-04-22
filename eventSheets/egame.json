@@ -5,11 +5,21 @@
 			"eventType": "variable",
 			"name": "JumpStrength",
 			"type": "number",
-			"initialValue": "650",
+			"initialValue": "400",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 102760337032873
+		},
+		{
+			"eventType": "variable",
+			"name": "Speed",
+			"type": "number",
+			"initialValue": "60",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 982588017441852
 		},
 		{
 			"eventType": "group",
@@ -86,9 +96,50 @@
 							"parameters": {
 								"angle": "180"
 							}
+						},
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 479817115432181,
+							"parameters": {
+								"tag": "\"prime_numbers\"",
+								"file": "prime_numbers.json"
+							}
 						}
 					],
 					"sid": 891310828017803
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 508762122404719,
+							"parameters": {
+								"tag": "\"prime_numbers\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 895628758684420,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "JSON",
+									"sid": 810717448103783,
+									"parameters": {
+										"path": "\"prime_numbers\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 307465473001047
+						}
+					]
 				}
 			],
 			"sid": 305624398401451
@@ -227,6 +278,30 @@
 						}
 					],
 					"sid": 255622838801972
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 656484273513816,
+							"parameters": {
+								"object": "Hash"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 745391596478968,
+							"parameters": {
+								"layout": "GameOver"
+							}
+						}
+					],
+					"sid": 198595091481147
 				}
 			],
 			"sid": 262280398409290
@@ -530,6 +605,122 @@
 				}
 			],
 			"sid": 695491539009096
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Hash Spawner",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "SelectedInstance",
+					"type": "number",
+					"initialValue": "1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 445263620079975
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 991205591197909,
+							"parameters": {
+								"interval-seconds": "random(1.5,  3.5)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "create_hash",
+							"sid": 211848109509063,
+							"parameters": [
+								"random(64, LayoutHeight-64)"
+							]
+						}
+					],
+					"sid": 352166284680236
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 498420343182889,
+							"parameters": {
+								"first-value": "Hash.X + Hash.Width",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Hash",
+							"sid": 591163565368723
+						}
+					],
+					"sid": 528739658865492
+				}
+			],
+			"sid": 294943104620289
+		},
+		{
+			"functionName": "create_hash",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "YPosition",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 458030486575364
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 491387117064081,
+					"parameters": {
+						"object-to-create": "Hash",
+						"layer": "\"Game\"",
+						"x": "LayoutWidth + 50",
+						"y": "random(0+Hash.Height, LayoutHeight-Hash.Height)"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Hash",
+					"sid": 144753243226901,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "180"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Hash",
+					"sid": 440923420962924,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "Speed"
+					}
+				}
+			],
+			"sid": 705365601037690
 		}
 	],
 	"sid": 621482238303227
