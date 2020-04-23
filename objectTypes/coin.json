@@ -11,13 +11,7 @@
 			"sid": 514336375879847
 		}
 	],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Bullet",
-			"name": "Bullet",
-			"sid": 618079151572707
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [

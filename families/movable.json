@@ -1,0 +1,21 @@
+{
+	"name": "Movable",
+	"plugin-id": "Sprite",
+	"sid": 463238308658504,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 128881791928111
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Background",
+		"Spikes",
+		"Hash",
+		"DeadlyCog",
+		"Coin"
+	]
+}
