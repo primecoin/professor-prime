@@ -35,7 +35,7 @@
 			"eventType": "variable",
 			"name": "MinSpeed",
 			"type": "number",
-			"initialValue": "60",
+			"initialValue": "150",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -43,13 +43,33 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "HashCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 445891747951851
+		},
+		{
+			"eventType": "variable",
 			"name": "MaxSpeed",
 			"type": "number",
-			"initialValue": "100",
+			"initialValue": "150",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 124705635224020
+		},
+		{
+			"eventType": "variable",
+			"name": "IsGameOver",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 965209480548676
 		},
 		{
 			"eventType": "group",
@@ -68,15 +88,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 811871893953413,
-							"parameters": {
-								"type": "log",
-								"message": "\"Tap Tap tap\""
-							}
-						},
 						{
 							"id": "set-vector-y",
 							"objectClass": "Player",
@@ -110,6 +121,21 @@
 					],
 					"actions": [
 						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 602520177274409
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Coin",
+							"sid": 498079406742473
+						},
+						{
+							"id": "destroy",
+							"objectClass": "CoinFont",
+							"sid": 968804027422823
+						},
+						{
 							"id": "set-vector-y",
 							"objectClass": "Player",
 							"sid": 313915098287764,
@@ -120,56 +146,24 @@
 						},
 						{
 							"id": "set-angle-of-motion",
-							"objectClass": "Background",
-							"sid": 370785554600131,
+							"objectClass": "Movable",
+							"sid": 568871476818502,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"angle": "180"
 							}
 						},
 						{
-							"id": "request-project-file",
-							"objectClass": "AJAX",
-							"sid": 479817115432181,
+							"id": "set-angle-of-motion",
+							"objectClass": "Background",
+							"sid": 923544275951067,
+							"behaviorType": "Bullet",
 							"parameters": {
-								"tag": "\"prime_numbers\"",
-								"file": "prime_numbers.json"
+								"angle": "180"
 							}
 						}
 					],
 					"sid": 891310828017803
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-completed",
-							"objectClass": "AJAX",
-							"sid": 508762122404719,
-							"parameters": {
-								"tag": "\"prime_numbers\""
-							}
-						}
-					],
-					"actions": [],
-					"sid": 895628758684420,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for-each",
-									"objectClass": "JSON",
-									"sid": 810717448103783,
-									"parameters": {
-										"path": "\"prime_numbers\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 307465473001047
-						}
-					]
 				}
 			],
 			"sid": 305624398401451
@@ -187,16 +181,54 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 595241895705465,
+							"sid": 931674675227674,
 							"parameters": {
-								"first-value": "Background(-1).X",
+								"first-value": "Background(-1).X + Background.Width",
+								"comparison": 3,
+								"second-value": "LayoutWidth"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 300048168233246,
+							"parameters": {
+								"object-to-create": "Background",
+								"layer": "\"Background\"",
+								"x": "Background(-1).X+Background.Width",
+								"y": "0"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Background",
+							"sid": 639785387158143,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "180"
+							}
+						}
+					],
+					"sid": 366109990074219
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 176390161296508,
+							"parameters": {
+								"first-value": "Background(0).X + Background.Width",
 								"comparison": 3,
 								"second-value": "0"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 366109990074219,
+					"sid": 472681567435769,
 					"children": [
 						{
 							"eventType": "block",
@@ -204,7 +236,7 @@
 								{
 									"id": "pick-nth-instance",
 									"objectClass": "System",
-									"sid": 621090361406357,
+									"sid": 633922948711648,
 									"parameters": {
 										"object": "Background",
 										"instance": "0"
@@ -213,40 +245,12 @@
 							],
 							"actions": [
 								{
-									"type": "comment",
-									"text": "Destroy first background"
-								},
-								{
 									"id": "destroy",
 									"objectClass": "Background",
-									"sid": 688397914760667
-								},
-								{
-									"type": "comment",
-									"text": "create a new background and set bullet angle"
-								},
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 758257653763494,
-									"parameters": {
-										"object-to-create": "Background",
-										"layer": "\"Background\"",
-										"x": "Background(0).X+Background.Width",
-										"y": "0"
-									}
-								},
-								{
-									"id": "set-angle-of-motion",
-									"objectClass": "Background",
-									"sid": 792955909336754,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"angle": "180"
-									}
+									"sid": 481513611055361
 								}
 							],
-							"sid": 667709215182827
+							"sid": 348974400759933
 						}
 					]
 				}
@@ -260,22 +264,6 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "DeathTop",
-							"sid": 355235673576052,
-							"parameters": {
-								"object": "Player"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 850857585892217,
-					"disabled": true
-				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -333,21 +321,31 @@
 						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "Player",
-							"sid": 971163793429612,
+							"sid": 170773084719626,
 							"parameters": {
-								"object": "DeathTop"
-							}
-						},
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Player",
-							"sid": 981144284976541,
-							"parameters": {
-								"object": "Hash"
+								"object": "Enemies"
 							}
 						}
 					],
 					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 208077386391320,
+							"parameters": {
+								"variable": "IsGameOver",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Movable",
+							"sid": 303345301363924,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "0"
+							}
+						},
 						{
 							"id": "set-enabled",
 							"objectClass": "Player",
@@ -414,39 +412,36 @@
 									"sid": 747846055118602
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 289034101814088,
+							"children": [
 								{
-									"id": "rotate-clockwise",
-									"objectClass": "DeadlyCog",
-									"sid": 282219846468901,
-									"parameters": {
-										"degrees": "5"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 830322379646995,
+											"parameters": {
+												"first-value": "IsGameOver",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "rotate-clockwise",
+											"objectClass": "DeadlyCog",
+											"sid": 783502591505234,
+											"parameters": {
+												"degrees": "5"
+											}
+										}
+									],
+									"sid": 776206901679352
 								}
-							],
-							"sid": 289034101814088
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-start-of-layout",
-									"objectClass": "System",
-									"sid": 704698424864780
-								}
-							],
-							"actions": [
-								{
-									"id": "set-angle-of-motion",
-									"objectClass": "DeadlyCog",
-									"sid": 465079504523127,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"angle": "180"
-									}
-								}
-							],
-							"sid": 653826968849480
+							]
 						}
 					],
 					"sid": 223813401674907
@@ -482,6 +477,16 @@
 												"comparison": 3,
 												"second-value": "LayoutWidth"
 											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 501821464685518,
+											"parameters": {
+												"first-value": "IsGameOver",
+												"comparison": 0,
+												"second-value": "0"
+											}
 										}
 									],
 									"actions": [
@@ -499,7 +504,7 @@
 										{
 											"id": "set-angle-of-motion",
 											"objectClass": "DeadlyCog",
-											"sid": 872480481944007,
+											"sid": 282811463269806,
 											"behaviorType": "Bullet",
 											"parameters": {
 												"angle": "180"
@@ -582,17 +587,7 @@
 							"sid": 352442769192190
 						}
 					],
-					"actions": [
-						{
-							"id": "set-angle-of-motion",
-							"objectClass": "Spikes",
-							"sid": 358959758869259,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"angle": "180"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 371682792676389
 				},
 				{
@@ -636,7 +631,7 @@
 								{
 									"id": "set-angle-of-motion",
 									"objectClass": "Spikes",
-									"sid": 728158681152994,
+									"sid": 902313232968496,
 									"behaviorType": "Bullet",
 									"parameters": {
 										"angle": "180"
@@ -694,10 +689,30 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Hash Coin Spawner",
+			"title": "Hash/Coin Spawner",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "variable",
+					"name": "YPosition",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 420698827229920
+				},
+				{
+					"eventType": "variable",
+					"name": "XPosition",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 630552202319150
+				},
 				{
 					"eventType": "variable",
 					"name": "SelectedInstance",
@@ -714,9 +729,19 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 339497813250727,
+							"sid": 322242957209214,
 							"parameters": {
-								"interval-seconds": "random(1,  3.5)"
+								"interval-seconds": "random(1,  2)"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 700931461632153,
+							"parameters": {
+								"first-value": "IsGameOver",
+								"comparison": 0,
+								"second-value": "0"
 							}
 						}
 					],
@@ -739,25 +764,109 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 276652042173164,
+									"sid": 290316020853390,
 									"parameters": {
 										"first-value": "SelectedInstance",
 										"comparison": 0,
-										"second-value": "1"
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 175820484280695,
+									"parameters": {
+										"first-value": "HashCount",
+										"comparison": 2,
+										"second-value": "2"
 									}
 								}
 							],
 							"actions": [
 								{
-									"callFunction": "create_coins",
-									"sid": 629761527893128,
-									"parameters": [
-										"random(64, LayoutHeight-64)",
-										"random(MinSpeed, MaxSpeed)"
-									]
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 655805075339602,
+									"parameters": {
+										"variable": "XPosition",
+										"value": "LayoutWidth+50"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 369223410289771,
+									"parameters": {
+										"variable": "YPosition",
+										"value": "random(64, LayoutHeight-64)"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 155852100733715,
+									"parameters": {
+										"variable": "HashCount",
+										"value": "1"
+									}
 								}
 							],
-							"sid": 710818735141730
+							"sid": 710818735141730,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 127023457242344,
+											"parameters": {
+												"count": "choose(2.2,2.3,4)"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 391700780549937,
+											"parameters": {
+												"first-value": "IsGameOver",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "create_hash",
+											"sid": 383056087869785,
+											"parameters": [
+												"XPosition",
+												"YPosition",
+												"random(MinSpeed, MaxSpeed)"
+											]
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 255443487460624,
+											"parameters": {
+												"variable": "XPosition",
+												"value": "XPosition + Hash.Width"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 293719471815461,
+											"parameters": {
+												"type": "log",
+												"message": "\"Creating New Hash: \" & HashCount & \" \" & dt"
+											}
+										}
+									],
+									"sid": 173640511945822
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -770,12 +879,21 @@
 							],
 							"actions": [
 								{
-									"callFunction": "create_hash",
-									"sid": 536497747442539,
+									"callFunction": "create_coins",
+									"sid": 153976458901147,
 									"parameters": [
 										"random(64, LayoutHeight-64)",
 										"random(MinSpeed, MaxSpeed)"
 									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 994409004951100,
+									"parameters": {
+										"variable": "HashCount",
+										"value": "0"
+									}
 								}
 							],
 							"sid": 405964201883686
@@ -786,24 +904,159 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-two-values",
+							"id": "pick-nth-instance",
 							"objectClass": "System",
-							"sid": 498420343182889,
+							"sid": 548314273683601,
 							"parameters": {
-								"first-value": "Hash.X + Hash.Width",
-								"comparison": 3,
-								"second-value": "0"
+								"object": "Coin",
+								"instance": "-1"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "destroy",
-							"objectClass": "Hash",
-							"sid": 591163565368723
+							"type": "comment",
+							"text": "avoid overlap between hash and coin"
 						}
 					],
-					"sid": 528739658865492
+					"sid": 967257677229418,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Coin",
+									"sid": 473337190196323,
+									"parameters": {
+										"object": "Hash"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Coin",
+									"sid": 434535284778354
+								}
+							],
+							"sid": 755877060998754
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-nth-instance",
+							"objectClass": "System",
+							"sid": 969096995389652,
+							"parameters": {
+								"object": "Hash",
+								"instance": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 806090807157430,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 498524880026519,
+									"parameters": {
+										"first-value": "Hash.X + Hash.Width",
+										"comparison": 3,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Hash",
+									"sid": 517337954027795
+								}
+							],
+							"sid": 898038774677576
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-nth-instance",
+							"objectClass": "System",
+							"sid": 810092992073758,
+							"parameters": {
+								"object": "Coin",
+								"instance": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 790884078287682,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 973416035689340,
+									"parameters": {
+										"first-value": "Coin.X + Coin.Width",
+										"comparison": 3,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "destroy_coin",
+									"sid": 656332032423004,
+									"parameters": [
+										"Coin.UID"
+									]
+								}
+							],
+							"sid": 528634134612608,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 904208453392730,
+											"parameters": {
+												"object": "CoinFont",
+												"expression": "CoinFont.Pin.PinnedUID = Coin.UID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "CoinFont",
+											"sid": 383808741714114
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Coin",
+											"sid": 715120353224419
+										}
+									],
+									"sid": 575405064093126,
+									"disabled": true
+								}
+							]
+						}
+					]
 				}
 			],
 			"sid": 294943104620289
@@ -836,6 +1089,13 @@
 								"variable": "Score",
 								"value": "Score + Coin.Points"
 							}
+						},
+						{
+							"callFunction": "destroy_coin",
+							"sid": 120910836882035,
+							"parameters": [
+								"Coin.UID"
+							]
 						}
 					],
 					"sid": 908215795632571,
@@ -903,45 +1163,7 @@
 									"sid": 442571889294835
 								}
 							],
-							"sid": 216901538133030
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-destroyed",
-							"objectClass": "Coin",
-							"sid": 490348551296126
-						}
-					],
-					"actions": [],
-					"sid": 125899227523373,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 235050041594789,
-									"parameters": {
-										"first-value": "CoinFont.Pin.PinnedUID",
-										"comparison": 0,
-										"second-value": "Coin.UID"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "CoinFont",
-									"sid": 455978415936092
-								}
-							],
-							"sid": 667275597769057,
+							"sid": 216901538133030,
 							"disabled": true
 						}
 					]
@@ -964,6 +1186,13 @@
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
+							"name": "XPosition",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 379187604835320
+						},
+						{
 							"name": "YPosition",
 							"type": "number",
 							"initialValue": "0",
@@ -984,18 +1213,18 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 164919940262613,
+							"sid": 750070650473330,
 							"parameters": {
 								"object-to-create": "Hash",
 								"layer": "\"Game\"",
-								"x": "LayoutWidth + 50",
-								"y": "random(0+Hash.Height, LayoutHeight-Hash.Height)"
+								"x": "XPosition",
+								"y": "YPosition"
 							}
 						},
 						{
 							"id": "set-angle-of-motion",
 							"objectClass": "Hash",
-							"sid": 707107770250764,
+							"sid": 697472928002917,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"angle": "180"
@@ -1004,10 +1233,10 @@
 						{
 							"id": "set-speed",
 							"objectClass": "Hash",
-							"sid": 720901136588551,
+							"sid": 471376434402680,
 							"behaviorType": "Bullet",
 							"parameters": {
-								"speed": "startSpeed"
+								"speed": "MaxSpeed"
 							}
 						}
 					],
@@ -1041,7 +1270,7 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 927833726323155,
+							"sid": 981726780858889,
 							"parameters": {
 								"object-to-create": "Coin",
 								"layer": "\"Game\"",
@@ -1050,9 +1279,19 @@
 							}
 						},
 						{
+							"id": "set-size",
+							"objectClass": "Coin",
+							"sid": 629486241455614,
+							"disabled": true,
+							"parameters": {
+								"width": "64",
+								"height": "64"
+							}
+						},
+						{
 							"id": "set-angle-of-motion",
 							"objectClass": "Coin",
-							"sid": 396871117990340,
+							"sid": 350450235597554,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"angle": "180"
@@ -1061,10 +1300,10 @@
 						{
 							"id": "set-speed",
 							"objectClass": "Coin",
-							"sid": 829030331676478,
+							"sid": 874096392633384,
 							"behaviorType": "Bullet",
 							"parameters": {
-								"speed": "startSpeed"
+								"speed": "MaxSpeed"
 							}
 						},
 						{
@@ -1079,12 +1318,22 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 999188952486922,
+							"sid": 412743847432973,
 							"parameters": {
 								"object-to-create": "CoinFont",
-								"layer": "\"Game\"",
+								"layer": "\"UI\"",
 								"x": "Coin.X",
 								"y": "Coin.Y"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "CoinFont",
+							"sid": 275799122182725,
+							"disabled": true,
+							"parameters": {
+								"width": "40",
+								"height": "40"
 							}
 						},
 						{
@@ -1116,6 +1365,90 @@
 						}
 					],
 					"sid": 965631724764622
+				},
+				{
+					"functionName": "destroy_coin",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "CoinUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 632708945582585
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 988055175370686,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 165677088647045,
+									"parameters": {
+										"object": "CoinFont",
+										"expression": "CoinFont.Pin.PinnedUID = CoinUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 341226783070689,
+									"parameters": {
+										"type": "log",
+										"message": "\"Destroy CoinFont: \" & CoinFont.UID"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "CoinFont",
+									"sid": 309819263448916
+								}
+							],
+							"sid": 924838632044275
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 393786883664066,
+									"parameters": {
+										"object": "Coin",
+										"expression": "Coin.UID = CoinUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 488610493034867,
+									"parameters": {
+										"type": "log",
+										"message": "\"Destroy Coin: \"& Coin.UID"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Coin",
+									"sid": 721480257816794
+								}
+							],
+							"sid": 869014355707857
+						}
+					]
 				}
 			],
 			"sid": 162674197488483

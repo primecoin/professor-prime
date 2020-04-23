@@ -30,12 +30,26 @@
 					"behaviors": {
 						"Flash": {
 							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
 						}
 					},
 					"world": {
-						"x": 239,
+						"x": 425.5,
 						"y": 87,
-						"width": 479,
+						"width": 852,
 						"height": 140,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -74,13 +88,27 @@
 					"behaviors": {
 						"Flash": {
 							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
 						}
 					},
 					"world": {
-						"x": 238,
-						"y": 428,
-						"width": 479,
-						"height": 179,
+						"x": 432,
+						"y": 240,
+						"width": 816,
+						"height": 176,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -118,11 +146,25 @@
 					"behaviors": {
 						"Flash": {
 							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
 						}
 					},
 					"world": {
-						"x": 241,
-						"y": 804,
+						"x": 432,
+						"y": 416,
 						"width": 479,
 						"height": 44,
 						"originX": 0.5,
@@ -166,8 +208,8 @@
 	"sid": 936997743079932,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 480,
-	"height": 854,
+	"width": 854,
+	"height": 480,
 	"unboundedScrolling": false,
 	"eventSheet": "eMainMenu"
 }

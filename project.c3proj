@@ -72,6 +72,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r189.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Pin",
 			"name": "Pin",
 			"author": "Scirra",
@@ -127,7 +135,10 @@
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"Movable",
+			"Enemies"
+		],
 		"subfolders": []
 	},
 	"layouts": {
@@ -229,7 +240,7 @@
 	},
 	"properties": {
 		"description": "Collect the Prime Coins and avoid being sucked up by the cooling system for the other cryptocoins.",
-		"version": "1.0.0.1",
+		"version": "1.1.0.0",
 		"author": "",
 		"authorEmail": "",
 		"authorWebsite": "",
@@ -259,7 +270,7 @@
 			0
 		],
 		"useHighDpi": true,
-		"orientations": "portrait",
+		"orientations": "landscape",
 		"enableWebGL": true,
 		"gpuPreference": "high-performance",
 		"framerateMode": "vsync",
@@ -272,7 +283,7 @@
 		"clearBackground": true,
 		"enhancedAccelerationPrecision": true
 	},
-	"viewportWidth": 480,
-	"viewportHeight": 854,
+	"viewportWidth": 854,
+	"viewportHeight": 480,
 	"firstLayout": "MainMenu"
 }
