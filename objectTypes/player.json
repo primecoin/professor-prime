@@ -3,7 +3,14 @@
 	"plugin-id": "Sprite",
 	"sid": 823367301831924,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "GodMode",
+			"type": "number",
+			"desc": "",
+			"sid": 247979879922632
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Platform",

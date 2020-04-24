@@ -4,7 +4,13 @@
 	"sid": 813767246406867,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 972854466896624
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -21,14 +27,14 @@
 						"imageSpriteId": 5,
 						"collisionPoly": {
 							"points": [
-								0.19140625,
-								0.1953125,
-								0.796875,
-								0.20703125,
-								0.80859375,
-								0.796875,
-								0.1953125,
-								0.80078125
+								0.1859375,
+								0.184375,
+								0.80625,
+								0.1875,
+								0.8109375,
+								0.8140625,
+								0.184375,
+								0.821875
 							]
 						},
 						"useCollisionPoly": true,
