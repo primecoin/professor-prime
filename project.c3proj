@@ -63,6 +63,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "PlatformInfo",
+			"name": "Platform info",
+			"author": "Scirra",
+			"version": "r189.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Flash",
 			"name": "Flash",
@@ -119,7 +127,8 @@
 			"Hash",
 			"Array",
 			"AJAX",
-			"JSON"
+			"JSON",
+			"PlatformInfo"
 		],
 		"subfolders": [
 			{
@@ -240,7 +249,7 @@
 	},
 	"properties": {
 		"description": "Collect the Prime Coins and avoid being sucked up by the cooling system for the other cryptocoins.",
-		"version": "1.1.0.0",
+		"version": "1.1.0.2",
 		"author": "",
 		"authorEmail": "",
 		"authorWebsite": "",

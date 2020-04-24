@@ -86,7 +86,25 @@
 					"sid": 458199974180203
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 186876706985292,
+					"parameters": {
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "auto"
+					}
+				},
+				{
+					"id": "lock-orientation",
+					"objectClass": "Browser",
+					"sid": 453946071617626,
+					"parameters": {
+						"orientation": "landscape"
+					}
+				}
+			],
 			"sid": 489718643100525,
 			"children": [
 				{
