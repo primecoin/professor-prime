@@ -155,7 +155,7 @@
 					},
 					"uid": 2,
 					"instanceVariables": {
-						"GodMode": 1
+						"GodMode": 0
 					},
 					"behaviors": {
 						"Platform": {
@@ -169,7 +169,7 @@
 								"double-jump": false,
 								"jump-sustain": 0,
 								"default-controls": false,
-								"enabled": false
+								"enabled": true
 							}
 						},
 						"Flash": {
