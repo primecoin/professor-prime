@@ -71,6 +71,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r189.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Flash",
 			"name": "Flash",
@@ -128,7 +136,9 @@
 			"Array",
 			"AJAX",
 			"JSON",
-			"PlatformInfo"
+			"PlatformInfo",
+			"Audio",
+			"Pointer"
 		],
 		"subfolders": [
 			{
@@ -172,11 +182,38 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "Collecting coins.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 264288954374001
+				},
+				{
+					"name": "Play.startbutton.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 723264322718831
+				},
+				{
+					"name": "Impact with hash.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 729177559611029
+				},
+				{
+					"name": "Fans.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 937756070806215
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "Main background sound for inngame.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 547739212067372
+				}
+			],
 			"subfolders": []
 		},
 		"video": {
@@ -228,13 +265,7 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [
-				{
-					"name": "prime_numbers.json",
-					"type": "application/json",
-					"sid": 187463585213603
-				}
-			],
+			"items": [],
 			"subfolders": []
 		}
 	},

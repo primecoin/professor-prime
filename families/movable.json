@@ -2,7 +2,14 @@
 	"name": "Movable",
 	"plugin-id": "Sprite",
 	"sid": 463238308658504,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "Speed",
+			"type": "number",
+			"desc": "",
+			"sid": 940085222705727
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Bullet",

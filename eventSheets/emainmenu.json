@@ -49,6 +49,17 @@
 							}
 						},
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 152304581898506,
+							"parameters": {
+								"audio-file": "Play.startbutton",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
 							"id": "set-scale",
 							"objectClass": "SpriteFont",
 							"sid": 806416510229421,
@@ -91,6 +102,7 @@
 					"id": "request-fullscreen",
 					"objectClass": "Browser",
 					"sid": 186876706985292,
+					"disabled": true,
 					"parameters": {
 						"mode": "stretch-letterbox-scale",
 						"navigation-ui": "auto"
@@ -100,6 +112,7 @@
 					"id": "lock-orientation",
 					"objectClass": "Browser",
 					"sid": 453946071617626,
+					"disabled": true,
 					"parameters": {
 						"orientation": "landscape"
 					}

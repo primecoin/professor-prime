@@ -151,6 +151,15 @@
 							"sid": 968804027422823
 						},
 						{
+							"id": "set-enabled",
+							"objectClass": "Player",
+							"sid": 210598972541629,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
 							"id": "set-vector-y",
 							"objectClass": "Player",
 							"sid": 313915098287764,
@@ -169,25 +178,127 @@
 							}
 						},
 						{
+							"id": "set-enabled",
+							"objectClass": "Movable",
+							"sid": 615348067303456,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 750117263203550,
+							"parameters": {
+								"audio-file": "Main background sound for inngame",
+								"loop": "looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 891310828017803
+				},
+				{
+					"eventType": "comment",
+					"text": "Start game on touch?"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap",
+							"objectClass": "Touch",
+							"sid": 420402518489665
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 711835851024574,
+							"parameters": {
+								"first-value": "IsPlaying",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 566344349483362,
+							"parameters": {
+								"first-value": "IsGameOver",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 939837232958928,
+							"parameters": {
+								"variable": "IsPlaying",
+								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 371364284941083,
+							"parameters": {
+								"audio-file": "Fans",
+								"loop": "looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 299201811553966,
+							"parameters": {
+								"audio-file": "Play.startbutton",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Pointer",
+							"sid": 262363390864855
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Movable",
+							"sid": 631053069581963,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
 							"id": "set-angle-of-motion",
-							"objectClass": "Background",
-							"sid": 923544275951067,
+							"objectClass": "Movable",
+							"sid": 629309731181529,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"angle": "180"
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 398273897124114,
+							"id": "set-enabled",
+							"objectClass": "Player",
+							"sid": 509857062543653,
+							"behaviorType": "Platform",
 							"parameters": {
-								"variable": "IsPlaying",
-								"value": "1"
+								"state": "enabled"
 							}
 						}
 					],
-					"sid": 891310828017803
+					"sid": 547811567830070
 				}
 			],
 			"sid": 305624398401451
@@ -292,57 +403,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-y",
-							"objectClass": "Player",
-							"sid": 923917294725839,
-							"parameters": {
-								"comparison": 5,
-								"y-co-ordinate": "LayoutHeight + 200"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 538543185517432,
-							"parameters": {
-								"layout": "GameOver"
-							}
-						}
-					],
-					"sid": 330597416567081,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Player",
-							"sid": 848185356696068,
-							"parameters": {
-								"object": "Hash"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 337437451590817,
-							"parameters": {
-								"layout": "GameOver"
-							}
-						}
-					],
-					"sid": 876262459352698,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "Player",
 							"sid": 170773084719626,
@@ -372,6 +432,17 @@
 							}
 						},
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 582523017435311,
+							"parameters": {
+								"audio-file": "Impact with hash",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
 							"id": "set-active",
 							"objectClass": "Hash",
 							"sid": 995764422939887,
@@ -381,12 +452,12 @@
 							}
 						},
 						{
-							"id": "set-speed",
+							"id": "set-enabled",
 							"objectClass": "Movable",
-							"sid": 303345301363924,
+							"sid": 871846576416333,
 							"behaviorType": "Bullet",
 							"parameters": {
-								"speed": "0"
+								"state": "disabled"
 							}
 						},
 						{
@@ -416,6 +487,11 @@
 							"parameters": {
 								"seconds": "1.0"
 							}
+						},
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 523398065555103
 						},
 						{
 							"id": "go-to-layout",
@@ -468,6 +544,16 @@
 												"first-value": "IsGameOver",
 												"comparison": 0,
 												"second-value": "0"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 371065355279408,
+											"parameters": {
+												"first-value": "IsPlaying",
+												"comparison": 0,
+												"second-value": "1"
 											}
 										}
 									],
@@ -546,14 +632,52 @@
 										{
 											"id": "set-angle-of-motion",
 											"objectClass": "DeadlyCog",
-											"sid": 282811463269806,
+											"sid": 640137033871314,
 											"behaviorType": "Bullet",
 											"parameters": {
 												"angle": "180"
 											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "DeadlyCog",
+											"sid": 868106294833592,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "DeadlyCog.Speed"
+											}
 										}
 									],
-									"sid": 514428560103052
+									"sid": 514428560103052,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 915306081409961,
+													"parameters": {
+														"first-value": "IsPlaying",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-enabled",
+													"objectClass": "DeadlyCog",
+													"sid": 669191683442327,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"state": "enabled"
+													}
+												}
+											],
+											"sid": 787079594544333
+										}
+									]
 								}
 							]
 						}
@@ -624,18 +748,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 352442769192190
-						}
-					],
-					"actions": [],
-					"sid": 371682792676389
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "every-tick",
 							"objectClass": "System",
 							"sid": 441993699175695
@@ -673,14 +785,52 @@
 								{
 									"id": "set-angle-of-motion",
 									"objectClass": "Spikes",
-									"sid": 902313232968496,
+									"sid": 401006444177660,
 									"behaviorType": "Bullet",
 									"parameters": {
 										"angle": "180"
 									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Spikes",
+									"sid": 980209930195519,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "Spikes.Speed"
+									}
 								}
 							],
-							"sid": 976703799027941
+							"sid": 976703799027941,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 435417463362653,
+											"parameters": {
+												"first-value": "IsPlaying",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-enabled",
+											"objectClass": "Spikes",
+											"sid": 337352775171903,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "enabled"
+											}
+										}
+									],
+									"sid": 518838529164022
+								}
+							]
 						}
 					]
 				},
@@ -697,7 +847,12 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "TODO: fix this. Check just for X"
+						}
+					],
 					"sid": 815228828524127,
 					"children": [
 						{
@@ -801,37 +956,20 @@
 										"off-time": "0.1",
 										"duration": "1.0"
 									}
-								}
-							],
-							"sid": 884889789401535
-						},
-						{
-							"eventType": "block",
-							"conditions": [
+								},
 								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 872791397943328,
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 846205778411958,
 									"parameters": {
-										"object": "CoinFont",
-										"expression": "CoinFont.Pin.PinnedUID = Coin.UID"
+										"audio-file": "Collecting coins",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"\""
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "CoinFont",
-									"sid": 897091271133847
-								},
-								{
-									"id": "destroy",
-									"objectClass": "Coin",
-									"sid": 442571889294835
-								}
-							],
-							"sid": 216901538133030,
-							"disabled": true
+							"sid": 884889789401535
 						}
 					]
 				}

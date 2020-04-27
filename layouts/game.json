@@ -15,7 +15,9 @@
 						"live-preview": false
 					},
 					"uid": 5,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Speed": 40
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
@@ -56,7 +58,9 @@
 						"live-preview": false
 					},
 					"uid": 6,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Speed": 40
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
@@ -169,7 +173,7 @@
 								"double-jump": false,
 								"jump-sustain": 0,
 								"default-controls": false,
-								"enabled": true
+								"enabled": false
 							}
 						},
 						"Flash": {
@@ -203,7 +207,9 @@
 						"live-preview": false
 					},
 					"uid": 7,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Speed": 40
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
@@ -213,7 +219,7 @@
 								"bounce-off-solids": false,
 								"set-angle": false,
 								"step": false,
-								"enabled": true
+								"enabled": false
 							}
 						}
 					},
@@ -244,7 +250,9 @@
 						"live-preview": false
 					},
 					"uid": 8,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Speed": 40
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
@@ -254,7 +262,7 @@
 								"bounce-off-solids": false,
 								"set-angle": false,
 								"step": false,
-								"enabled": true
+								"enabled": false
 							}
 						}
 					},
@@ -285,7 +293,9 @@
 						"live-preview": false
 					},
 					"uid": 21,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Speed": 40
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
@@ -295,7 +305,7 @@
 								"bounce-off-solids": false,
 								"set-angle": false,
 								"step": false,
-								"enabled": true
+								"enabled": false
 							}
 						}
 					},
@@ -414,6 +424,7 @@
 					},
 					"uid": 9,
 					"instanceVariables": {
+						"Speed": 40,
 						"Points": 0
 					},
 					"behaviors": {
@@ -500,11 +511,13 @@
 						"live-preview": false
 					},
 					"uid": 12,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Speed": 40
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
-								"speed": 400,
+								"speed": 40,
 								"acceleration": 0,
 								"gravity": 0,
 								"bounce-off-solids": false,
@@ -533,6 +546,94 @@
 						"y": 640,
 						"width": 64,
 						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Pointer",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 14,
+					"instanceVariables": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "size",
+								"wave": "sine",
+								"period": 1,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 30,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 1280,
+						"y": 256,
+						"width": 100,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Pointer",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 15,
+					"instanceVariables": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "size",
+								"wave": "sine",
+								"period": 1,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 30,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 427,
+						"y": 240,
+						"width": 100,
+						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
