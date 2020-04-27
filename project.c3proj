@@ -138,7 +138,8 @@
 			"JSON",
 			"PlatformInfo",
 			"Audio",
-			"Pointer"
+			"Pointer",
+			"StartOverlay"
 		],
 		"subfolders": [
 			{

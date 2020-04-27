@@ -267,6 +267,11 @@
 						},
 						{
 							"id": "destroy",
+							"objectClass": "StartOverlay",
+							"sid": 736933286301297
+						},
+						{
+							"id": "destroy",
 							"objectClass": "Pointer",
 							"sid": 262363390864855
 						},
