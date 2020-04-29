@@ -2,7 +2,14 @@
 	"name": "Enemies",
 	"plugin-id": "Sprite",
 	"sid": 447014474214472,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "EnemyType",
+			"type": "string",
+			"desc": "",
+			"sid": 139011941957858
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [

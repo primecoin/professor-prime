@@ -73,7 +73,9 @@
 						"live-preview": false
 					},
 					"uid": 17,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Type": "Restart"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 554.5,

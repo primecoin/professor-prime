@@ -1,0 +1,331 @@
+{
+	"name": "ePause",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "IsMuted",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 436060449291505
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Pause",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 824636694907124,
+							"parameters": {
+								"object": "Sprite"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 783205829734612,
+							"parameters": {
+								"first-value": "IsPlaying",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "toggle-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 255679193110255,
+							"parameters": {
+								"variable": "IsPaused"
+							}
+						}
+					],
+					"sid": 647637912408775,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 380811358970332,
+									"parameters": {
+										"first-value": "IsPaused",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 945323965974575,
+									"parameters": {
+										"first-value": "timescale",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 507569034683571,
+									"parameters": {
+										"layer": "\"Pause\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 693512752205019,
+									"parameters": {
+										"time-scale": "0"
+									}
+								},
+								{
+									"id": "set-paused",
+									"objectClass": "Audio",
+									"sid": 304824234878682,
+									"parameters": {
+										"tag": "\"MainMusic\"",
+										"state": "pause"
+									}
+								},
+								{
+									"id": "set-paused",
+									"objectClass": "Audio",
+									"sid": 844555015959626,
+									"parameters": {
+										"tag": "\"DeadlyCog\"",
+										"state": "pause"
+									}
+								}
+							],
+							"sid": 368968024327434
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 208556544898109,
+									"parameters": {
+										"first-value": "IsPaused",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 162529422227983,
+									"parameters": {
+										"first-value": "timescale",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 164844841116381,
+									"parameters": {
+										"time-scale": "1.0"
+									}
+								},
+								{
+									"id": "set-paused",
+									"objectClass": "Audio",
+									"sid": 924770852597432,
+									"parameters": {
+										"tag": "\"MainMusic\"",
+										"state": "resume"
+									}
+								},
+								{
+									"id": "set-paused",
+									"objectClass": "Audio",
+									"sid": 444146929909773,
+									"parameters": {
+										"tag": "\"DeadlyCog\"",
+										"state": "resume"
+									}
+								}
+							],
+							"sid": 886993455796922
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 977108865817175,
+							"parameters": {
+								"object": "SoundButton"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 440858203352827,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 579008640357409,
+									"parameters": {
+										"first-value": "IsMuted",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-muted",
+									"objectClass": "Audio",
+									"sid": 144689367941103,
+									"parameters": {
+										"tag": "\"MainMusic\"",
+										"state": "muted"
+									}
+								},
+								{
+									"id": "set-muted",
+									"objectClass": "Audio",
+									"sid": 802880894915245,
+									"parameters": {
+										"tag": "\"DeadlyCog\"",
+										"state": "muted"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "SoundButton",
+									"sid": 574497347922356,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 356679170493731
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 972566657444718
+								}
+							],
+							"actions": [
+								{
+									"id": "set-muted",
+									"objectClass": "Audio",
+									"sid": 175790666923630,
+									"parameters": {
+										"tag": "\"MainMusic\"",
+										"state": "unmuted"
+									}
+								},
+								{
+									"id": "set-muted",
+									"objectClass": "Audio",
+									"sid": 628114500731876,
+									"parameters": {
+										"tag": "\"DeadlyCog\"",
+										"state": "unmuted"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "SoundButton",
+									"sid": 317685498653903,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 781150624003192,
+									"parameters": {
+										"variable": "IsMuted",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 358474776830743
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 167969775862264,
+							"parameters": {
+								"object": "RestartButton",
+								"expression": "RestartButton.Type = \"Resume\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 700498068307178,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 777818536848253,
+									"parameters": {
+										"object": "RestartButton"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 540807125558451,
+									"parameters": {
+										"layer": "\"Pause\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 554586315190930
+						}
+					]
+				}
+			],
+			"sid": 620361913948062
+		}
+	],
+	"sid": 147842246020486
+}

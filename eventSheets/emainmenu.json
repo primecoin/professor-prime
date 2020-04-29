@@ -116,6 +116,14 @@
 					"parameters": {
 						"orientation": "landscape"
 					}
+				},
+				{
+					"id": "preload",
+					"objectClass": "Audio",
+					"sid": 173278341680809,
+					"parameters": {
+						"audio-file": "Main background sound for inngame"
+					}
 				}
 			],
 			"sid": 489718643100525,

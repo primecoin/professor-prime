@@ -2,6 +2,10 @@
 	"name": "eGame",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "ePause"
+		},
+		{
 			"eventType": "variable",
 			"name": "JumpStrength",
 			"type": "number",
@@ -53,6 +57,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "IsPaused",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 921000071848744
+		},
+		{
+			"eventType": "variable",
 			"name": "HashCount",
 			"type": "number",
 			"initialValue": "0",
@@ -99,12 +113,32 @@
 					],
 					"actions": [
 						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 916788030606459,
+							"parameters": {
+								"animation": "\"Animation 2\"",
+								"from": "beginning"
+							}
+						},
+						{
 							"id": "set-vector-y",
 							"objectClass": "Player",
 							"sid": 985091202765373,
 							"behaviorType": "Platform",
 							"parameters": {
 								"vector-y": "-JumpStrength"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 867310618747366,
+							"parameters": {
+								"audio-file": "when touch screen",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"FlapSound\""
 							}
 						}
 					],
@@ -189,12 +223,12 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 750117263203550,
+							"sid": 760403596779885,
 							"parameters": {
 								"audio-file": "Main background sound for inngame",
 								"loop": "looping",
 								"volume": "0",
-								"tag-optional": "\"\""
+								"tag-optional": "\"MainMusic\""
 							}
 						}
 					],
@@ -246,12 +280,12 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 371364284941083,
+							"sid": 684499525004027,
 							"parameters": {
 								"audio-file": "Fans",
 								"loop": "looping",
 								"volume": "0",
-								"tag-optional": "\"\""
+								"tag-optional": "\"FansSound\""
 							}
 						},
 						{
@@ -266,14 +300,25 @@
 							}
 						},
 						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 445496364454287,
+							"parameters": {
+								"layer": "\"StartOverlay\"",
+								"visibility": "invisible"
+							}
+						},
+						{
 							"id": "destroy",
 							"objectClass": "StartOverlay",
-							"sid": 736933286301297
+							"sid": 736933286301297,
+							"disabled": true
 						},
 						{
 							"id": "destroy",
 							"objectClass": "Pointer",
-							"sid": 262363390864855
+							"sid": 262363390864855,
+							"disabled": true
 						},
 						{
 							"id": "set-enabled",
@@ -440,6 +485,7 @@
 							"id": "play",
 							"objectClass": "Audio",
 							"sid": 582523017435311,
+							"disabled": true,
 							"parameters": {
 								"audio-file": "Impact with hash",
 								"loop": "not-looping",
@@ -477,37 +523,286 @@
 						{
 							"id": "flash",
 							"objectClass": "Player",
-							"sid": 408613437764622,
+							"sid": 421321214052185,
 							"behaviorType": "Flash",
 							"parameters": {
 								"on-time": "0.2",
 								"off-time": "0.2",
-								"duration": "1.0"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 184106734624115,
-							"parameters": {
-								"seconds": "1.0"
-							}
-						},
-						{
-							"id": "stop-all",
-							"objectClass": "Audio",
-							"sid": 523398065555103
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 253571692952407,
-							"parameters": {
-								"layout": "GameOver"
+								"duration": "5"
 							}
 						}
 					],
-					"sid": 279210287551114
+					"sid": 279210287551114,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 842640690593604,
+									"parameters": {
+										"object": "Enemies",
+										"expression": "Enemies.EnemyType",
+										"comparison": 0,
+										"value": "\"Hash\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 391579105285187,
+									"parameters": {
+										"audio-file": "Impact with hash",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 353160787076203,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 192552541078111,
+									"parameters": {
+										"type": "log",
+										"message": "\"OnGameOver HASH\""
+									}
+								},
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 947874160667219,
+									"parameters": {
+										"tag": "\"OnGameOver\""
+									}
+								}
+							],
+							"sid": 749184635843406
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 521962523711519,
+									"parameters": {
+										"object": "Enemies",
+										"expression": "Enemies.EnemyType",
+										"comparison": 0,
+										"value": "\"Spikes\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 748203001827697,
+									"parameters": {
+										"audio-file": "bottom chains hit",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 874644943455141,
+									"parameters": {
+										"type": "log",
+										"message": "\"OnGameOver SPIKES\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 788741307843339,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 852296388434098,
+									"parameters": {
+										"tag": "\"OnGameOver\""
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 497256426271175,
+									"parameters": {
+										"type": "log",
+										"message": "\"After Sending GameOver signal on Skipes\""
+									}
+								}
+							],
+							"sid": 639329521159584
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 482000727036915,
+									"parameters": {
+										"object": "Enemies",
+										"expression": "Enemies.EnemyType",
+										"comparison": 0,
+										"value": "\"DeadlyCog\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 407487984615820,
+									"parameters": {
+										"audio-file": "crash into fans first part",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"FanSound\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 880346155678093,
+									"parameters": {
+										"seconds": "1.0"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 396632313409350,
+									"parameters": {
+										"audio-file": "when crash into fans and they stop 2nd part",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"Fan2Sound\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 756754250972077,
+									"parameters": {
+										"seconds": "1.5"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 811153613235182,
+									"parameters": {
+										"type": "log",
+										"message": "\"OnGameOver COG\""
+									}
+								},
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 612567957262260,
+									"parameters": {
+										"tag": "\"OnGameOver\""
+									}
+								}
+							],
+							"sid": 998738913412988
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Stop sounds and wait to go GameOver"
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 504124421564310,
+									"breakpoint": true,
+									"parameters": {
+										"tag": "\"OnGameOver\""
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 194169450551810,
+									"parameters": {
+										"type": "log",
+										"message": "\"After Waiting For Signal\""
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 407983016394213,
+									"parameters": {
+										"tag": "\"Fan2Sound\""
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 891044517997313,
+									"parameters": {
+										"tag": "\"FlapSound\""
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 106512471909150,
+									"parameters": {
+										"tag": "\"FansSound\""
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 293291738858530,
+									"parameters": {
+										"tag": "\"MainMusic\""
+									}
+								},
+								{
+									"id": "stop-flashing",
+									"objectClass": "Player",
+									"sid": 261736017314054,
+									"behaviorType": "Flash"
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 982496044353783,
+									"parameters": {
+										"layout": "GameOver"
+									}
+								}
+							],
+							"sid": 869194522616129
+						}
+					]
 				}
 			],
 			"sid": 262280398409290
@@ -559,6 +854,16 @@
 												"first-value": "IsPlaying",
 												"comparison": 0,
 												"second-value": "1"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 217025188862787,
+											"parameters": {
+												"first-value": "IsPaused",
+												"comparison": 0,
+												"second-value": "0"
 											}
 										}
 									],
@@ -779,13 +1084,18 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 237144776507465,
+									"sid": 232068571733351,
 									"parameters": {
 										"object-to-create": "Spikes",
 										"layer": "\"Game\"",
-										"x": "Spikes(-1).X + Spikes.Width",
+										"x": "Spikes(-1).X + 80",
 										"y": "Spikes(-1).Y"
 									}
+								},
+								{
+									"id": "move-to-bottom",
+									"objectClass": "Spikes",
+									"sid": 545817159033199
 								},
 								{
 									"id": "set-angle-of-motion",
