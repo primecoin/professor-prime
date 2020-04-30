@@ -109,6 +109,15 @@
 							"id": "on-any-touch-start",
 							"objectClass": "Touch",
 							"sid": 703027462126601
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 445511753449855,
+							"parameters": {
+								"variable": "IsPaused"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -361,95 +370,6 @@
 				}
 			],
 			"sid": 305624398401451
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Background Parallax",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 931674675227674,
-							"parameters": {
-								"first-value": "Background(-1).X + Background.Width",
-								"comparison": 3,
-								"second-value": "LayoutWidth"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 300048168233246,
-							"parameters": {
-								"object-to-create": "Background",
-								"layer": "\"Background\"",
-								"x": "Background(-1).X+Background.Width",
-								"y": "0"
-							}
-						},
-						{
-							"id": "set-angle-of-motion",
-							"objectClass": "Background",
-							"sid": 639785387158143,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"angle": "180"
-							}
-						}
-					],
-					"sid": 366109990074219
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 176390161296508,
-							"parameters": {
-								"first-value": "Background(0).X + Background.Width",
-								"comparison": 3,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 472681567435769,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-nth-instance",
-									"objectClass": "System",
-									"sid": 633922948711648,
-									"parameters": {
-										"object": "Background",
-										"instance": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "Background",
-									"sid": 481513611055361
-								}
-							],
-							"sid": 348974400759933
-						}
-					]
-				}
-			],
-			"sid": 938368361946629
 		},
 		{
 			"eventType": "group",
@@ -852,76 +772,6 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Cog Animation",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-tick",
-									"objectClass": "System",
-									"sid": 747846055118602
-								}
-							],
-							"actions": [],
-							"sid": 289034101814088,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 830322379646995,
-											"parameters": {
-												"first-value": "IsGameOver",
-												"comparison": 0,
-												"second-value": "0"
-											}
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 371065355279408,
-											"parameters": {
-												"first-value": "IsPlaying",
-												"comparison": 0,
-												"second-value": "1"
-											}
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 217025188862787,
-											"parameters": {
-												"first-value": "IsPaused",
-												"comparison": 0,
-												"second-value": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "rotate-clockwise",
-											"objectClass": "DeadlyCog",
-											"sid": 783502591505234,
-											"parameters": {
-												"degrees": "5"
-											}
-										}
-									],
-									"sid": 776206901679352
-								}
-							]
-						}
-					],
-					"sid": 223813401674907
-				},
 				{
 					"eventType": "group",
 					"disabled": false,

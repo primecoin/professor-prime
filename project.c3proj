@@ -125,7 +125,6 @@
 			"Player",
 			"Touch",
 			"Browser",
-			"Background",
 			"DeadlyCog",
 			"DeathTop",
 			"RestartButton",
@@ -310,7 +309,7 @@
 	},
 	"properties": {
 		"description": "Collect the Prime Coins and avoid being sucked up by the cooling system for the other cryptocoins.",
-		"version": "1.2.3.0",
+		"version": "1.2.3.1",
 		"author": "",
 		"authorEmail": "",
 		"authorWebsite": "",

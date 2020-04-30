@@ -42,11 +42,12 @@
 					],
 					"actions": [
 						{
-							"id": "toggle-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 255679193110255,
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 680070673279357,
 							"parameters": {
-								"variable": "IsPaused"
+								"type": "log",
+								"message": "\"--- Pause Clicked IsPaused: \" & IsPaused"
 							}
 						}
 					],
@@ -56,24 +57,13 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
+									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 380811358970332,
+									"sid": 847615255666830,
 									"parameters": {
-										"first-value": "IsPaused",
-										"comparison": 0,
-										"second-value": "1"
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 945323965974575,
-									"parameters": {
-										"first-value": "timescale",
-										"comparison": 0,
-										"second-value": "1"
-									}
+										"variable": "IsPaused"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -95,21 +85,21 @@
 									}
 								},
 								{
-									"id": "set-paused",
-									"objectClass": "Audio",
-									"sid": 304824234878682,
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 322064014234745,
 									"parameters": {
-										"tag": "\"MainMusic\"",
-										"state": "pause"
+										"variable": "IsPaused",
+										"value": "true"
 									}
 								},
 								{
-									"id": "set-paused",
-									"objectClass": "Audio",
-									"sid": 844555015959626,
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 815475541821915,
 									"parameters": {
-										"tag": "\"DeadlyCog\"",
-										"state": "pause"
+										"type": "log",
+										"message": "\"Set pause to true\""
 									}
 								}
 							],
@@ -119,31 +109,16 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
+									"id": "else",
 									"objectClass": "System",
-									"sid": 208556544898109,
-									"parameters": {
-										"first-value": "IsPaused",
-										"comparison": 0,
-										"second-value": "0"
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 162529422227983,
-									"parameters": {
-										"first-value": "timescale",
-										"comparison": 0,
-										"second-value": "0"
-									}
+									"sid": 664652611438777
 								}
 							],
 							"actions": [
 								{
 									"id": "set-time-scale",
 									"objectClass": "System",
-									"sid": 164844841116381,
+									"sid": 859027540477203,
 									"parameters": {
 										"time-scale": "1.0"
 									}
@@ -151,7 +126,7 @@
 								{
 									"id": "set-paused",
 									"objectClass": "Audio",
-									"sid": 924770852597432,
+									"sid": 992301372767399,
 									"parameters": {
 										"tag": "\"MainMusic\"",
 										"state": "resume"
@@ -160,14 +135,42 @@
 								{
 									"id": "set-paused",
 									"objectClass": "Audio",
-									"sid": 444146929909773,
+									"sid": 145055275800884,
 									"parameters": {
 										"tag": "\"DeadlyCog\"",
 										"state": "resume"
 									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 652598262340176,
+									"parameters": {
+										"variable": "IsPaused",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 748430394536677,
+									"parameters": {
+										"layer": "\"Pause\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 737920122922077,
+									"parameters": {
+										"type": "log",
+										"message": "\"Set pause to false\""
+									}
 								}
 							],
-							"sid": 886993455796922
+							"sid": 654345908173624,
+							"disabled": true
 						}
 					]
 				},
@@ -190,33 +193,22 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
+									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 579008640357409,
+									"sid": 420266957795358,
 									"parameters": {
-										"first-value": "IsMuted",
-										"comparison": 0,
-										"second-value": "0"
-									}
+										"variable": "IsMuted"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
 								{
-									"id": "set-muted",
+									"id": "set-silent",
 									"objectClass": "Audio",
-									"sid": 144689367941103,
+									"sid": 275072214632484,
 									"parameters": {
-										"tag": "\"MainMusic\"",
-										"state": "muted"
-									}
-								},
-								{
-									"id": "set-muted",
-									"objectClass": "Audio",
-									"sid": 802880894915245,
-									"parameters": {
-										"tag": "\"DeadlyCog\"",
-										"state": "muted"
+										"mode": "silent"
 									}
 								},
 								{
@@ -225,6 +217,15 @@
 									"sid": 574497347922356,
 									"parameters": {
 										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 521839836289933,
+									"parameters": {
+										"variable": "IsMuted",
+										"value": "true"
 									}
 								}
 							],
@@ -241,21 +242,11 @@
 							],
 							"actions": [
 								{
-									"id": "set-muted",
+									"id": "set-silent",
 									"objectClass": "Audio",
-									"sid": 175790666923630,
+									"sid": 779401452286348,
 									"parameters": {
-										"tag": "\"MainMusic\"",
-										"state": "unmuted"
-									}
-								},
-								{
-									"id": "set-muted",
-									"objectClass": "Audio",
-									"sid": 628114500731876,
-									"parameters": {
-										"tag": "\"DeadlyCog\"",
-										"state": "unmuted"
+										"mode": "not-silent"
 									}
 								},
 								{
@@ -269,10 +260,10 @@
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 781150624003192,
+									"sid": 467270781360183,
 									"parameters": {
 										"variable": "IsMuted",
-										"value": "true"
+										"value": "false"
 									}
 								}
 							],
@@ -316,6 +307,32 @@
 									"parameters": {
 										"layer": "\"Pause\"",
 										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 721895279901080,
+									"parameters": {
+										"time-scale": "1.0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 312258077896940,
+									"parameters": {
+										"variable": "IsPaused",
+										"value": "false"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 708997544485530,
+									"parameters": {
+										"type": "log",
+										"message": "\"Set pause to false\""
 									}
 								}
 							],

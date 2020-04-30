@@ -19,7 +19,6 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"Background",
 		"Spikes",
 		"Hash",
 		"DeadlyCog",
