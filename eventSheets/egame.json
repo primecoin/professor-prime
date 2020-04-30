@@ -170,6 +170,15 @@
 							"sid": 602520177274409
 						},
 						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 513863755179076,
+							"parameters": {
+								"layer": "\"StartOverlay\"",
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "destroy",
 							"objectClass": "Hash",
 							"sid": 168977894417982
@@ -1871,6 +1880,68 @@
 				}
 			],
 			"sid": 381970801137676
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Clouds",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 533042094324579,
+							"parameters": {
+								"first-value": "Cloud.X + Cloud.Width",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Cloud",
+							"sid": 134748910051906
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 786276429216863,
+							"parameters": {
+								"object-to-create": "Cloud",
+								"layer": "\"Background2\"",
+								"x": "0",
+								"y": "random(80, LayoutHeight - 180)"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Cloud",
+							"sid": 467117140413954,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "180"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Cloud",
+							"sid": 467165586967235,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "random(15,21)"
+							}
+						}
+					],
+					"sid": 177859122665787
+				}
+			],
+			"sid": 993981533846261
 		}
 	],
 	"sid": 621482238303227

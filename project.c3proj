@@ -144,7 +144,10 @@
 			"HUDBackground",
 			"PauseOverlay",
 			"SoundButton",
-			"ProfessorExplosion"
+			"ProfessorExplosion",
+			"Background1",
+			"MountainBackground",
+			"Cloud"
 		],
 		"subfolders": [
 			{

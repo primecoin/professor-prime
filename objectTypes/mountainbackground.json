@@ -1,0 +1,57 @@
+{
+	"name": "MountainBackground",
+	"plugin-id": "Sprite",
+	"sid": 671049737567518,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 938,
+						"height": 422,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 647866,
+						"collisionPoly": {
+							"points": [
+								0.21961620469083157,
+								0.4881516587677725,
+								0.5,
+								0.023696682464454975,
+								0.8283582089552238,
+								0.3791469194312796,
+								0.8827292110874201,
+								0.5,
+								0.9786780383795309,
+								0.95260663507109,
+								0.5,
+								0.9644549763033176,
+								0.009594882729211088,
+								0.976303317535545,
+								0.03731343283582089,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 478286956224048,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
