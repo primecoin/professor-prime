@@ -26,7 +26,7 @@
 							"objectClass": "Touch",
 							"sid": 824636694907124,
 							"parameters": {
-								"object": "Sprite"
+								"object": "PauseButton"
 							}
 						},
 						{

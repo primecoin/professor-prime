@@ -609,7 +609,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "PauseButton",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -740,7 +740,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "ProfessorExplosion",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -748,14 +748,14 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 14,
+					"uid": 26,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 632,
-						"y": 616,
-						"width": 250,
-						"height": 250,
+						"x": 1128,
+						"y": 408,
+						"width": 654,
+						"height": 576,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

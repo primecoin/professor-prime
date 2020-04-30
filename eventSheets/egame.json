@@ -521,14 +521,43 @@
 							}
 						},
 						{
+							"id": "set-visible",
+							"objectClass": "Player",
+							"sid": 414135731087238,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 441909482816686,
+							"parameters": {
+								"object-to-create": "ProfessorExplosion",
+								"layer": "\"Game\"",
+								"x": "Player.X",
+								"y": "Player.Y"
+							}
+						},
+						{
 							"id": "flash",
 							"objectClass": "Player",
 							"sid": 421321214052185,
+							"disabled": true,
 							"behaviorType": "Flash",
 							"parameters": {
 								"on-time": "0.2",
 								"off-time": "0.2",
 								"duration": "5"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "ProfessorExplosion",
+							"sid": 533305189910597,
+							"parameters": {
+								"width": "64",
+								"height": "64"
 							}
 						}
 					],
@@ -608,11 +637,11 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 748203001827697,
+									"sid": 674704835323307,
 									"parameters": {
 										"audio-file": "bottom chains hit",
 										"loop": "not-looping",
-										"volume": "0",
+										"volume": "-10",
 										"tag-optional": "\"\""
 									}
 								},
