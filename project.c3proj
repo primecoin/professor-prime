@@ -147,7 +147,10 @@
 			"PlatformInfo",
 			"Audio",
 			"LocalStorage",
-			"GameData"
+			"GameData",
+			"youtube",
+			"DiscordLogoWhite",
+			"telegramlogo"
 		],
 		"subfolders": [
 			{
@@ -183,7 +186,7 @@
 					"RestartButton",
 					"SoundButton",
 					"StartOverlay",
-					"Sprite"
+					"PrimeLogo"
 				],
 				"subfolders": [],
 				"name": "UI Objects"
@@ -358,7 +361,7 @@
 	},
 	"properties": {
 		"description": "Collect the Prime Coins and avoid being sucked up by the cooling system for the other cryptocoins.",
-		"version": "1.2.3.3",
+		"version": "1.2.4.0",
 		"author": "",
 		"authorEmail": "",
 		"authorWebsite": "",

@@ -14,7 +14,7 @@
 						"character-height": 136,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
 						"spacing-data": "[[40,\" \"],[8,\"|\"],[15,\"[\"],[16,\"]\"],[17,\"`\"],[23,\",;'°\"],[24,\".:\"],[26,\"l!\"],[27,\"i\"],[29,\"()\"],[33,\"-\"],[35,\"£€\"],[36,\"<>\"],[37,\"~\"],[39,\"1\"],[41,\"+\"],[42,\"=\"],[43,\"\\\"*\"],[50,\"t\"],[51,\"Is\"],[52,\"j2\"],[53,\"Ffo?\"],[55,\"Jcu\"],[56,\"EShr\"],[57,\"aeknv\"],[58,\"L@\"],[59,\"Zbgpz5\"],[60,\"BPd$\"],[61,\"C69\"],[62,\"7\"],[64,\"K4\"],[65,\"Hqy3&\"],[66,\"DR\\/\"],[67,\"GT\"],[68,\"VYx\"],[69,\"ANOX0\"],[70,\"#\"],[71,\"U8\"],[74,\"Q\"],[80,\"%\"],[81,\"Ww\"],[82,\"_\"],[85,\"m\"],[93,\"M\"]]",
-						"scale": 1,
+						"scale": 0.8,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
@@ -47,10 +47,10 @@
 						}
 					},
 					"world": {
-						"x": 425.5,
-						"y": 87,
-						"width": 852,
-						"height": 140,
+						"x": 427,
+						"y": 48,
+						"width": 848,
+						"height": 96,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -72,7 +72,7 @@
 						"character-height": 136,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
 						"spacing-data": "[[40,\" \"],[8,\"|\"],[15,\"[\"],[16,\"]\"],[17,\"`\"],[23,\",;'°\"],[24,\".:\"],[26,\"l!\"],[27,\"i\"],[29,\"()\"],[33,\"-\"],[35,\"£€\"],[36,\"<>\"],[37,\"~\"],[39,\"1\"],[41,\"+\"],[42,\"=\"],[43,\"\\\"*\"],[50,\"t\"],[51,\"Is\"],[52,\"j2\"],[53,\"Ffo?\"],[55,\"Jcu\"],[56,\"EShr\"],[57,\"aeknv\"],[58,\"L@\"],[59,\"Zbgpz5\"],[60,\"BPd$\"],[61,\"C69\"],[62,\"7\"],[64,\"K4\"],[65,\"Hqy3&\"],[66,\"DR\\/\"],[67,\"GT\"],[68,\"VYx\"],[69,\"ANOX0\"],[70,\"#\"],[71,\"U8\"],[74,\"Q\"],[80,\"%\"],[81,\"Ww\"],[82,\"_\"],[85,\"m\"],[93,\"M\"]]",
-						"scale": 1,
+						"scale": 0.6,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
@@ -105,10 +105,10 @@
 						}
 					},
 					"world": {
-						"x": 432,
-						"y": 240,
+						"x": 416,
+						"y": 144,
 						"width": 816,
-						"height": 176,
+						"height": 80,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -130,7 +130,7 @@
 						"character-height": 136,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
 						"spacing-data": "[[40,\" \"],[8,\"|\"],[15,\"[\"],[16,\"]\"],[17,\"`\"],[23,\",;'°\"],[24,\".:\"],[26,\"l!\"],[27,\"i\"],[29,\"()\"],[33,\"-\"],[35,\"£€\"],[36,\"<>\"],[37,\"~\"],[39,\"1\"],[41,\"+\"],[42,\"=\"],[43,\"\\\"*\"],[50,\"t\"],[51,\"Is\"],[52,\"j2\"],[53,\"Ffo?\"],[55,\"Jcu\"],[56,\"EShr\"],[57,\"aeknv\"],[58,\"L@\"],[59,\"Zbgpz5\"],[60,\"BPd$\"],[61,\"C69\"],[62,\"7\"],[64,\"K4\"],[65,\"Hqy3&\"],[66,\"DR\\/\"],[67,\"GT\"],[68,\"VYx\"],[69,\"ANOX0\"],[70,\"#\"],[71,\"U8\"],[74,\"Q\"],[80,\"%\"],[81,\"Ww\"],[82,\"_\"],[85,\"m\"],[93,\"M\"]]",
-						"scale": 0.5,
+						"scale": 0.3,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
@@ -163,12 +163,273 @@
 						}
 					},
 					"world": {
-						"x": 432,
-						"y": 416,
+						"x": 427,
+						"y": 448,
 						"width": 479,
 						"height": 44,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "youtube",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 40,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 371,
+						"y": 256,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SpriteFont",
+					"properties": {
+						"text": "Youtube",
+						"enable-bbcode": true,
+						"character-width": 95,
+						"character-height": 136,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[40,\" \"],[8,\"|\"],[15,\"[\"],[16,\"]\"],[17,\"`\"],[23,\",;'°\"],[24,\".:\"],[26,\"l!\"],[27,\"i\"],[29,\"()\"],[33,\"-\"],[35,\"£€\"],[36,\"<>\"],[37,\"~\"],[39,\"1\"],[41,\"+\"],[42,\"=\"],[43,\"\\\"*\"],[50,\"t\"],[51,\"Is\"],[52,\"j2\"],[53,\"Ffo?\"],[55,\"Jcu\"],[56,\"EShr\"],[57,\"aeknv\"],[58,\"L@\"],[59,\"Zbgpz5\"],[60,\"BPd$\"],[61,\"C69\"],[62,\"7\"],[64,\"K4\"],[65,\"Hqy3&\"],[66,\"DR\\/\"],[67,\"GT\"],[68,\"VYx\"],[69,\"ANOX0\"],[70,\"#\"],[71,\"U8\"],[74,\"Q\"],[80,\"%\"],[81,\"Ww\"],[82,\"_\"],[85,\"m\"],[93,\"M\"]]",
+						"scale": 0.2,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 41,
+					"instanceVariables": {
+						"Type": "Youtube"
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 403,
+						"y": 240,
+						"width": 96,
+						"height": 32,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SpriteFont",
+					"properties": {
+						"text": "Discord",
+						"enable-bbcode": true,
+						"character-width": 95,
+						"character-height": 136,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[40,\" \"],[8,\"|\"],[15,\"[\"],[16,\"]\"],[17,\"`\"],[23,\",;'°\"],[24,\".:\"],[26,\"l!\"],[27,\"i\"],[29,\"()\"],[33,\"-\"],[35,\"£€\"],[36,\"<>\"],[37,\"~\"],[39,\"1\"],[41,\"+\"],[42,\"=\"],[43,\"\\\"*\"],[50,\"t\"],[51,\"Is\"],[52,\"j2\"],[53,\"Ffo?\"],[55,\"Jcu\"],[56,\"EShr\"],[57,\"aeknv\"],[58,\"L@\"],[59,\"Zbgpz5\"],[60,\"BPd$\"],[61,\"C69\"],[62,\"7\"],[64,\"K4\"],[65,\"Hqy3&\"],[66,\"DR\\/\"],[67,\"GT\"],[68,\"VYx\"],[69,\"ANOX0\"],[70,\"#\"],[71,\"U8\"],[74,\"Q\"],[80,\"%\"],[81,\"Ww\"],[82,\"_\"],[85,\"m\"],[93,\"M\"]]",
+						"scale": 0.2,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 43,
+					"instanceVariables": {
+						"Type": "Discord"
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 403,
+						"y": 288,
+						"width": 80,
+						"height": 32,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "DiscordLogoWhite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 42,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 371,
+						"y": 304,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "telegramlogo",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 44,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 371,
+						"y": 352,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SpriteFont",
+					"properties": {
+						"text": "Telegram",
+						"enable-bbcode": true,
+						"character-width": 95,
+						"character-height": 136,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[40,\" \"],[8,\"|\"],[15,\"[\"],[16,\"]\"],[17,\"`\"],[23,\",;'°\"],[24,\".:\"],[26,\"l!\"],[27,\"i\"],[29,\"()\"],[33,\"-\"],[35,\"£€\"],[36,\"<>\"],[37,\"~\"],[39,\"1\"],[41,\"+\"],[42,\"=\"],[43,\"\\\"*\"],[50,\"t\"],[51,\"Is\"],[52,\"j2\"],[53,\"Ffo?\"],[55,\"Jcu\"],[56,\"EShr\"],[57,\"aeknv\"],[58,\"L@\"],[59,\"Zbgpz5\"],[60,\"BPd$\"],[61,\"C69\"],[62,\"7\"],[64,\"K4\"],[65,\"Hqy3&\"],[66,\"DR\\/\"],[67,\"GT\"],[68,\"VYx\"],[69,\"ANOX0\"],[70,\"#\"],[71,\"U8\"],[74,\"Q\"],[80,\"%\"],[81,\"Ww\"],[82,\"_\"],[85,\"m\"],[93,\"M\"]]",
+						"scale": 0.2,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 45,
+					"instanceVariables": {
+						"Type": "Telegram"
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 403,
+						"y": 336,
+						"width": 96,
+						"height": 32,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,
