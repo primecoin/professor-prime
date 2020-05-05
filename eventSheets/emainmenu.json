@@ -155,11 +155,11 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 785604636985383,
+									"sid": 729380783600763,
 									"parameters": {
 										"audio-file": "Play start button 2",
 										"loop": "not-looping",
-										"volume": "0",
+										"volume": "-10",
 										"tag-optional": "\"Sounds\""
 									}
 								},
@@ -372,10 +372,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 167258268612048,
+									"sid": 710155071843231,
 									"parameters": {
 										"variable": "SocialURL",
-										"value": "\"https://discord.gg/c576Ux\""
+										"value": "\"https://discord.gg/cDnkger\""
 									}
 								},
 								{
