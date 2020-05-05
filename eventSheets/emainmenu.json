@@ -2,158 +2,178 @@
 	"name": "eMainMenu",
 	"events": [
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "pick-by-comparison",
-					"objectClass": "System",
-					"sid": 918840589126950,
-					"parameters": {
-						"object": "SpriteFont",
-						"expression": "SpriteFont.Type",
-						"comparison": 0,
-						"value": "\"PlayButton\""
-					}
-				}
-			],
-			"actions": [],
-			"sid": 699155183077369,
+			"eventType": "group",
+			"disabled": false,
+			"title": "Main Menu on Start",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 901682137497972,
-							"parameters": {
-								"object": "SpriteFont"
-							}
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 305506072990715
 						}
 					],
 					"actions": [
 						{
-							"id": "set-scale",
-							"objectClass": "SpriteFont",
-							"sid": 736936991639130,
+							"id": "request-fullscreen",
+							"objectClass": "Browser",
+							"sid": 342535560920698,
+							"disabled": true,
 							"parameters": {
-								"scale": "1.2"
+								"mode": "stretch-letterbox-scale",
+								"navigation-ui": "auto"
 							}
 						},
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 307284346365596,
+							"id": "lock-orientation",
+							"objectClass": "Browser",
+							"sid": 530232190515958,
+							"disabled": true,
 							"parameters": {
-								"seconds": "0.2"
+								"orientation": "landscape"
 							}
 						},
 						{
-							"id": "play",
+							"id": "preload",
 							"objectClass": "Audio",
-							"sid": 848326238021858,
+							"sid": 762800314386722,
 							"parameters": {
-								"audio-file": "Play.startbutton",
-								"loop": "not-looping",
-								"volume": "0",
-								"tag-optional": "\"Sounds\""
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "SpriteFont",
-							"sid": 806416510229421,
-							"parameters": {
-								"scale": "1"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 861433133520806,
-							"parameters": {
-								"seconds": "0.1"
-							}
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 526300889106479,
-							"parameters": {
-								"layout": "Game"
+								"audio-file": "Main background sound for inngame"
 							}
 						}
 					],
-					"sid": 754954741617339
+					"sid": 837743535046832,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 277465196414811,
+									"parameters": {
+										"object": "SpriteFont",
+										"expression": "SpriteFont.Type = \"Version\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "SpriteFont",
+									"sid": 871191078924682,
+									"parameters": {
+										"text": "\"v\"&projectversion"
+									}
+								}
+							],
+							"sid": 558748274834576
+						}
+					]
 				}
-			]
+			],
+			"sid": 300913924374451
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 458199974180203
-				}
-			],
-			"actions": [
-				{
-					"id": "request-fullscreen",
-					"objectClass": "Browser",
-					"sid": 186876706985292,
-					"disabled": true,
-					"parameters": {
-						"mode": "stretch-letterbox-scale",
-						"navigation-ui": "auto"
-					}
-				},
-				{
-					"id": "lock-orientation",
-					"objectClass": "Browser",
-					"sid": 453946071617626,
-					"disabled": true,
-					"parameters": {
-						"orientation": "landscape"
-					}
-				},
-				{
-					"id": "preload",
-					"objectClass": "Audio",
-					"sid": 173278341680809,
-					"parameters": {
-						"audio-file": "Main background sound for inngame"
-					}
-				}
-			],
-			"sid": 489718643100525,
+			"eventType": "group",
+			"disabled": false,
+			"title": "Wait For Touch Play",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-by-evaluate",
+							"id": "pick-by-comparison",
 							"objectClass": "System",
-							"sid": 186206119113165,
+							"sid": 140971369655730,
 							"parameters": {
 								"object": "SpriteFont",
-								"expression": "SpriteFont.Type = \"Version\""
+								"expression": "SpriteFont.Type",
+								"comparison": 0,
+								"value": "\"PlayButton\""
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 329586691602504,
+					"children": [
 						{
-							"id": "set-text",
-							"objectClass": "SpriteFont",
-							"sid": 224436784934650,
-							"parameters": {
-								"text": "\"v\"&projectversion"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 821646973424345,
+									"parameters": {
+										"object": "SpriteFont"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-scale",
+									"objectClass": "SpriteFont",
+									"sid": 945549234228962,
+									"parameters": {
+										"scale": "1.2"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 558634069575162,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 785604636985383,
+									"parameters": {
+										"audio-file": "Play start button 2",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"Sounds\""
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "SpriteFont",
+									"sid": 750133972848164,
+									"parameters": {
+										"scale": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 117202558861474,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 601568343864126,
+									"parameters": {
+										"layout": "Game"
+									}
+								}
+							],
+							"sid": 206103409084271
 						}
-					],
-					"sid": 268492741804487
+					]
 				}
-			]
+			],
+			"sid": 458748643043639
 		}
 	],
 	"sid": 360384029801467
