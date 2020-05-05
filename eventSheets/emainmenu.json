@@ -86,6 +86,16 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "waitTime",
+					"type": "number",
+					"initialValue": "0.1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 451645344475108
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -152,11 +162,29 @@
 									}
 								},
 								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 971952263676662,
+									"parameters": {
+										"variable": "waitTime",
+										"value": "lerp(1, 0.1, Functions.is_audio_muted)"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 390237264878733,
+									"parameters": {
+										"type": "log",
+										"message": "\"waitTime: \" & waitTime"
+									}
+								},
+								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 117202558861474,
+									"sid": 319188554172455,
 									"parameters": {
-										"seconds": "0.1"
+										"seconds": "waitTime"
 									}
 								},
 								{
