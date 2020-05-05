@@ -6,6 +6,10 @@
 			"includeSheet": "ePause"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "eFunctions"
+		},
+		{
 			"eventType": "variable",
 			"name": "JumpStrength",
 			"type": "number",
@@ -142,12 +146,12 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 867310618747366,
+							"sid": 640604005116792,
 							"parameters": {
-								"audio-file": "when touch screen",
+								"audio-file": "woosh2",
 								"loop": "not-looping",
-								"volume": "0",
-								"tag-optional": "\"FlapSound\""
+								"volume": "25",
+								"tag-optional": "\"Sounds\""
 							}
 						}
 					],
@@ -241,12 +245,12 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 760403596779885,
+							"sid": 235119839985000,
 							"parameters": {
 								"audio-file": "Main background sound for inngame",
 								"loop": "looping",
 								"volume": "0",
-								"tag-optional": "\"MainMusic\""
+								"tag-optional": "\"Sounds\""
 							}
 						}
 					],
@@ -298,23 +302,23 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 684499525004027,
+							"sid": 406344353472020,
 							"parameters": {
 								"audio-file": "Fans",
 								"loop": "looping",
 								"volume": "0",
-								"tag-optional": "\"FansSound\""
+								"tag-optional": "\"Sounds\""
 							}
 						},
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 299201811553966,
+							"sid": 748869643951839,
 							"parameters": {
 								"audio-file": "Play.startbutton",
 								"loop": "not-looping",
 								"volume": "0",
-								"tag-optional": "\"\""
+								"tag-optional": "\"Sounds\""
 							}
 						},
 						{
@@ -483,10 +487,10 @@
 						{
 							"id": "set-size",
 							"objectClass": "ProfessorExplosion",
-							"sid": 533305189910597,
+							"sid": 239766731331873,
 							"parameters": {
-								"width": "64",
-								"height": "64"
+								"width": "128",
+								"height": "112"
 							}
 						}
 					],
@@ -511,12 +515,12 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 391579105285187,
+									"sid": 467749753200788,
 									"parameters": {
 										"audio-file": "Impact with hash",
 										"loop": "not-looping",
 										"volume": "0",
-										"tag-optional": "\"\""
+										"tag-optional": "\"Sounds\""
 									}
 								},
 								{
@@ -566,12 +570,12 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 674704835323307,
+									"sid": 290198356897107,
 									"parameters": {
 										"audio-file": "bottom chains hit",
 										"loop": "not-looping",
 										"volume": "-10",
-										"tag-optional": "\"\""
+										"tag-optional": "\"Sounds\""
 									}
 								},
 								{
@@ -630,12 +634,12 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 407487984615820,
+									"sid": 855315876481373,
 									"parameters": {
 										"audio-file": "crash into fans first part",
 										"loop": "not-looping",
 										"volume": "0",
-										"tag-optional": "\"FanSound\""
+										"tag-optional": "\"Sounds\""
 									}
 								},
 								{
@@ -649,12 +653,12 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 396632313409350,
+									"sid": 198289184823092,
 									"parameters": {
 										"audio-file": "when crash into fans and they stop 2nd part",
 										"loop": "not-looping",
 										"volume": "0",
-										"tag-optional": "\"Fan2Sound\""
+										"tag-optional": "\"Sounds\""
 									}
 								},
 								{
@@ -697,7 +701,6 @@
 									"id": "wait-for-signal",
 									"objectClass": "System",
 									"sid": 504124421564310,
-									"breakpoint": true,
 									"parameters": {
 										"tag": "\"OnGameOver\""
 									}
@@ -714,33 +717,9 @@
 								{
 									"id": "stop",
 									"objectClass": "Audio",
-									"sid": 407983016394213,
+									"sid": 290155268322842,
 									"parameters": {
-										"tag": "\"Fan2Sound\""
-									}
-								},
-								{
-									"id": "stop",
-									"objectClass": "Audio",
-									"sid": 891044517997313,
-									"parameters": {
-										"tag": "\"FlapSound\""
-									}
-								},
-								{
-									"id": "stop",
-									"objectClass": "Audio",
-									"sid": 106512471909150,
-									"parameters": {
-										"tag": "\"FansSound\""
-									}
-								},
-								{
-									"id": "stop",
-									"objectClass": "Audio",
-									"sid": 293291738858530,
-									"parameters": {
-										"tag": "\"MainMusic\""
+										"tag": "\"Sounds\""
 									}
 								},
 								{
@@ -1163,12 +1142,12 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 846205778411958,
+									"sid": 337766541950190,
 									"parameters": {
 										"audio-file": "Collecting coins",
 										"loop": "not-looping",
 										"volume": "0",
-										"tag-optional": "\"\""
+										"tag-optional": "\"Sounds\""
 									}
 								}
 							],

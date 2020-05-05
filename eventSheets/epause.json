@@ -2,14 +2,8 @@
 	"name": "ePause",
 	"events": [
 		{
-			"eventType": "variable",
-			"name": "IsMuted",
-			"type": "boolean",
-			"initialValue": "false",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 436060449291505
+			"eventType": "include",
+			"includeSheet": "eFunctions"
 		},
 		{
 			"eventType": "group",
@@ -48,6 +42,15 @@
 							"parameters": {
 								"type": "log",
 								"message": "\"--- Pause Clicked IsPaused: \" & IsPaused"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 699142830522357,
+							"parameters": {
+								"type": "log",
+								"message": "\"Is Muted?: \" & Functions.is_audio_muted"
 							}
 						}
 					],
@@ -103,74 +106,74 @@
 									}
 								}
 							],
-							"sid": 368968024327434
-						},
-						{
-							"eventType": "block",
-							"conditions": [
+							"sid": 368968024327434,
+							"children": [
 								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 664652611438777
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 103159615227645,
+											"parameters": {
+												"first-value": "GameData.GetDefault(\"is_audio_muted\", 0)",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "SoundButton",
+											"sid": 735048865938447,
+											"parameters": {
+												"frame-number": "1"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 355435149576838,
+											"parameters": {
+												"type": "log",
+												"message": "\"Is Muted?: \" & Functions.is_audio_muted"
+											}
+										}
+									],
+									"sid": 427173862263436
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 831910996547042
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "SoundButton",
+											"sid": 681811297078405,
+											"parameters": {
+												"frame-number": "0"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 696804255766953,
+											"parameters": {
+												"type": "log",
+												"message": "\"Is Muted?: \" & Functions.is_audio_muted"
+											}
+										}
+									],
+									"sid": 490583601480430
 								}
-							],
-							"actions": [
-								{
-									"id": "set-time-scale",
-									"objectClass": "System",
-									"sid": 859027540477203,
-									"parameters": {
-										"time-scale": "1.0"
-									}
-								},
-								{
-									"id": "set-paused",
-									"objectClass": "Audio",
-									"sid": 992301372767399,
-									"parameters": {
-										"tag": "\"MainMusic\"",
-										"state": "resume"
-									}
-								},
-								{
-									"id": "set-paused",
-									"objectClass": "Audio",
-									"sid": 145055275800884,
-									"parameters": {
-										"tag": "\"DeadlyCog\"",
-										"state": "resume"
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 652598262340176,
-									"parameters": {
-										"variable": "IsPaused",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 748430394536677,
-									"parameters": {
-										"layer": "\"Pause\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 737920122922077,
-									"parameters": {
-										"type": "log",
-										"message": "\"Set pause to false\""
-									}
-								}
-							],
-							"sid": 654345908173624,
-							"disabled": true
+							]
 						}
 					]
 				},
@@ -186,27 +189,47 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 421775110629329,
+							"parameters": {
+								"type": "log",
+								"message": "\"Sound Mute Button clicked\""
+							}
+						}
+					],
 					"sid": 440858203352827,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-boolean-eventvar",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 420266957795358,
+									"sid": 320460829827562,
 									"parameters": {
-										"variable": "IsMuted"
-									},
-									"isInverted": true
+										"first-value": "Functions.is_audio_muted",
+										"comparison": 0,
+										"second-value": "0"
+									}
 								}
 							],
 							"actions": [
 								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 975379807149324,
+									"parameters": {
+										"type": "log",
+										"message": "\"On is_audio_muted: \" & Functions.is_audio_muted"
+									}
+								},
+								{
 									"id": "set-silent",
 									"objectClass": "Audio",
-									"sid": 275072214632484,
+									"sid": 343021491425324,
 									"parameters": {
 										"mode": "silent"
 									}
@@ -220,13 +243,11 @@
 									}
 								},
 								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 521839836289933,
-									"parameters": {
-										"variable": "IsMuted",
-										"value": "true"
-									}
+									"callFunction": "save_audio_status",
+									"sid": 424805236779061,
+									"parameters": [
+										"1"
+									]
 								}
 							],
 							"sid": 356679170493731
@@ -242,12 +263,25 @@
 							],
 							"actions": [
 								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 804118037826447,
+									"parameters": {
+										"type": "log",
+										"message": "\"On is_audio_muted: \" & Functions.is_audio_muted"
+									}
+								},
+								{
 									"id": "set-silent",
 									"objectClass": "Audio",
-									"sid": 779401452286348,
+									"sid": 778271502086162,
 									"parameters": {
 										"mode": "not-silent"
 									}
+								},
+								{
+									"callFunction": "start_looped_sounds",
+									"sid": 401432148105576
 								},
 								{
 									"id": "set-animation-frame",
@@ -258,12 +292,19 @@
 									}
 								},
 								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 467270781360183,
+									"callFunction": "save_audio_status",
+									"sid": 526403668940306,
+									"parameters": [
+										"0"
+									]
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 201620538297846,
 									"parameters": {
-										"variable": "IsMuted",
-										"value": "false"
+										"type": "log",
+										"message": "\"On is_audio_muted == 0\""
 									}
 								}
 							],

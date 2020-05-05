@@ -1,7 +1,7 @@
 {
-	"name": "Cloud",
+	"name": "Sprite",
 	"plugin-id": "Sprite",
-	"sid": 730351377151328,
+	"sid": 160416017953405,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,29 +11,31 @@
 			{
 				"frames": [
 					{
-						"width": 3562,
-						"height": 1000,
-						"originX": 0,
-						"originY": 0,
+						"width": 400,
+						"height": 400,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5863816,
+						"imageSpriteId": 7913979,
 						"collisionPoly": {
 							"points": [
-								0.18421052631578946,
-								0.660377358490566,
+								0,
+								0,
 								0.5,
 								0,
-								0.8368421052631579,
-								0.5660377358490566,
-								0.8157894736842105,
+								0.9975,
+								0,
+								0.9975,
 								0.5,
-								0.9894736842105263,
-								0.9622641509433962,
+								0.9975,
+								0.9975,
 								0.5,
-								0.9811320754716981,
-								0.30526315789473685,
+								0.9975,
+								0,
+								0.9975,
+								0,
 								0.5
 							]
 						},
@@ -41,7 +43,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 483698966375309,
+				"sid": 438269794618821,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

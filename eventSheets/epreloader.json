@@ -1,0 +1,272 @@
+{
+	"name": "ePreloader",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ePause"
+		},
+		{
+			"eventType": "variable",
+			"name": "SetupFinish",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 146916688055077
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 667521592419640,
+					"parameters": {
+						"first-value": "loadingprogress",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 570842637577443,
+					"parameters": {
+						"first-value": "SetupFinish",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 640926032030386,
+					"parameters": {
+						"type": "log",
+						"message": "\"LoadingProgress done: \" & loadingprogress"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 560867836720934,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 113669008851762,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 400641850412789
+		},
+		{
+			"eventType": "comment",
+			"text": "Check if there is GameData and load it",
+			"background-color": [
+				1,
+				1,
+				0.5019607843137255,
+				1
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 559407738144819
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 624580744674877,
+					"parameters": {
+						"type": "log",
+						"message": "\"Layout start\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 833501144912554,
+					"parameters": {
+						"key": "\"GameData\""
+					}
+				}
+			],
+			"sid": 211545487968375
+		},
+		{
+			"eventType": "comment",
+			"text": "Loading GameData",
+			"background-color": [
+				1,
+				1,
+				0.5019607843137255,
+				1
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 732928979081472,
+					"parameters": {
+						"key": "\"GameData\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 377152378283094,
+					"parameters": {
+						"type": "log",
+						"message": "\"LocalStorage.ItemValue: \" & LocalStorage.ItemValue"
+					}
+				},
+				{
+					"id": "load",
+					"objectClass": "GameData",
+					"sid": 609942408554059,
+					"parameters": {
+						"json": "LocalStorage.ItemValue"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 876424089911908,
+					"parameters": {
+						"type": "log",
+						"message": "\"GameData loaded: \" & GameData.AsJSON"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 871662000380271,
+					"parameters": {
+						"variable": "SetupFinish",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 989037633005064,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 190742937439018,
+							"parameters": {
+								"first-value": "Functions.is_audio_muted",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 140600217184536,
+							"parameters": {
+								"type": "log",
+								"message": "\"After checking game data\""
+							}
+						},
+						{
+							"id": "set-silent",
+							"objectClass": "Audio",
+							"sid": 350804901619316,
+							"parameters": {
+								"mode": "silent"
+							}
+						}
+					],
+					"sid": 826406840086007
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "When NO GameData set default to Mute False",
+			"text-color": [
+				0,
+				1,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 718250777147599,
+					"parameters": {
+						"key": "\"GameData\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 722963745303666,
+					"parameters": {
+						"type": "log",
+						"message": "\"GameData does not exists\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "GameData",
+					"sid": 915383416003863,
+					"parameters": {
+						"key": "\"is_audio_muted\"",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-silent",
+					"objectClass": "Audio",
+					"sid": 424426494959328,
+					"parameters": {
+						"mode": "not-silent"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 675754658509481,
+					"parameters": {
+						"variable": "SetupFinish",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 745875661941562
+		}
+	],
+	"sid": 664330847084391
+}

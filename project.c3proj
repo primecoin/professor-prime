@@ -79,6 +79,22 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"version": "r197.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"version": "r197.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Flash",
 			"name": "Flash",
@@ -122,31 +138,16 @@
 	"uniqueId": "wq99fd5920g",
 	"objectTypes": {
 		"items": [
-			"Player",
 			"Touch",
 			"Browser",
-			"DeadlyCog",
-			"DeathTop",
-			"RestartButton",
-			"HomeButton",
 			"Spikes",
-			"Coin",
-			"Hash",
 			"Array",
 			"AJAX",
 			"JSON",
 			"PlatformInfo",
 			"Audio",
-			"Pointer",
-			"StartOverlay",
-			"PauseButton",
-			"HUDBackground",
-			"PauseOverlay",
-			"SoundButton",
-			"ProfessorExplosion",
-			"Background1",
-			"MountainBackground",
-			"Cloud"
+			"LocalStorage",
+			"GameData"
 		],
 		"subfolders": [
 			{
@@ -156,6 +157,36 @@
 				],
 				"subfolders": [],
 				"name": "Fonts"
+			},
+			{
+				"items": [
+					"Background1",
+					"Cloud",
+					"Coin",
+					"DeadlyCog",
+					"DeathTop",
+					"Hash",
+					"MountainBackground",
+					"Player",
+					"ProfessorExplosion"
+				],
+				"subfolders": [],
+				"name": "GameObjects"
+			},
+			{
+				"items": [
+					"HUDBackground",
+					"PauseButton",
+					"PauseOverlay",
+					"HomeButton",
+					"Pointer",
+					"RestartButton",
+					"SoundButton",
+					"StartOverlay",
+					"Sprite"
+				],
+				"subfolders": [],
+				"name": "UI Objects"
 			}
 		]
 	},
@@ -172,7 +203,8 @@
 		"items": [
 			"Game",
 			"GameOver",
-			"MainMenu"
+			"MainMenu",
+			"Preloader"
 		],
 		"subfolders": []
 	},
@@ -181,7 +213,9 @@
 			"eGame",
 			"eGameOver",
 			"eMainMenu",
-			"ePause"
+			"ePause",
+			"eFunctions",
+			"ePreloader"
 		],
 		"subfolders": []
 	},
@@ -231,6 +265,21 @@
 					"name": "when crash into fans and they stop 2nd part.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 314016651361568
+				},
+				{
+					"name": "whoosh_low_deep_soft_02.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 298939348631592
+				},
+				{
+					"name": "voice_male_b_laugh_short_02.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 293429629742406
+				},
+				{
+					"name": "woosh2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 433884329127319
 				}
 			],
 			"subfolders": []
@@ -315,7 +364,7 @@
 		"authorWebsite": "",
 		"appId": "",
 		"pixelRounding": true,
-		"useLoaderLayout": false,
+		"useLoaderLayout": true,
 		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
@@ -344,7 +393,7 @@
 		"gpuPreference": "high-performance",
 		"framerateMode": "vsync",
 		"compositingMode": "standard",
-		"sampling": "nearest",
+		"sampling": "trilinear",
 		"downscaling": "medium",
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "progress",
@@ -354,5 +403,5 @@
 	},
 	"viewportWidth": 854,
 	"viewportHeight": 480,
-	"firstLayout": "MainMenu"
+	"firstLayout": "Preloader"
 }

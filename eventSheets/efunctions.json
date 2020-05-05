@@ -1,0 +1,215 @@
+{
+	"name": "eFunctions",
+	"events": [
+		{
+			"functionName": "is_audio_muted",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Returns if the audio is muted based on the actual AUDIO object"
+				},
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 927237274282773,
+					"parameters": {
+						"value": "GameData.GetDefault(\"is_audio_muted\", 0)"
+					}
+				}
+			],
+			"sid": 901807078928761
+		},
+		{
+			"functionName": "toggle_audio",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Toggle audio mute and returns 0 for muted, 1 for unmuted"
+				}
+			],
+			"sid": 821527065248821,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 753976269085109,
+							"parameters": {
+								"first-value": "Functions.is_audio_muted",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Unmute audio"
+						},
+						{
+							"id": "set-muted",
+							"objectClass": "Audio",
+							"sid": 182309077314359,
+							"parameters": {
+								"tag": "\"Sounds\"",
+								"state": "unmuted"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 866631394784179,
+							"parameters": {
+								"type": "log",
+								"message": "\"Audio unmuted\""
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 957740494864340,
+							"parameters": {
+								"value": "1"
+							}
+						}
+					],
+					"sid": 501106521060126
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 610869610888367
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Mute audio"
+						},
+						{
+							"id": "set-muted",
+							"objectClass": "Audio",
+							"sid": 423117961774861,
+							"parameters": {
+								"tag": "\"Sounds\"",
+								"state": "muted"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 348175966701611,
+							"parameters": {
+								"type": "log",
+								"message": "\"Audiio muted\""
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 235254281676497,
+							"parameters": {
+								"value": "0"
+							}
+						}
+					],
+					"sid": 514246861792886
+				}
+			]
+		},
+		{
+			"functionName": "save_audio_status",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "is_muted",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 182632121089142
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "add-key",
+					"objectClass": "GameData",
+					"sid": 403773300649998,
+					"parameters": {
+						"key": "\"is_audio_muted\"",
+						"value": "is_muted"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 776374348549825,
+					"parameters": {
+						"key": "\"GameData\"",
+						"value": "GameData.AsJSON"
+					}
+				}
+			],
+			"sid": 378025452817971
+		},
+		{
+			"functionName": "start_looped_sounds",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 633352061842083,
+					"parameters": {
+						"audio-file": "Main background sound for inngame",
+						"loop": "looping",
+						"volume": "0",
+						"tag-optional": "\"Sounds\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 163536426007298,
+					"parameters": {
+						"audio-file": "Fans",
+						"loop": "looping",
+						"volume": "0",
+						"tag-optional": "\"Sounds\""
+					}
+				}
+			],
+			"sid": 429672877279402
+		}
+	],
+	"sid": 150829195223343
+}
