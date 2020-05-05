@@ -96,6 +96,16 @@
 					"sid": 451645344475108
 				},
 				{
+					"eventType": "variable",
+					"name": "playButtonScale",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 669584629262899
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -129,9 +139,9 @@
 								{
 									"id": "set-scale",
 									"objectClass": "SpriteFont",
-									"sid": 945549234228962,
+									"sid": 712109223096661,
 									"parameters": {
-										"scale": "1.2"
+										"scale": "1"
 									}
 								},
 								{
@@ -156,9 +166,9 @@
 								{
 									"id": "set-scale",
 									"objectClass": "SpriteFont",
-									"sid": 750133972848164,
+									"sid": 255016418093924,
 									"parameters": {
-										"scale": "1"
+										"scale": "0.6"
 									}
 								},
 								{

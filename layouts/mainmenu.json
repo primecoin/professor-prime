@@ -66,7 +66,7 @@
 				{
 					"type": "SpriteFont",
 					"properties": {
-						"text": "play",
+						"text": "PLAY",
 						"enable-bbcode": true,
 						"character-width": 95,
 						"character-height": 136,
@@ -106,7 +106,7 @@
 					},
 					"world": {
 						"x": 416,
-						"y": 144,
+						"y": 160,
 						"width": 816,
 						"height": 80,
 						"originX": 0.5,
