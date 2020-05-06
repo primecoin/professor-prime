@@ -139,9 +139,9 @@
 								{
 									"id": "set-scale",
 									"objectClass": "SpriteFont",
-									"sid": 712109223096661,
+									"sid": 538713908905476,
 									"parameters": {
-										"scale": "1"
+										"scale": "0.5"
 									}
 								},
 								{
@@ -166,9 +166,9 @@
 								{
 									"id": "set-scale",
 									"objectClass": "SpriteFont",
-									"sid": 255016418093924,
+									"sid": 143344205478287,
 									"parameters": {
-										"scale": "0.6"
+										"scale": "0.3"
 									}
 								},
 								{

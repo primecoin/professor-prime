@@ -146,11 +146,11 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 640604005116792,
+							"sid": 474673214225949,
 							"parameters": {
-								"audio-file": "woosh2",
+								"audio-file": "when touch screen 2",
 								"loop": "not-looping",
-								"volume": "25",
+								"volume": "-5",
 								"tag-optional": "\"Sounds\""
 							}
 						}
