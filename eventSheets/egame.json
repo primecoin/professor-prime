@@ -146,11 +146,11 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 474673214225949,
+							"sid": 217180212060838,
 							"parameters": {
 								"audio-file": "when touch screen 2",
 								"loop": "not-looping",
-								"volume": "-5",
+								"volume": "-15",
 								"tag-optional": "\"Sounds\""
 							}
 						}

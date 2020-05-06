@@ -394,6 +394,37 @@
 				}
 			],
 			"sid": 432625775020057
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "MainMenu Clouds",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "Cloud",
+							"sid": 897475346819429
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "Cloud",
+							"sid": 439114263479875,
+							"parameters": {
+								"x": "0-Cloud.Width"
+							}
+						}
+					],
+					"sid": 865102952881888
+				}
+			],
+			"sid": 345993740869628
 		}
 	],
 	"sid": 360384029801467
