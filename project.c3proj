@@ -150,7 +150,8 @@
 			"GameData",
 			"youtube",
 			"DiscordLogoWhite",
-			"telegramlogo"
+			"telegramlogo",
+			"Sprite"
 		],
 		"subfolders": [
 			{
@@ -218,7 +219,8 @@
 			"eMainMenu",
 			"ePause",
 			"eFunctions",
-			"ePreloader"
+			"ePreloader",
+			"eSocialLinks"
 		],
 		"subfolders": []
 	},
@@ -366,7 +368,7 @@
 	},
 	"properties": {
 		"description": "Collect the Prime Coins and avoid being sucked up by the cooling system for the other cryptocoins.",
-		"version": "1.2.4.3",
+		"version": "1.2.4.4",
 		"author": "",
 		"authorEmail": "",
 		"authorWebsite": "",

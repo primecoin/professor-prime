@@ -2,6 +2,10 @@
 	"name": "eGameOver",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "eSocialLinks"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{

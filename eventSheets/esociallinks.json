@@ -1,0 +1,188 @@
+{
+	"name": "eSocialLinks",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Touch Social Links",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "SocialURL",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 132930373852231
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 677885815369857,
+							"parameters": {
+								"object": "SpriteFont",
+								"expression": "SpriteFont.Type",
+								"comparison": 0,
+								"value": "\"Youtube\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 150097125561874,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 754271033852995,
+									"parameters": {
+										"object": "SpriteFont"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 644244849692424,
+									"parameters": {
+										"variable": "SocialURL",
+										"value": "\"https://www.youtube.com/watch?v=rkTTpBZdYtU\""
+									}
+								},
+								{
+									"id": "open-url-in-new-window",
+									"objectClass": "Browser",
+									"sid": 564068421749598,
+									"parameters": {
+										"url": "SocialURL",
+										"tag": "\"SocialURL\""
+									}
+								}
+							],
+							"sid": 923204678347277
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 647866183328102,
+							"parameters": {
+								"object": "SpriteFont",
+								"expression": "SpriteFont.Type",
+								"comparison": 0,
+								"value": "\"Telegram\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 346646315367325,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 499026320597088,
+									"parameters": {
+										"object": "SpriteFont"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 895099281515906,
+									"parameters": {
+										"variable": "SocialURL",
+										"value": "\"https://t.me/primecoinofficial\""
+									}
+								},
+								{
+									"id": "open-url-in-new-window",
+									"objectClass": "Browser",
+									"sid": 956708686715531,
+									"parameters": {
+										"url": "SocialURL",
+										"tag": "\"SocialURL\""
+									}
+								}
+							],
+							"sid": 548981186804879
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 378328289583863,
+							"parameters": {
+								"object": "SpriteFont",
+								"expression": "SpriteFont.Type",
+								"comparison": 0,
+								"value": "\"Discord\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 104025807458782,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 601255305423590,
+									"parameters": {
+										"object": "SpriteFont"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 530041184762589,
+									"parameters": {
+										"variable": "SocialURL",
+										"value": "\"https://discord.gg/cDnkger\""
+									}
+								},
+								{
+									"id": "open-url-in-new-window",
+									"objectClass": "Browser",
+									"sid": 266359893721360,
+									"parameters": {
+										"url": "SocialURL",
+										"tag": "\"SocialURL\""
+									}
+								}
+							],
+							"sid": 297348150121150
+						}
+					]
+				}
+			],
+			"sid": 513991224704192
+		}
+	],
+	"sid": 427880694793509
+}

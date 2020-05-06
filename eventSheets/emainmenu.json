@@ -2,6 +2,10 @@
 	"name": "eMainMenu",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "eSocialLinks"
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Main Menu on Start",
@@ -215,8 +219,8 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
-			"title": "Touch Social Links",
+			"disabled": true,
+			"title": "NNNTouch Social Links",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -247,6 +251,7 @@
 					],
 					"actions": [],
 					"sid": 297244026990699,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -280,7 +285,8 @@
 									}
 								}
 							],
-							"sid": 970992238269880
+							"sid": 970992238269880,
+							"disabled": true
 						}
 					]
 				},
@@ -301,6 +307,7 @@
 					],
 					"actions": [],
 					"sid": 300371553875141,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -334,7 +341,8 @@
 									}
 								}
 							],
-							"sid": 173366316852620
+							"sid": 173366316852620,
+							"disabled": true
 						}
 					]
 				},
@@ -355,6 +363,7 @@
 					],
 					"actions": [],
 					"sid": 929110883524985,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -388,7 +397,8 @@
 									}
 								}
 							],
-							"sid": 899476647538232
+							"sid": 899476647538232,
+							"disabled": true
 						}
 					]
 				}

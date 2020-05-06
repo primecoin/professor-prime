@@ -2,9 +2,96 @@
 	"name": "GameOver",
 	"layers": [
 		{
+			"name": "Background",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "PrimeLogo",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 52,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 427,
+						"y": 240,
+						"width": 293.6170975948097,
+						"height": 293.6170975948097,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.8
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 842001629862369,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0,
+				0,
+				0,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
 			"name": "UI",
 			"overriden": 0,
 			"instances": [
+				{
+					"type": "Sprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 59,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 427,
+						"y": 240,
+						"width": 854,
+						"height": 151,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.5882352941176471,
+							0.5882352941176471,
+							0.5882352941176471,
+							0.5
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
 				{
 					"type": "SpriteFont",
 					"properties": {
@@ -48,9 +135,9 @@
 					},
 					"world": {
 						"x": 427,
-						"y": 133.5,
-						"width": 852,
-						"height": 179,
+						"y": 85.5,
+						"width": 649,
+						"height": 122,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -78,8 +165,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 543.75,
-						"y": 308,
+						"x": 541,
+						"y": 436,
 						"width": 64,
 						"height": 64,
 						"originX": 0.5,
@@ -107,12 +194,273 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 310.25,
-						"y": 308,
+						"x": 313,
+						"y": 436,
 						"width": 64,
 						"height": 64,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "youtube",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 53,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 371,
+						"y": 192,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SpriteFont",
+					"properties": {
+						"text": "Youtube",
+						"enable-bbcode": true,
+						"character-width": 185,
+						"character-height": 268,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
+						"scale": 0.1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 54,
+					"instanceVariables": {
+						"Type": "Youtube"
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 403,
+						"y": 176,
+						"width": 96,
+						"height": 32,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SpriteFont",
+					"properties": {
+						"text": "Discord",
+						"enable-bbcode": true,
+						"character-width": 185,
+						"character-height": 268,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
+						"scale": 0.1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 55,
+					"instanceVariables": {
+						"Type": "Discord"
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 403,
+						"y": 224,
+						"width": 80,
+						"height": 32,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "DiscordLogoWhite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 56,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 371,
+						"y": 240,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "telegramlogo",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 57,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 371,
+						"y": 288,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SpriteFont",
+					"properties": {
+						"text": "Telegram",
+						"enable-bbcode": true,
+						"character-width": 185,
+						"character-height": 268,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
+						"scale": 0.1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 58,
+					"instanceVariables": {
+						"Type": "Telegram"
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 403,
+						"y": 272,
+						"width": 96,
+						"height": 32,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,
@@ -139,7 +487,7 @@
 				0.3686274509803922,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"parallaxX": 0,
 			"parallaxY": 0,
 			"scaleRate": 1,
