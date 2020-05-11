@@ -1,0 +1,30 @@
+{
+	"name": "eLeaderBoard",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 618326568951799,
+					"parameters": {
+						"object": "HomeButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 938668108204473,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 766333979167877
+		}
+	],
+	"sid": 875530414948720
+}

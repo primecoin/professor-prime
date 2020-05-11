@@ -1,0 +1,879 @@
+{
+	"name": "eSocialLogin",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "IsRegistration",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 532730798881602
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayFabTittleID",
+			"type": "string",
+			"initialValue": "2F3C1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 883421354645085
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button",
+					"sid": 688904172805269
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 128862843456091,
+					"parameters": {
+						"type": "log",
+						"message": "\"Button clicked: \" & Button.Type "
+					}
+				}
+			],
+			"sid": 653288236536774,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "lPassword",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 350475569620778
+				},
+				{
+					"eventType": "variable",
+					"name": "lEmail",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 818161264545572
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 738233317735325,
+							"parameters": {
+								"instance-variable": "Type",
+								"comparison": 0,
+								"value": "\"okButton\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "OK Button pressed",
+							"text-color": [
+								0,
+								1,
+								0,
+								1
+							]
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 155364079349530,
+							"parameters": {
+								"type": "log",
+								"message": "\"OK Button clicked IsRegistration: \" & IsRegistration"
+							}
+						}
+					],
+					"sid": 820567200255210,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 451660351215426,
+									"parameters": {
+										"first-value": "IsRegistration",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 719875428676018,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 663511722719460,
+											"parameters": {
+												"object": "TextInput",
+												"expression": "TextInput.Type",
+												"comparison": 0,
+												"value": "\"emailInput\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 639040906237767,
+											"parameters": {
+												"variable": "lEmail",
+												"value": "TextInput.Text"
+											}
+										}
+									],
+									"sid": 785808345939526
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 741318874624911,
+											"parameters": {
+												"object": "TextInput",
+												"expression": "TextInput.Type",
+												"comparison": 0,
+												"value": "\"passwordInput\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 668275512471676,
+											"parameters": {
+												"variable": "lPassword",
+												"value": "TextInput.Text"
+											}
+										}
+									],
+									"sid": 538403772754180
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 249243648518909,
+											"parameters": {
+												"type": "log",
+												"message": "\"Email: \" & lEmail & \" Password: \" & lPassword"
+											}
+										},
+										{
+											"type": "script",
+											"script": "LoginToPlayFab(runtime, localVars.lEmail, localVars.lPassword);"
+										}
+									],
+									"sid": 914161042305179
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 420754724941597
+								}
+							],
+							"actions": [],
+							"sid": 441088000944623
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 576384265091539,
+							"parameters": {
+								"instance-variable": "Type",
+								"comparison": 0,
+								"value": "\"cancelButton\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Cancel Button pressed",
+							"text-color": [
+								0,
+								1,
+								0,
+								1
+							]
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 742676754189110,
+							"parameters": {
+								"type": "log",
+								"message": "\"cancelButton clicked\""
+							}
+						}
+					],
+					"sid": 454198956443988
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 324014913316430,
+							"parameters": {
+								"instance-variable": "Type",
+								"comparison": 0,
+								"value": "\"isRegisterCheckbox\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Register checkbox toggled",
+							"text-color": [
+								0,
+								1,
+								0,
+								1
+							]
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 131385694871200,
+							"parameters": {
+								"type": "log",
+								"message": "\"Register Checkbox Clicked\""
+							}
+						}
+					],
+					"sid": 284030951852344,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-checked",
+									"objectClass": "Button",
+									"sid": 158073245968544
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 798432664704122,
+									"parameters": {
+										"type": "log",
+										"message": "\"Button is checked\""
+									}
+								},
+								{
+									"callFunction": "ToggleRegisterComponents",
+									"sid": 420866807250520,
+									"parameters": [
+										"1"
+									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 622501857660421,
+									"parameters": {
+										"variable": "IsRegistration",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 819777875777445
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 556745074489251
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 258523146077778,
+									"parameters": {
+										"type": "log",
+										"message": "\"Button is not checked\""
+									}
+								},
+								{
+									"callFunction": "ToggleRegisterComponents",
+									"sid": 961591163808034,
+									"parameters": [
+										"0"
+									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 560312811836752,
+									"parameters": {
+										"variable": "IsRegistration",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 518132526079893
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 517788227861368,
+							"parameters": {
+								"instance-variable": "Type",
+								"comparison": 0,
+								"value": "\"btnCloseError\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Close Error Dialog",
+							"text-color": [
+								0,
+								1,
+								0,
+								1
+							]
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 513900755803882,
+							"parameters": {
+								"type": "log",
+								"message": "\"Button Close Error\""
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 196586543659296,
+							"parameters": {
+								"layer": "\"Error\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 953603785005507,
+							"parameters": {
+								"layer": "\"UI\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 424555305959852
+				}
+			]
+		},
+		{
+			"functionName": "ToggleRegisterComponents",
+			"functionDescription": "Will hide or show the register components on the UI",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "isRegister",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 983696113626906
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 521362464587760,
+					"parameters": {
+						"type": "log",
+						"message": "\"ToggleRegisterComponent called isRegister: \" & isRegister"
+					}
+				}
+			],
+			"sid": 364947219539852,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 745646228596353,
+							"parameters": {
+								"first-value": "isRegister",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 497361774035101,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 843864688915022,
+									"parameters": {
+										"object": "TextInput",
+										"expression": "TextInput.Type",
+										"comparison": 0,
+										"value": "\"confirmPasswordInput\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "TextInput",
+									"sid": 307317861490846,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 760453935788056
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 379062237762924,
+									"parameters": {
+										"object": "Text",
+										"expression": "Text.Type",
+										"comparison": 0,
+										"value": "\"displayNameTitle\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Text",
+									"sid": 274256347815434,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 291594641651027
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 940843431863384,
+									"parameters": {
+										"object": "TextInput",
+										"expression": "TextInput.Type",
+										"comparison": 0,
+										"value": "\"displayNameInput\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "TextInput",
+									"sid": 752156865848399,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 287369131308514
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 967616738426146,
+									"parameters": {
+										"object": "Text",
+										"expression": "Text.Type",
+										"comparison": 0,
+										"value": "\"usernameTitle\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Text",
+									"sid": 765412993949359,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 992720074637528
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 728112126709761,
+									"parameters": {
+										"object": "TextInput",
+										"expression": "TextInput.Type",
+										"comparison": 0,
+										"value": "\"usernameInput\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "TextInput",
+									"sid": 274002908888827,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 884650073455445
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 457957865105960,
+									"parameters": {
+										"object": "Text",
+										"expression": "Text.Type",
+										"comparison": 0,
+										"value": "\"registerLoginTitle\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 439082545710933,
+									"parameters": {
+										"text": "\"Login\""
+									}
+								}
+							],
+							"sid": 477866235718776
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 364803679815406
+						}
+					],
+					"actions": [],
+					"sid": 707286326487342,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 764451021852447,
+									"parameters": {
+										"object": "TextInput",
+										"expression": "TextInput.Type",
+										"comparison": 0,
+										"value": "\"confirmPasswordInput\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "TextInput",
+									"sid": 792215197639042,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 752073052698779
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 981530472713722,
+									"parameters": {
+										"object": "Text",
+										"expression": "Text.Type",
+										"comparison": 0,
+										"value": "\"displayNameTitle\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Text",
+									"sid": 195494364344987,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 242328594718116
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 542207653736711,
+									"parameters": {
+										"object": "TextInput",
+										"expression": "TextInput.Type",
+										"comparison": 0,
+										"value": "\"displayNameInput\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "TextInput",
+									"sid": 743549775514083,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 260906232985281
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 795573915717350,
+									"parameters": {
+										"object": "Text",
+										"expression": "Text.Type",
+										"comparison": 0,
+										"value": "\"usernameTitle\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Text",
+									"sid": 118202372037617,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 140988877619849
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 306567214675125,
+									"parameters": {
+										"object": "TextInput",
+										"expression": "TextInput.Type",
+										"comparison": 0,
+										"value": "\"usernameInput\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "TextInput",
+									"sid": 151750150087723,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 305536298705576
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 462799726387520,
+									"parameters": {
+										"object": "Text",
+										"expression": "Text.Type",
+										"comparison": 0,
+										"value": "\"registerLoginTitle\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 958343836213068,
+									"parameters": {
+										"text": "\"Register\""
+									}
+								}
+							],
+							"sid": 916749914452240
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "ShowErrorDialog",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "errorMsg",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 703146485102974
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 308784272578764,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 554279871019785,
+							"parameters": {
+								"object": "Text",
+								"expression": "Text.Type",
+								"comparison": 0,
+								"value": "\"playfabErrorText\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 927791492945436,
+							"parameters": {
+								"text": "errorMsg"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 830010231451986,
+							"parameters": {
+								"layer": "\"UI\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 858372514367613,
+							"parameters": {
+								"layer": "\"Error\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 526594793819766
+				}
+			]
+		}
+	],
+	"sid": 955479893279808
+}

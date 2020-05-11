@@ -95,6 +95,30 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"version": "r197.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"version": "r197.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r197.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Flash",
 			"name": "Flash",
@@ -151,7 +175,11 @@
 			"youtube",
 			"DiscordLogoWhite",
 			"telegramlogo",
-			"Sprite"
+			"Sprite",
+			"friends",
+			"Button",
+			"TextInput",
+			"Text"
 		],
 		"subfolders": [
 			{
@@ -208,7 +236,9 @@
 			"Game",
 			"GameOver",
 			"MainMenu",
-			"Preloader"
+			"Preloader",
+			"Leaderboard",
+			"SocialLogin"
 		],
 		"subfolders": []
 	},
@@ -220,13 +250,26 @@
 			"ePause",
 			"eFunctions",
 			"ePreloader",
-			"eSocialLinks"
+			"eSocialLinks",
+			"eLeaderBoard",
+			"eSocialLogin"
 		],
 		"subfolders": []
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
+			"items": [
+				{
+					"name": "PlayFabClientApi.js",
+					"type": "text/javascript",
+					"sid": 419817764968222
+				},
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 772198879962794
+				}
+			],
 			"subfolders": []
 		},
 		"sound": {
@@ -309,7 +352,13 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "Big_Bottom_Typeface_Normal.ttf",
+					"type": "application/font-sfnt",
+					"sid": 491382300629642
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {
