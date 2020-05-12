@@ -38,40 +38,6 @@
 					}
 				},
 				{
-					"type": "TextInput",
-					"properties": {
-						"text": "",
-						"placeholder": "email",
-						"tooltip": "Enter your Email here",
-						"initially-visible": true,
-						"enabled": true,
-						"read-only": false,
-						"spell-check": false,
-						"type": "email",
-						"auto-font-size": true,
-						"id": "input_email"
-					},
-					"uid": 74,
-					"instanceVariables": {
-						"Type": "emailInput"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 294,
-						"y": 92,
-						"width": 265,
-						"height": 25,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						]
-					}
-				},
-				{
 					"type": "Text",
 					"properties": {
 						"text": "Email",
@@ -116,196 +82,6 @@
 					}
 				},
 				{
-					"type": "TextInput",
-					"properties": {
-						"text": "",
-						"placeholder": "display name",
-						"tooltip": "Enter the name you want to use in this game",
-						"initially-visible": false,
-						"enabled": true,
-						"read-only": false,
-						"spell-check": false,
-						"type": "text",
-						"auto-font-size": true,
-						"id": "input_displayName"
-					},
-					"uid": 76,
-					"instanceVariables": {
-						"Type": "displayNameInput"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 299,
-						"y": 284,
-						"width": 265,
-						"height": 25,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						]
-					}
-				},
-				{
-					"type": "Text",
-					"properties": {
-						"text": "Display Name",
-						"enable-bbcode": true,
-						"font": "Big_Bottom_Typeface_Normal",
-						"size": 10,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": false,
-						"origin": "top-left"
-					},
-					"uid": 77,
-					"instanceVariables": {
-						"Type": "displayNameTitle"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 299,
-						"y": 246,
-						"width": 266,
-						"height": 30,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "TextInput",
-					"properties": {
-						"text": "",
-						"placeholder": "username",
-						"tooltip": "Enter a username",
-						"initially-visible": false,
-						"enabled": true,
-						"read-only": false,
-						"spell-check": false,
-						"type": "text",
-						"auto-font-size": true,
-						"id": "input_userName"
-					},
-					"uid": 78,
-					"instanceVariables": {
-						"Type": "usernameInput"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 299,
-						"y": 361,
-						"width": 265,
-						"height": 25,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						]
-					}
-				},
-				{
-					"type": "Text",
-					"properties": {
-						"text": "Username",
-						"enable-bbcode": true,
-						"font": "Big_Bottom_Typeface_Normal",
-						"size": 10,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": false,
-						"origin": "top-left"
-					},
-					"uid": 79,
-					"instanceVariables": {
-						"Type": "usernameTitle"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 299,
-						"y": 323,
-						"width": 266,
-						"height": 30,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "TextInput",
-					"properties": {
-						"text": "",
-						"placeholder": "password",
-						"tooltip": "Enter Password",
-						"initially-visible": true,
-						"enabled": true,
-						"read-only": false,
-						"spell-check": false,
-						"type": "password",
-						"auto-font-size": true,
-						"id": "input_password"
-					},
-					"uid": 80,
-					"instanceVariables": {
-						"Type": "passwordInput"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 297,
-						"y": 169,
-						"width": 265,
-						"height": 25,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						]
-					}
-				},
-				{
 					"type": "Text",
 					"properties": {
 						"text": "Password",
@@ -347,84 +123,6 @@
 						],
 						"angle": 0,
 						"zElevation": 0
-					}
-				},
-				{
-					"type": "Text",
-					"properties": {
-						"text": "Login",
-						"enable-bbcode": true,
-						"font": "Big_Bottom_Typeface_Normal",
-						"size": 16,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 82,
-					"instanceVariables": {
-						"Type": "registerLoginTitle"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 294,
-						"y": 4,
-						"width": 266,
-						"height": 41,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "TextInput",
-					"properties": {
-						"text": "",
-						"placeholder": "confirm password",
-						"tooltip": "Enter Password",
-						"initially-visible": false,
-						"enabled": true,
-						"read-only": false,
-						"spell-check": false,
-						"type": "password",
-						"auto-font-size": true,
-						"id": "input_confirmPassword"
-					},
-					"uid": 83,
-					"instanceVariables": {
-						"Type": "confirmPasswordInput"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 297,
-						"y": 208,
-						"width": 265,
-						"height": 25,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						]
 					}
 				},
 				{
@@ -489,6 +187,308 @@
 							1,
 							1
 						]
+					}
+				},
+				{
+					"type": "EmailInput",
+					"properties": {
+						"text": "",
+						"placeholder": "email",
+						"tooltip": "Enter your Email here",
+						"initially-visible": true,
+						"enabled": true,
+						"read-only": false,
+						"spell-check": false,
+						"type": "email",
+						"auto-font-size": true,
+						"id": "input_email"
+					},
+					"uid": 89,
+					"instanceVariables": {
+						"Type": "emailInput"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 297,
+						"y": 92,
+						"width": 265,
+						"height": 25,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "PasswordInput",
+					"properties": {
+						"text": "",
+						"placeholder": "password",
+						"tooltip": "Enter Password",
+						"initially-visible": true,
+						"enabled": true,
+						"read-only": false,
+						"spell-check": false,
+						"type": "password",
+						"auto-font-size": true,
+						"id": "input_password"
+					},
+					"uid": 74,
+					"instanceVariables": {
+						"Type": "passwordInput"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 297,
+						"y": 169,
+						"width": 265,
+						"height": 25,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "ConfirmPasswordInput",
+					"properties": {
+						"text": "",
+						"placeholder": "confirm password",
+						"tooltip": "Enter Password",
+						"initially-visible": false,
+						"enabled": true,
+						"read-only": false,
+						"spell-check": false,
+						"type": "password",
+						"auto-font-size": true,
+						"id": "input_confirmPassword"
+					},
+					"uid": 90,
+					"instanceVariables": {
+						"Type": "confirmPasswordInput"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 297,
+						"y": 208,
+						"width": 265,
+						"height": 25,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "DisplayNameInput",
+					"properties": {
+						"text": "",
+						"placeholder": "display name",
+						"tooltip": "Enter the name you want to use in this game",
+						"initially-visible": false,
+						"enabled": true,
+						"read-only": false,
+						"spell-check": false,
+						"type": "text",
+						"auto-font-size": true,
+						"id": "input_displayName"
+					},
+					"uid": 83,
+					"instanceVariables": {
+						"Type": "displayNameInput"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 299,
+						"y": 284,
+						"width": 265,
+						"height": 25,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "UsernameInput",
+					"properties": {
+						"text": "",
+						"placeholder": "username",
+						"tooltip": "Enter a username",
+						"initially-visible": false,
+						"enabled": true,
+						"read-only": false,
+						"spell-check": false,
+						"type": "text",
+						"auto-font-size": true,
+						"id": "input_userName"
+					},
+					"uid": 76,
+					"instanceVariables": {
+						"Type": "usernameInput"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 299,
+						"y": 361,
+						"width": 265,
+						"height": 25,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "DisplayNameTitle",
+					"properties": {
+						"text": "Display Name",
+						"enable-bbcode": true,
+						"font": "Big_Bottom_Typeface_Normal",
+						"size": 10,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": false,
+						"origin": "top-left"
+					},
+					"uid": 78,
+					"instanceVariables": {
+						"Type": "displayNameTitle"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 299,
+						"y": 246,
+						"width": 266,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UsernameTitle",
+					"properties": {
+						"text": "Username",
+						"enable-bbcode": true,
+						"font": "Big_Bottom_Typeface_Normal",
+						"size": 10,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": false,
+						"origin": "top-left"
+					},
+					"uid": 77,
+					"instanceVariables": {
+						"Type": "usernameTitle"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 299,
+						"y": 323,
+						"width": 266,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RegisterLoginTitle",
+					"properties": {
+						"text": "Login",
+						"enable-bbcode": true,
+						"font": "Big_Bottom_Typeface_Normal",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 79,
+					"instanceVariables": {
+						"Type": "registerLoginTitle"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 294,
+						"y": 4,
+						"width": 266,
+						"height": 41,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
 					}
 				}
 			],

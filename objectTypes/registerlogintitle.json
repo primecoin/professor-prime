@@ -1,0 +1,16 @@
+{
+	"name": "RegisterLoginTitle",
+	"plugin-id": "Text",
+	"sid": 796029436686632,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"sid": 943952429559044
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

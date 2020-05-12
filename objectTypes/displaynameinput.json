@@ -1,0 +1,15 @@
+{
+	"name": "DisplayNameInput",
+	"plugin-id": "TextBox",
+	"sid": 568574979200817,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"sid": 101974490232566
+		}
+	],
+	"behaviorTypes": []
+}

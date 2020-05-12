@@ -1,0 +1,15 @@
+{
+	"name": "EmailInput",
+	"plugin-id": "TextBox",
+	"sid": 344107281738727,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"sid": 972922476923374
+		}
+	],
+	"behaviorTypes": []
+}

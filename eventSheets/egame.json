@@ -729,6 +729,10 @@
 									"behaviorType": "Flash"
 								},
 								{
+									"type": "script",
+									"script": "SubmitScore(runtime);"
+								},
+								{
 									"id": "go-to-layout",
 									"objectClass": "System",
 									"sid": 982496044353783,

@@ -209,6 +209,28 @@
 				}
 			],
 			"sid": 429672877279402
+		},
+		{
+			"functionName": "save_game_data",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 787152105811745,
+					"parameters": {
+						"key": "\"GameData\"",
+						"value": "GameData.AsJSON"
+					}
+				}
+			],
+			"sid": 559263203019528
 		}
 	],
 	"sid": 150829195223343

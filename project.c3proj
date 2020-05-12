@@ -24,6 +24,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"version": "r197.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Touch",
 			"name": "Touch",
 			"author": "Scirra",
@@ -104,14 +112,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "TextBox",
-			"name": "Text input",
-			"author": "Scirra",
-			"version": "r197.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
@@ -179,7 +179,10 @@
 			"friends",
 			"Button",
 			"TextInput",
-			"Text"
+			"Text",
+			"DisplayNameTitle",
+			"UsernameTitle",
+			"RegisterLoginTitle"
 		],
 		"subfolders": [
 			{
@@ -219,6 +222,17 @@
 				],
 				"subfolders": [],
 				"name": "UI Objects"
+			},
+			{
+				"items": [
+					"EmailInput",
+					"ConfirmPasswordInput",
+					"DisplayNameInput",
+					"PasswordInput",
+					"UsernameInput"
+				],
+				"subfolders": [],
+				"name": "Login Form"
 			}
 		]
 	},
@@ -268,6 +282,11 @@
 					"name": "main.js",
 					"type": "application/javascript",
 					"sid": 772198879962794
+				},
+				{
+					"name": "uuidv4.min.js",
+					"type": "text/javascript",
+					"sid": 881335776502508
 				}
 			],
 			"subfolders": []

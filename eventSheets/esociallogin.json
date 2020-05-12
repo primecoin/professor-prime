@@ -2,6 +2,30 @@
 	"name": "eSocialLogin",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "eFunctions"
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayFabEntityToken",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 467278340589991
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayFabSessionTicket",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 775408530302378
+		},
+		{
 			"eventType": "variable",
 			"name": "IsRegistration",
 			"type": "number",
@@ -143,7 +167,8 @@
 											}
 										}
 									],
-									"sid": 785808345939526
+									"sid": 785808345939526,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -171,7 +196,8 @@
 											}
 										}
 									],
-									"sid": 538403772754180
+									"sid": 538403772754180,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -180,15 +206,15 @@
 										{
 											"id": "log",
 											"objectClass": "Browser",
-											"sid": 249243648518909,
+											"sid": 307980527221289,
 											"parameters": {
 												"type": "log",
-												"message": "\"Email: \" & lEmail & \" Password: \" & lPassword"
+												"message": "\"**** Email: \" & EmailInput.Text & \" Password: \" & PasswordInput.Text"
 											}
 										},
 										{
 											"type": "script",
-											"script": "LoginToPlayFab(runtime, localVars.lEmail, localVars.lPassword);"
+											"script": "LoginToPlayFab(runtime);"
 										}
 									],
 									"sid": 914161042305179
@@ -204,7 +230,12 @@
 									"sid": 420754724941597
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"type": "script",
+									"script": "RegisterToPlayFab(runtime);"
+								}
+							],
 							"sid": 441088000944623
 						}
 					]
@@ -241,6 +272,14 @@
 							"parameters": {
 								"type": "log",
 								"message": "\"cancelButton clicked\""
+							}
+						},
+						{
+							"id": "go-to-nextprevious-layout",
+							"objectClass": "System",
+							"sid": 311465231187010,
+							"parameters": {
+								"which": "previous"
 							}
 						}
 					],
@@ -462,172 +501,57 @@
 							}
 						}
 					],
-					"actions": [],
-					"sid": 497361774035101,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 843864688915022,
-									"parameters": {
-										"object": "TextInput",
-										"expression": "TextInput.Type",
-										"comparison": 0,
-										"value": "\"confirmPasswordInput\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "TextInput",
-									"sid": 307317861490846,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 760453935788056
+							"id": "set-visible",
+							"objectClass": "ConfirmPasswordInput",
+							"sid": 506986844513471,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 379062237762924,
-									"parameters": {
-										"object": "Text",
-										"expression": "Text.Type",
-										"comparison": 0,
-										"value": "\"displayNameTitle\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "Text",
-									"sid": 274256347815434,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 291594641651027
+							"id": "set-visible",
+							"objectClass": "DisplayNameTitle",
+							"sid": 439619215616433,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 940843431863384,
-									"parameters": {
-										"object": "TextInput",
-										"expression": "TextInput.Type",
-										"comparison": 0,
-										"value": "\"displayNameInput\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "TextInput",
-									"sid": 752156865848399,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 287369131308514
+							"id": "set-visible",
+							"objectClass": "DisplayNameInput",
+							"sid": 860248508766865,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 967616738426146,
-									"parameters": {
-										"object": "Text",
-										"expression": "Text.Type",
-										"comparison": 0,
-										"value": "\"usernameTitle\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "Text",
-									"sid": 765412993949359,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 992720074637528
+							"id": "set-visible",
+							"objectClass": "UsernameTitle",
+							"sid": 345203487826041,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 728112126709761,
-									"parameters": {
-										"object": "TextInput",
-										"expression": "TextInput.Type",
-										"comparison": 0,
-										"value": "\"usernameInput\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "TextInput",
-									"sid": 274002908888827,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 884650073455445
+							"id": "set-visible",
+							"objectClass": "UsernameInput",
+							"sid": 249292215535764,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 457957865105960,
-									"parameters": {
-										"object": "Text",
-										"expression": "Text.Type",
-										"comparison": 0,
-										"value": "\"registerLoginTitle\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "Text",
-									"sid": 439082545710933,
-									"parameters": {
-										"text": "\"Login\""
-									}
-								}
-							],
-							"sid": 477866235718776
+							"id": "set-text",
+							"objectClass": "RegisterLoginTitle",
+							"sid": 592320847427796,
+							"parameters": {
+								"text": "\"Login\""
+							}
 						}
-					]
+					],
+					"sid": 497361774035101
 				},
 				{
 					"eventType": "block",
@@ -638,172 +562,57 @@
 							"sid": 364803679815406
 						}
 					],
-					"actions": [],
-					"sid": 707286326487342,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 764451021852447,
-									"parameters": {
-										"object": "TextInput",
-										"expression": "TextInput.Type",
-										"comparison": 0,
-										"value": "\"confirmPasswordInput\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "TextInput",
-									"sid": 792215197639042,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 752073052698779
+							"id": "set-visible",
+							"objectClass": "ConfirmPasswordInput",
+							"sid": 827603103976972,
+							"parameters": {
+								"visibility": "visible"
+							}
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 981530472713722,
-									"parameters": {
-										"object": "Text",
-										"expression": "Text.Type",
-										"comparison": 0,
-										"value": "\"displayNameTitle\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "Text",
-									"sid": 195494364344987,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 242328594718116
+							"id": "set-visible",
+							"objectClass": "DisplayNameTitle",
+							"sid": 343911136085668,
+							"parameters": {
+								"visibility": "visible"
+							}
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 542207653736711,
-									"parameters": {
-										"object": "TextInput",
-										"expression": "TextInput.Type",
-										"comparison": 0,
-										"value": "\"displayNameInput\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "TextInput",
-									"sid": 743549775514083,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 260906232985281
+							"id": "set-visible",
+							"objectClass": "DisplayNameInput",
+							"sid": 609460179338645,
+							"parameters": {
+								"visibility": "visible"
+							}
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 795573915717350,
-									"parameters": {
-										"object": "Text",
-										"expression": "Text.Type",
-										"comparison": 0,
-										"value": "\"usernameTitle\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "Text",
-									"sid": 118202372037617,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 140988877619849
+							"id": "set-visible",
+							"objectClass": "UsernameTitle",
+							"sid": 787045310119324,
+							"parameters": {
+								"visibility": "visible"
+							}
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 306567214675125,
-									"parameters": {
-										"object": "TextInput",
-										"expression": "TextInput.Type",
-										"comparison": 0,
-										"value": "\"usernameInput\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "TextInput",
-									"sid": 151750150087723,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 305536298705576
+							"id": "set-visible",
+							"objectClass": "UsernameInput",
+							"sid": 691731080845726,
+							"parameters": {
+								"visibility": "visible"
+							}
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 462799726387520,
-									"parameters": {
-										"object": "Text",
-										"expression": "Text.Type",
-										"comparison": 0,
-										"value": "\"registerLoginTitle\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "Text",
-									"sid": 958343836213068,
-									"parameters": {
-										"text": "\"Register\""
-									}
-								}
-							],
-							"sid": 916749914452240
+							"id": "set-text",
+							"objectClass": "RegisterLoginTitle",
+							"sid": 991169885428850,
+							"parameters": {
+								"text": "\"Register\""
+							}
 						}
-					]
+					],
+					"sid": 707286326487342
 				}
 			]
 		},
@@ -873,6 +682,27 @@
 					"sid": 526594793819766
 				}
 			]
+		},
+		{
+			"functionName": "GoPreviousLayout",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 260145059744112,
+					"parameters": {
+						"which": "previous"
+					}
+				}
+			],
+			"sid": 831446944775879
 		}
 	],
 	"sid": 955479893279808
