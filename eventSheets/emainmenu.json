@@ -435,6 +435,93 @@
 				}
 			],
 			"sid": 345993740869628
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 502088053521471,
+					"parameters": {
+						"object": "Ranking"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 987206880147641,
+					"parameters": {
+						"layout": "Leaderboard"
+					}
+				}
+			],
+			"sid": 462329663243500
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 990396598685530,
+					"parameters": {
+						"variable": "DEBUG"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "ClearStorage",
+					"sid": 450761641027686
+				}
+			],
+			"sid": 689757628226726
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 468968170771362
+				}
+			],
+			"actions": [],
+			"sid": 922283387031891,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-clicked",
+							"objectClass": "ClearStorage",
+							"sid": 412763366359352
+						}
+					],
+					"actions": [
+						{
+							"id": "clear-storage",
+							"objectClass": "LocalStorage",
+							"sid": 645489062972639
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 180668379447877,
+							"parameters": {
+								"type": "log",
+								"message": "\"LocalStorage Cleared!\""
+							}
+						}
+					],
+					"sid": 633024709486716
+				}
+			]
 		}
 	],
 	"sid": 360384029801467

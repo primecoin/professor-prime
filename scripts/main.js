@@ -52,6 +52,19 @@ function PlayFabDataSession(runtime) {
     }
 }
 
+function getPlayFabSessionTicket(result) {
+    return result["data"]["SessionTicket"];
+}
+
+function getPlayFabCustomId(result) {
+    return result["data"]["InfoResultPayload"]["AccountInfo"]["CustomIdInfo"]["CustomId"];
+}
+
+function getPlayFabEntityToken(result) {
+    return result["data"]["EntityToken"]["EntityToken"];
+}
+
+
 /*** end utility functions ***/
 
 function LogPlayFabResultsToConsole(result, error) {
@@ -97,8 +110,31 @@ function GetLeaderboard(runtime) {
 function LoginToPlayFabSilent(runtime) {
     const customId = playFabSessionData.getCustomId();
     console.log(`got CustomId: ${customId}`);
+
     if (typeof customId === "undefined") {
         console.log("No customId available we need the user to login.")
+        console.log("Create a new custom Id so the player logs in anonymously.")
+
+        const customId = uuidv4();
+        const request = {
+            CustomId: customId,
+            CreateAccount: true,
+        }
+        PlayFabClientSDK.LoginWithCustomID(request, function (result, error) {
+            LogPlayFabResultsToConsole(result, error);
+
+            if (error !== null) {
+                LogPlayFabResultsToConsole(result, PlayFab.GenerateErrorReport(error));
+                return;
+            }
+            if (result !== null) {
+                console.log(`PlayFab LoginWithCustomId success`);
+                const sessionTicket = getPlayFabSessionTicket(result);
+                const entityToken = getPlayFabEntityToken(result);
+
+                
+            }
+        });
         return;
     }
 

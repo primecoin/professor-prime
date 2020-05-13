@@ -7,6 +7,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "DEBUG",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 644169790182628
+		},
+		{
+			"eventType": "variable",
 			"name": "SetupFinish",
 			"type": "number",
 			"initialValue": "0",
@@ -162,6 +172,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 876424089911908,
+					"breakpoint": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"GameData loaded: \" & GameData.AsJSON"

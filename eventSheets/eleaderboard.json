@@ -37,17 +37,88 @@
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 268850026134748,
+			"children": [
 				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 845908007088182,
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-key",
+							"objectClass": "GameData",
+							"sid": 513512933491564,
+							"parameters": {
+								"key": "\"PlayFabCustomId\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 978243693080562,
+							"parameters": {
+								"layout": "SocialLogin"
+							}
+						}
+					],
+					"sid": 607734282578062
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 784677630194421
+						}
+					],
+					"actions": [],
+					"sid": 764615436043407
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-key",
+					"objectClass": "GameData",
+					"sid": 227148097718436,
 					"parameters": {
-						"layout": "SocialLogin"
+						"key": "\"PlayFabCustomId\""
 					}
 				}
 			],
-			"sid": 268850026134748
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "friends",
+					"sid": 932477808238579,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 453661960778300
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 564283884474822
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "GetLeaderboard(runtime);"
+				}
+			],
+			"sid": 372674352450295
 		}
 	],
 	"sid": 875530414948720

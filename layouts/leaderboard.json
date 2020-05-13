@@ -64,586 +64,6 @@
 					}
 				},
 				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "1000 John Smith",
-						"enable-bbcode": true,
-						"character-width": 185,
-						"character-height": 268,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
-						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
-						"scale": 0.1,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 61,
-					"instanceVariables": {
-						"Type": "ScorePos0"
-					},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 50,
-								"magnitude-random": 0,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 187,
-						"y": 94.50960713345233,
-						"width": 480,
-						"height": 27.01919267809575,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "1000 John Smith",
-						"enable-bbcode": true,
-						"character-width": 185,
-						"character-height": 268,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
-						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
-						"scale": 0.1,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 62,
-					"instanceVariables": {
-						"Type": "ScorePos1"
-					},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 50,
-								"magnitude-random": 0,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 187,
-						"y": 122.50960713345233,
-						"width": 480,
-						"height": 27.01919267809575,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "1000 John Smith",
-						"enable-bbcode": true,
-						"character-width": 185,
-						"character-height": 268,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
-						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
-						"scale": 0.1,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 63,
-					"instanceVariables": {
-						"Type": "ScorePos2"
-					},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 50,
-								"magnitude-random": 0,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 187,
-						"y": 150.50960713345233,
-						"width": 480,
-						"height": 27.01919267809575,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "1000 John Smith",
-						"enable-bbcode": true,
-						"character-width": 185,
-						"character-height": 268,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
-						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
-						"scale": 0.1,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 64,
-					"instanceVariables": {
-						"Type": "ScorePos3"
-					},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 50,
-								"magnitude-random": 0,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 187,
-						"y": 177.50960713345233,
-						"width": 480,
-						"height": 27.01919267809575,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "1000 John Smith",
-						"enable-bbcode": true,
-						"character-width": 185,
-						"character-height": 268,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
-						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
-						"scale": 0.1,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 65,
-					"instanceVariables": {
-						"Type": "ScorePos4"
-					},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 50,
-								"magnitude-random": 0,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 187,
-						"y": 205.50960713345233,
-						"width": 480,
-						"height": 27.01919267809575,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "1000 John Smith",
-						"enable-bbcode": true,
-						"character-width": 185,
-						"character-height": 268,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
-						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
-						"scale": 0.1,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 66,
-					"instanceVariables": {
-						"Type": "ScorePos5"
-					},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 50,
-								"magnitude-random": 0,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 187,
-						"y": 233.50960713345228,
-						"width": 480,
-						"height": 27.01919267809575,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "1000 John Smith",
-						"enable-bbcode": true,
-						"character-width": 185,
-						"character-height": 268,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
-						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
-						"scale": 0.1,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 67,
-					"instanceVariables": {
-						"Type": "ScorePos6"
-					},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 50,
-								"magnitude-random": 0,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 187,
-						"y": 261.5096071334523,
-						"width": 480,
-						"height": 27.01919267809575,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "1000 John Smith",
-						"enable-bbcode": true,
-						"character-width": 185,
-						"character-height": 268,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
-						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
-						"scale": 0.1,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 68,
-					"instanceVariables": {
-						"Type": "ScorePos7"
-					},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 50,
-								"magnitude-random": 0,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 187,
-						"y": 289.5096071334523,
-						"width": 480,
-						"height": 27.01919267809575,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "1000 John Smith",
-						"enable-bbcode": true,
-						"character-width": 185,
-						"character-height": 268,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
-						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
-						"scale": 0.1,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 69,
-					"instanceVariables": {
-						"Type": "ScorePos8"
-					},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 50,
-								"magnitude-random": 0,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 187,
-						"y": 317.5096071334523,
-						"width": 480,
-						"height": 27.01919267809575,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "1000 John Smith",
-						"enable-bbcode": true,
-						"character-width": 185,
-						"character-height": 268,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
-						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
-						"scale": 0.1,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 70,
-					"instanceVariables": {
-						"Type": "ScorePos9"
-					},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 50,
-								"magnitude-random": 0,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 187,
-						"y": 344.5096071334523,
-						"width": 480,
-						"height": 27.01919267809575,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "HomeButton",
 					"properties": {
 						"initially-visible": true,
@@ -656,7 +76,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 329.6705826104775,
+						"x": 62,
 						"y": 433.34059825854786,
 						"width": 64,
 						"height": 64,
@@ -685,10 +105,112 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 524.3294173895225,
+						"x": 792,
 						"y": 433.34059825854786,
 						"width": 64,
 						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Leaderboard",
+					"properties": {
+						"text": "10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime",
+						"enable-bbcode": true,
+						"character-width": 185,
+						"character-height": 268,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
+						"scale": 0.13,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": false,
+						"origin": "top-left"
+					},
+					"uid": 61,
+					"instanceVariables": {
+						"Type": "Score"
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 261,
+						"y": 89,
+						"width": 350,
+						"height": 370,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Waiting",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 62,
+					"instanceVariables": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 360,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 427,
+						"y": 240,
+						"width": 144.9137674618944,
+						"height": 144.9137674618944,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

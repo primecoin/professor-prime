@@ -1,0 +1,38 @@
+{
+	"name": "Leaderboard",
+	"plugin-id": "Spritefont2",
+	"sid": 642955408312653,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"sid": 703741831762019
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 138822877465656
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 562831142484890
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 2048,
+		"height": 4096,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 3884090,
+		"useCollisionPoly": true
+	}
+}

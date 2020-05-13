@@ -182,13 +182,17 @@
 			"Text",
 			"DisplayNameTitle",
 			"UsernameTitle",
-			"RegisterLoginTitle"
+			"RegisterLoginTitle",
+			"Ranking",
+			"Waiting",
+			"ClearStorage"
 		],
 		"subfolders": [
 			{
 				"items": [
 					"SpriteFont",
-					"CoinFont"
+					"CoinFont",
+					"Leaderboard"
 				],
 				"subfolders": [],
 				"name": "Fonts"
