@@ -16,6 +16,16 @@
 			"sid": 146916688055077
 		},
 		{
+			"eventType": "variable",
+			"name": "LoggedInToPlayFab",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 689971704961423
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -156,6 +166,10 @@
 						"type": "log",
 						"message": "\"GameData loaded: \" & GameData.AsJSON"
 					}
+				},
+				{
+					"type": "script",
+					"script": "LoginToPlayFabSilent(runtime);"
 				},
 				{
 					"id": "set-eventvar-value",

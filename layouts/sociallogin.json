@@ -521,6 +521,35 @@
 			"overriden": 0,
 			"instances": [
 				{
+					"type": "Sprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 80,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 427,
+						"y": 240,
+						"width": 428,
+						"height": 474,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.41568627450980394,
+							0.41568627450980394,
+							0.41568627450980394,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Text",
 					"properties": {
 						"text": "ERROR",
