@@ -91,10 +91,10 @@
 		{
 			"eventType": "comment",
 			"text": "Check if there is GameData and load it",
-			"background-color": [
+			"text-color": [
+				0,
 				1,
-				1,
-				0.5019607843137255,
+				0,
 				1
 			]
 		},
@@ -131,10 +131,10 @@
 		{
 			"eventType": "comment",
 			"text": "Loading GameData",
-			"background-color": [
+			"text-color": [
+				0,
 				1,
-				1,
-				0.5019607843137255,
+				0,
 				1
 			]
 		},
@@ -264,13 +264,8 @@
 					}
 				},
 				{
-					"id": "add-key",
-					"objectClass": "GameData",
-					"sid": 915383416003863,
-					"parameters": {
-						"key": "\"is_audio_muted\"",
-						"value": "0"
-					}
+					"type": "script",
+					"script": "LoginToPlayFabSilent(runtime);"
 				},
 				{
 					"id": "set-silent",
@@ -291,6 +286,73 @@
 				}
 			],
 			"sid": 745875661941562
+		},
+		{
+			"functionName": "InitGameData",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "add-key",
+					"objectClass": "GameData",
+					"sid": 785135596965306,
+					"parameters": {
+						"key": "\"is_audio_muted\"",
+						"value": "0"
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "GameData",
+					"sid": 203514144648056,
+					"parameters": {
+						"key": "\"PlayFabHasUsername\"",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 619672132866078,
+					"parameters": {
+						"key": "\"GameData\"",
+						"value": "GameData.AsJSON"
+					}
+				}
+			],
+			"sid": 513827314098503
+		},
+		{
+			"functionName": "ResetGameData",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "clear-storage",
+					"objectClass": "LocalStorage",
+					"sid": 629031694950564
+				},
+				{
+					"id": "clear",
+					"objectClass": "GameData",
+					"sid": 682521348130301
+				},
+				{
+					"callFunction": "InitGameData",
+					"sid": 509201784472825
+				}
+			],
+			"sid": 994728741843744
 		}
 	],
 	"sid": 664330847084391

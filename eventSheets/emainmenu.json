@@ -505,9 +505,8 @@
 					],
 					"actions": [
 						{
-							"id": "clear-storage",
-							"objectClass": "LocalStorage",
-							"sid": 645489062972639
+							"callFunction": "ResetGameData",
+							"sid": 285936035799488
 						},
 						{
 							"id": "log",

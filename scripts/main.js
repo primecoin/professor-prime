@@ -1,6 +1,7 @@
 const PLAYFAB_SESSION_TICKET_KEY = "PlayFabSessionTicket";
 const PLAYFAB_ENTITY_TOKEN_KEY = "PlayFabEntityToken";
 const PLAYFAB_ENTITY_CUSTOM_ID_KEY = "PlayFabCustomId";
+const PLAYFAB_USERNAME_KEY = "PlayFabUsername";
 
 let playFabSessionData;
 
@@ -13,7 +14,8 @@ runOnStartup(async runtime => {
 /*** utility functions ***/
 function PlayFabDataSession(runtime) {
     this.runtime = runtime;
-    console.warn(`PlayFabDataSession constructon got runtime: ${runtime}`);
+
+    console.warn(`PlayFabDataSession constructon got runtime: ${JSON.stringify(runtime)}`);
 
     this.getGameDataMap = function () {
         return this.runtime.objects.GameData.getFirstInstance().getDataMap();
@@ -50,6 +52,15 @@ function PlayFabDataSession(runtime) {
         // call Construct local storage save
         this.runtime.callFunction("save_game_data");
     }
+
+    this.storeCustomGameData = function (key, value) {
+        this.getGameDataMap().set(key, value);
+        this.runtime.callFunction("save_game_data");
+    }
+
+    this.getCustomGameData = function (key) {
+        return this.getGameDataMap().get(key);
+    }
 }
 
 function getPlayFabSessionTicket(result) {
@@ -64,16 +75,25 @@ function getPlayFabEntityToken(result) {
     return result["data"]["EntityToken"]["EntityToken"];
 }
 
-
+function getPaddedScore(score, length=6) {
+    return `${score}`.padStart(length, '0');
+}
 /*** end utility functions ***/
 
-function LogPlayFabResultsToConsole(result, error) {
-    console.log(`result: ${JSON.stringify(result)} error: ${PlayFab.GenerateErrorReport(error)}`);
+function LogDataToConsole(data) {
+    console.log(JSON.stringify(data));
+}
+
+function LogPlayFabResultsToConsole(result, error, prepend = '') {
+    console.log(`${prepend}result: ${JSON.stringify(result)} error: ${PlayFab.GenerateErrorReport(error)}`);
 }
 
 function SubmitScore(runtime) {
     console.log("Calling submit score");
     const sessionTicket = playFabSessionData.getSessionTicket();
+    if (typeof sessionTicket === "undefined") {
+        console.warn("Not submitting score, sessionTicket is undefined");
+    }
     console.log("Calling submit score 2");
     const score = runtime.globalVars.Score;
     console.log(`Submit score: ${score}`);
@@ -86,7 +106,7 @@ function SubmitScore(runtime) {
     }
     console.log("Calling submit score 3");
     PlayFabClientSDK.UpdatePlayerStatistics(updateRequest, function (result, error) {
-        LogPlayFabResultsToConsole(result, error);
+        LogPlayFabResultsToConsole(result, error, "UpdatePlayerStatistics: ");
         console.log("Calling submit score 4 ");
     });
     console.log("Calling submit score 5");
@@ -102,54 +122,53 @@ function GetLeaderboard(runtime) {
     }
 
     PlayFabClientSDK.GetLeaderboard(request, function (result, error) {
-        LogPlayFabResultsToConsole(result, error);
+        LogPlayFabResultsToConsole(result, error, "GetLeaderboard: ");
+        if (result !== null) {
+            const leaderboardText = runtime.objects.Leaderboard.getFirstInstance();
+            const leaderboardList = result["data"]["Leaderboard"];
+            console.log(`leaderboardList ${JSON.stringify(leaderboardList)}`);
+            let entryText = '';
+            for (let i = 0; i < leaderboardList.length; i++) {
+                let entry = leaderboardList[i];
+                console.log(`entry: ${i} - ${JSON.stringify(entry)}`);
+                let score = entry["StatValue"];
+                score = getPaddedScore(score);
+                let position = getPaddedScore(i+1, 2);
+                entryText += `${position} - ${score} - ${entry["DisplayName"]}\n`;
+                console.log(`entryText: ${entryText}`);
+            }
+            console.log(`final entryText: ${entryText}`);
+            leaderboardText.text = entryText;
+        }
+        runtime.callFunction("LeaderboardDataLoaded");
     });
 }
 
 // Function to login to playfab using the customId if available
 function LoginToPlayFabSilent(runtime) {
-    const customId = playFabSessionData.getCustomId();
+    let customId = playFabSessionData.getCustomId();
     console.log(`got CustomId: ${customId}`);
 
     if (typeof customId === "undefined") {
         console.log("No customId available we need the user to login.")
-        console.log("Create a new custom Id so the player logs in anonymously.")
-
-        const customId = uuidv4();
-        const request = {
-            CustomId: customId,
-            CreateAccount: true,
-        }
-        PlayFabClientSDK.LoginWithCustomID(request, function (result, error) {
-            LogPlayFabResultsToConsole(result, error);
-
-            if (error !== null) {
-                LogPlayFabResultsToConsole(result, PlayFab.GenerateErrorReport(error));
-                return;
-            }
-            if (result !== null) {
-                console.log(`PlayFab LoginWithCustomId success`);
-                const sessionTicket = getPlayFabSessionTicket(result);
-                const entityToken = getPlayFabEntityToken(result);
-
-                
-            }
-        });
+        // console.log("Create a new custom Id so the player logs in anonymously.")
         return;
+        // customId = uuidv4();
     }
 
-    // try to login to playfab with customId
+    // try to login to PlayFab with customId
     const loginRequest = {
-        customId: customId
+        CustomId: customId
+        // CreateAccount: true
     }
 
     PlayFabClientSDK.LoginWithCustomID(loginRequest, function (result, error) {
-        LogPlayFabResultsToConsole(result, error);
+        LogPlayFabResultsToConsole(result, error, "LoginWithCustomID: ");
 
         if (result !== null) {
             // If the Login was successful we save the session data
-            const sessTicket = result["data"]["SessionTicket"]
-            const entityToken = result["data"]["EntityToken"]["EntityToken"];
+            const sessTicket = getPlayFabSessionTicket(result);
+            const entityToken = getPlayFabEntityToken(result);
             // we have customId at the top, we logged in with that
             // Save the PlayFab Session Data in the Local Storage for future Use
             playFabSessionData.storePlayFabSessionData(sessTicket, entityToken, customId);
@@ -179,7 +198,7 @@ function LoginToPlayFab(runtime) {
     // Do the Login Request to PlayFab
     PlayFabClientSDK.LoginWithEmailAddress(loginRequest, function (result, error) {
         // This is the callback code after the PlayFab SDK made the request to the server
-        LogPlayFabResultsToConsole(result, error);
+        LogPlayFabResultsToConsole(result, error, "LoginWithEmailAddress: ");
         if (error !== null) {
             // If we got an error show the Error Dialog and return
             ShowErrorDialog(runtime, PlayFab.GenerateErrorReport(error));
@@ -187,9 +206,9 @@ function LoginToPlayFab(runtime) {
         }
         if (result !== null) {
             // If the Login was successful we save the session data
-            const sessTicket = result["data"]["SessionTicket"]
-            const entityToken = result["data"]["EntityToken"]["EntityToken"];
-            const customId = result["data"]["InfoResultPayload"]["AccountInfo"]["CustomIdInfo"]["CustomId"];
+            const sessTicket = getPlayFabSessionTicket(result);
+            const entityToken = getPlayFabEntityToken(result);
+            const customId = getPlayFabCustomId(result);
 
             // Save the PlayFab Session Data in the Local Storage for future Use
             playFabSessionData.storePlayFabSessionData(sessTicket, entityToken, customId);
@@ -216,8 +235,15 @@ function RegisterToPlayFab(runtime) {
     // if passwords are different show an error and return
     if (password !== confirmPassword) {
         let msg = `passwords do not match: ${password} != ${confirmPassword}`;
-        console.log(msg);
+        console.warn(msg);
         ShowErrorDialog(runtime, "Passwords do not match.");
+        return;
+    }
+
+    if (!displayName) {
+        let msg = `Please provide a Display Name`;
+        console.warn(msg);
+        ShowErrorDialog(runtime, msg);
         return;
     }
 
@@ -226,16 +252,29 @@ function RegisterToPlayFab(runtime) {
         DisplayName: displayName,
         Email: email,
         Password: password,
-        RequireBothUsernameAndEmail: false,
         Username: username
     };
-
-    console.log(`PlayFab register request: ${JSON.stringify(registerRequest)}`);
+    //
+    // console.log(`PlayFab register request: ${JSON.stringify(registerRequest)}`);
+    //
+    // PlayFabClientSDK.AddUsernamePassword(registerRequest, function(result, error){
+    //     LogPlayFabResultsToConsole(result, error, "AddUsernamePassword: ");
+    //     if(error !== null) {
+    //         ShowErrorDialog(runtime, PlayFab.GenerateErrorReport(error));
+    //         return;
+    //     }
+    //     if(result !== null) {
+    //         console.log("AddUsernamePassword success, saving username.");
+    //         playFabSessionData.storeCustomGameData("PlayFabUsername", username);
+    //         playFabSessionData.storeCustomGameData("PlayFabHasUsername", 1);
+    //         runtime.callFunction("GoPreviousLayout");
+    //     }
+    // });
 
     // Make the call to the PlayFab SDK for registering the user with Email
     PlayFabClientSDK.RegisterPlayFabUser(registerRequest, function (result, error) {
         // this is the callback af
-        LogPlayFabResultsToConsole(result, error);
+        LogPlayFabResultsToConsole(result, error, "RegisterPlayFabUser: ");
         if (error !== null) {
             // if there was an error show the Error Dialog and then return
             ShowErrorDialog(runtime, PlayFab.GenerateErrorReport(error));
@@ -244,21 +283,20 @@ function RegisterToPlayFab(runtime) {
         if (result !== null) {
             // We don't want to ask the user to login every time so we will link with a CustomID
             // Get the session data to link with it
-            const sessTicket = result["data"]["SessionTicket"]
-            const entityToken = result["data"]["EntityToken"]["EntityToken"];
+            const sessTicket = getPlayFabSessionTicket(result);
+            const entityToken = getPlayFabEntityToken(result);
             // Generate an unique ID
             const customId = uuidv4();
             console.log(`Created new customId: ${customId}`);
             // Create the request
             const custIdRequest = {
                 CustomId: customId,
-                ForceLink: true, // this will replace any other custom id linking
-                EntityToken: entityToken
+                ForceLink: true // this will replace any other custom id linking
             }
 
             // make the call to link with custom ID, we shouldn't care of the return.
             PlayFabClientSDK.LinkCustomID(custIdRequest, function (result, error) {
-                LogPlayFabResultsToConsole(result, error);
+                LogPlayFabResultsToConsole(result, error, "LinkCustomID: ");
             });
 
             playFabSessionData.storePlayFabSessionData(sessTicket, entityToken, customId);

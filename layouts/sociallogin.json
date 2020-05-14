@@ -109,8 +109,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 297,
-						"y": 131,
+						"x": 294,
+						"y": 137,
 						"width": 266,
 						"height": 30,
 						"originX": 0,
@@ -176,7 +176,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 302,
-						"y": 427,
+						"y": 426,
 						"width": 250,
 						"height": 39,
 						"originX": 0,
@@ -209,8 +209,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 297,
-						"y": 92,
+						"x": 294,
+						"y": 96,
 						"width": 265,
 						"height": 25,
 						"originX": 0,
@@ -243,8 +243,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 297,
-						"y": 169,
+						"x": 294,
+						"y": 179,
 						"width": 265,
 						"height": 25,
 						"originX": 0,
@@ -277,8 +277,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 297,
-						"y": 208,
+						"x": 294,
+						"y": 220,
 						"width": 265,
 						"height": 25,
 						"originX": 0,
@@ -311,8 +311,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 299,
-						"y": 284,
+						"x": 294,
+						"y": 386,
 						"width": 265,
 						"height": 25,
 						"originX": 0,
@@ -345,8 +345,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 299,
-						"y": 361,
+						"x": 294,
+						"y": 303,
 						"width": 265,
 						"height": 25,
 						"originX": 0,
@@ -387,8 +387,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 299,
-						"y": 246,
+						"x": 294,
+						"y": 345,
 						"width": 266,
 						"height": 30,
 						"originX": 0,
@@ -431,8 +431,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 299,
-						"y": 323,
+						"x": 294,
+						"y": 262,
 						"width": 266,
 						"height": 30,
 						"originX": 0,
@@ -450,7 +450,7 @@
 				{
 					"type": "RegisterLoginTitle",
 					"properties": {
-						"text": "Login",
+						"text": "Register",
 						"enable-bbcode": true,
 						"font": "Big_Bottom_Typeface_Normal",
 						"size": 16,

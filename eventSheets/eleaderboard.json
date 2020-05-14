@@ -29,6 +29,48 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "has-key",
+					"objectClass": "GameData",
+					"sid": 616224463731038,
+					"parameters": {
+						"key": "\"PlayFabCustomId\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 644570454905548,
+					"parameters": {
+						"layout": "SocialLogin"
+					}
+				}
+			],
+			"sid": 249931096429193
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 118686987355085
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "GetLeaderboard(runtime);"
+				}
+			],
+			"sid": 544426386945227
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-tap-object",
 					"objectClass": "Touch",
 					"sid": 322678709798477,
@@ -39,6 +81,7 @@
 			],
 			"actions": [],
 			"sid": 268850026134748,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -63,7 +106,8 @@
 							}
 						}
 					],
-					"sid": 607734282578062
+					"sid": 607734282578062,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -75,50 +119,39 @@
 						}
 					],
 					"actions": [],
-					"sid": 764615436043407
+					"sid": 764615436043407,
+					"disabled": true
 				}
 			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "has-key",
-					"objectClass": "GameData",
-					"sid": 227148097718436,
-					"parameters": {
-						"key": "\"PlayFabCustomId\""
-					}
-				}
-			],
+			"functionName": "LeaderboardDataLoaded",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "friends",
-					"sid": 932477808238579,
+					"objectClass": "Waiting",
+					"sid": 864514626555564,
 					"parameters": {
 						"visibility": "invisible"
 					}
-				}
-			],
-			"sid": 453661960778300
-		},
-		{
-			"eventType": "block",
-			"conditions": [
+				},
 				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 564283884474822
+					"id": "set-visible",
+					"objectClass": "Leaderboard",
+					"sid": 273076175681728,
+					"parameters": {
+						"visibility": "visible"
+					}
 				}
 			],
-			"actions": [
-				{
-					"type": "script",
-					"script": "GetLeaderboard(runtime);"
-				}
-			],
-			"sid": 372674352450295
+			"sid": 451697605167941
 		}
 	],
 	"sid": 875530414948720

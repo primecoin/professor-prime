@@ -95,7 +95,7 @@
 				{
 					"type": "friends",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Default",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -124,7 +124,7 @@
 				{
 					"type": "Leaderboard",
 					"properties": {
-						"text": "10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime\n10 Professor Prime",
+						"text": "01 - 000100 - Professor Prime\n02 - 000100 - Professor Prime\n03 - 000100 - Professor Prime\n04 - 000100 - Professor Prime\n05 - 000100 - Professor Prime\n06 - 000100 - Professor Prime\n07 - 000100 - Professor Prime\n08 - 000100 - Professor Prime\n09 - 000100 - Professor Prime\n10 - 000100 - Professor Prime",
 						"enable-bbcode": true,
 						"character-width": 185,
 						"character-height": 268,
@@ -134,7 +134,7 @@
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
+						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": false,
 						"origin": "top-left"
@@ -163,10 +163,10 @@
 						}
 					},
 					"world": {
-						"x": 261,
-						"y": 89,
-						"width": 350,
-						"height": 370,
+						"x": 1,
+						"y": 104,
+						"width": 852,
+						"height": 355,
 						"originX": 0,
 						"originY": 0,
 						"color": [
