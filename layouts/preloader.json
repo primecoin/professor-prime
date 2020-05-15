@@ -33,6 +33,50 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Loading ...",
+						"enable-bbcode": true,
+						"font": "Big_Bottom_Typeface_Normal",
+						"size": 14,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 98,
+					"instanceVariables": {
+						"Type": "LoadingText"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 294,
+						"y": 433,
+						"width": 266,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 981499123358824,

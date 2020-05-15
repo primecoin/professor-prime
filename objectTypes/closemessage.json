@@ -1,0 +1,15 @@
+{
+	"name": "CloseMessage",
+	"plugin-id": "Button",
+	"sid": 489904448879941,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"sid": 515615839392260
+		}
+	],
+	"behaviorTypes": []
+}

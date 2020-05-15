@@ -622,6 +622,41 @@
 			"sid": 664435740510493
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "CloseMessage",
+					"sid": 750107232718558
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 815388267698219,
+					"parameters": {
+						"layer": "\"Message\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 947690713311861,
+					"parameters": {
+						"layer": "\"UI\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"callFunction": "GoPreviousLayout",
+					"sid": 332815549547475
+				}
+			],
+			"sid": 513171598708245
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "SocialLogin Functions",
@@ -921,6 +956,37 @@
 						}
 					],
 					"sid": 366765441836998
+				},
+				{
+					"functionName": "ShowRegistrationMessage",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 620983596924050,
+							"parameters": {
+								"layer": "\"UI\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 513679363829180,
+							"parameters": {
+								"layer": "\"Message\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 100499307828242
 				}
 			],
 			"sid": 773431344703787

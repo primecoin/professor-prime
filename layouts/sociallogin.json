@@ -479,7 +479,7 @@
 				{
 					"type": "RegisterLoginTitle",
 					"properties": {
-						"text": "Register",
+						"text": "Login",
 						"enable-bbcode": true,
 						"font": "Big_Bottom_Typeface_Normal",
 						"size": 16,
@@ -953,6 +953,169 @@
 				}
 			],
 			"sid": 625913480390131,
+			"effectTypes": [],
+			"isInitiallyVisible": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0,
+				0,
+				0,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "Message",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "PrimeCoinLogoSmall",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 94,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 80,
+						"y": 80,
+						"width": 100,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PrimeCoinLogoSmall",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 95,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 774,
+						"y": 80,
+						"width": 100,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "IMPORTANT PLEASE READ\n\nProfessor-Prime is a free to play game created by PRIMECOIN, which allows you to win XPM (our native cryptocurrency).\n\nYes the top 3 places on our leaderboards each month will receive some XPM directly into their wallets.\n\nYou can find our telegram channel and other social media links on the front menu, join up and show of your scores!\nThe winner will be contacted via email directly to receive their prize.\n\nPrimecoin \nA new era of consensus. ",
+						"enable-bbcode": true,
+						"font": "Big_Bottom_Typeface_Normal",
+						"size": 10,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 96,
+					"instanceVariables": {
+						"Type": "SocialLoginTitle"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 132,
+						"y": 83.5,
+						"width": 590,
+						"height": 313,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CloseMessage",
+					"properties": {
+						"type": "button",
+						"text": "OK",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": ""
+					},
+					"uid": 97,
+					"instanceVariables": {
+						"Type": "okButton"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 354,
+						"y": 426,
+						"width": 146,
+						"height": 39,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				}
+			],
+			"sid": 305818408226002,
 			"effectTypes": [],
 			"isInitiallyVisible": false,
 			"color": [

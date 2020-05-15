@@ -2,6 +2,7 @@ const PLAYFAB_SESSION_TICKET_KEY = "PlayFabSessionTicket";
 const PLAYFAB_ENTITY_TOKEN_KEY = "PlayFabEntityToken";
 const PLAYFAB_ENTITY_CUSTOM_ID_KEY = "PlayFabCustomId";
 const PLAYFAB_USERNAME_KEY = "PlayFabUsername";
+const REGISTRATION_MESSAGE_KEY = "RegistrationMessage";
 
 let playFabSessionData;
 
@@ -301,8 +302,15 @@ function RegisterToPlayFab(runtime) {
             });
 
             playFabSessionData.storePlayFabSessionData(sessTicket, entityToken, customId);
-            // exit to the previous layout (?)
-            runtime.callFunction("GoPreviousLayout");
+            // show message if we never showed it
+            const gameDataMap = playFabSessionData.getGameDataMap();
+            if(!gameDataMap.has(REGISTRATION_MESSAGE_KEY) || gameDataMap.get(REGISTRATION_MESSAGE_KEY) !== 1) {
+                playFabSessionData.storeCustomGameData(REGISTRATION_MESSAGE_KEY, 1);
+                runtime.callFunction("ShowRegistrationMessage");
+            } else {
+                // exit to the previous layout (?)
+                runtime.callFunction("GoPreviousLayout");
+            }
         }
     });
 }
