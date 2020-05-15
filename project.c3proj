@@ -185,7 +185,11 @@
 			"RegisterLoginTitle",
 			"Ranking",
 			"Waiting",
-			"ClearStorage"
+			"ClearStorage",
+			"PrimeCoinLogoSmall",
+			"RegisterCheckbox",
+			"RecoverPassword",
+			"CloseEmailSent"
 		],
 		"subfolders": [
 			{

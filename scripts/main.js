@@ -7,7 +7,7 @@ let playFabSessionData;
 
 runOnStartup(async runtime => {
     console.log("Javascript runOnStartup, setting up PlayFab");
-    PlayFab.settings.titleId = runtime.globalVars.PlayFabTittleID;
+    PlayFab.settings.titleId = runtime.globalVars.PlayFabTitleID;
     playFabSessionData = new PlayFabDataSession(runtime);
 });
 
@@ -75,9 +75,10 @@ function getPlayFabEntityToken(result) {
     return result["data"]["EntityToken"]["EntityToken"];
 }
 
-function getPaddedScore(score, length=6) {
+function getPaddedScore(score, length = 6) {
     return `${score}`.padStart(length, '0');
 }
+
 /*** end utility functions ***/
 
 function LogDataToConsole(data) {
@@ -133,7 +134,7 @@ function GetLeaderboard(runtime) {
                 console.log(`entry: ${i} - ${JSON.stringify(entry)}`);
                 let score = entry["StatValue"];
                 score = getPaddedScore(score);
-                let position = getPaddedScore(i+1, 2);
+                let position = getPaddedScore(i + 1, 2);
                 entryText += `${position} - ${score} - ${entry["DisplayName"]}\n`;
                 console.log(`entryText: ${entryText}`);
             }
@@ -302,6 +303,27 @@ function RegisterToPlayFab(runtime) {
             playFabSessionData.storePlayFabSessionData(sessTicket, entityToken, customId);
             // exit to the previous layout (?)
             runtime.callFunction("GoPreviousLayout");
+        }
+    });
+}
+
+function SendRecoveryEmail(runtime) {
+    const emailInput = runtime.objects.EmailInput.getFirstInstance();
+    const email = emailInput.text;
+    const request = {
+        Email: email,
+        TitleId: runtime.globalVars.PlayFabTitleID
+    }
+    PlayFabClientSDK.SendAccountRecoveryEmail(request, function (result, error) {
+        LogPlayFabResultsToConsole(result, error, "SendAccountRecoveryEmail: ");
+        if (error !== null) {
+            ShowErrorDialog(runtime, PlayFab.GenerateErrorReport(error));
+            return
+        }
+
+        if (result !== null) {
+            console.log("SendAccountRecoveryEmail success.");
+            runtime.callFunction("ShowEmailSent");
         }
     });
 }

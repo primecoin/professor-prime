@@ -9,7 +9,7 @@
 			"eventType": "variable",
 			"name": "DEBUG",
 			"type": "boolean",
-			"initialValue": "false",
+			"initialValue": "true",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,

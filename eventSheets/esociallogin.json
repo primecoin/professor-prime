@@ -37,7 +37,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "PlayFabTittleID",
+			"name": "PlayFabTitleID",
 			"type": "string",
 			"initialValue": "2F3C1",
 			"comment": "",
@@ -321,6 +321,7 @@
 						}
 					],
 					"sid": 284030951852344,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -358,7 +359,8 @@
 									}
 								}
 							],
-							"sid": 819777875777445
+							"sid": 819777875777445,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -396,7 +398,8 @@
 									}
 								}
 							],
-							"sid": 518132526079893
+							"sid": 518132526079893,
+							"disabled": true
 						}
 					]
 				},
@@ -458,100 +461,77 @@
 			]
 		},
 		{
-			"functionName": "ToggleRegisterComponents",
-			"functionDescription": "Will hide or show the register components on the UI",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [
+			"eventType": "block",
+			"conditions": [
 				{
-					"name": "isRegister",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 983696113626906
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 604031818350580
 				}
 			],
-			"eventType": "function-block",
-			"conditions": [],
 			"actions": [
 				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 521362464587760,
+					"id": "set-css-style",
+					"objectClass": "RegisterCheckbox",
+					"sid": 871533475166202,
 					"parameters": {
-						"type": "log",
-						"message": "\"ToggleRegisterComponent called isRegister: \" & isRegister"
+						"property-name": "\"transform\"",
+						"value": "\"scale(1.5)\""
 					}
 				}
 			],
-			"sid": 364947219539852,
+			"sid": 195924224461112,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "RegisterCheckbox",
+					"sid": 738163007177636
+				}
+			],
+			"actions": [],
+			"sid": 839470082776251,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 745646228596353,
-							"parameters": {
-								"first-value": "isRegister",
-								"comparison": 0,
-								"second-value": "0"
-							}
+							"id": "is-checked",
+							"objectClass": "RegisterCheckbox",
+							"sid": 954003772290780
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "ConfirmPasswordInput",
-							"sid": 506986844513471,
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 288126916322269,
 							"parameters": {
-								"visibility": "invisible"
+								"type": "log",
+								"message": "\"Button is checked\""
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "DisplayNameTitle",
-							"sid": 439619215616433,
-							"parameters": {
-								"visibility": "invisible"
-							}
+							"callFunction": "ToggleRegisterComponents",
+							"sid": 310451791066922,
+							"parameters": [
+								"1"
+							]
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "DisplayNameInput",
-							"sid": 860248508766865,
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 852620194757458,
 							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "UsernameTitle",
-							"sid": 345203487826041,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "UsernameInput",
-							"sid": 249292215535764,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "RegisterLoginTitle",
-							"sid": 592320847427796,
-							"parameters": {
-								"text": "\"Login\""
+								"variable": "IsRegistration",
+								"value": "1"
 							}
 						}
 					],
-					"sid": 497361774035101
+					"sid": 944208236942243
 				},
 				{
 					"eventType": "block",
@@ -559,111 +539,372 @@
 						{
 							"id": "else",
 							"objectClass": "System",
-							"sid": 364803679815406
+							"sid": 535646467908827
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "ConfirmPasswordInput",
-							"sid": 827603103976972,
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 519052907478735,
 							"parameters": {
-								"visibility": "visible"
+								"type": "log",
+								"message": "\"Button is not checked\""
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "DisplayNameTitle",
-							"sid": 343911136085668,
-							"parameters": {
-								"visibility": "visible"
-							}
+							"callFunction": "ToggleRegisterComponents",
+							"sid": 716591667469160,
+							"parameters": [
+								"0"
+							]
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "DisplayNameInput",
-							"sid": 609460179338645,
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 436622275675919,
 							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "UsernameTitle",
-							"sid": 787045310119324,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "UsernameInput",
-							"sid": 691731080845726,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "RegisterLoginTitle",
-							"sid": 991169885428850,
-							"parameters": {
-								"text": "\"Register\""
+								"variable": "IsRegistration",
+								"value": "0"
 							}
 						}
 					],
-					"sid": 707286326487342
+					"sid": 476234705659649
 				}
 			]
 		},
 		{
-			"functionName": "ShowErrorDialog",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [
+			"eventType": "block",
+			"conditions": [
 				{
-					"name": "errorMsg",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 703146485102974
+					"id": "on-clicked",
+					"objectClass": "CloseEmailSent",
+					"sid": 466856506525877
 				}
 			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 308784272578764,
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 530768380379054,
+					"parameters": {
+						"layer": "\"EmailSent\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 997405061989677,
+					"parameters": {
+						"layer": "\"UI\"",
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 313523523785297
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "RecoverPassword",
+					"sid": 271593483739618
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "SendRecoveryEmail(runtime);"
+				}
+			],
+			"sid": 664435740510493
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "SocialLogin Functions",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
+					"functionName": "ToggleRegisterComponents",
+					"functionDescription": "Will hide or show the register components on the UI",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
 						{
-							"id": "pick-by-comparison",
-							"objectClass": "System",
-							"sid": 554279871019785,
+							"name": "isRegister",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 983696113626906
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 399302758090790,
 							"parameters": {
-								"object": "Text",
-								"expression": "Text.Type",
-								"comparison": 0,
-								"value": "\"playfabErrorText\""
+								"type": "log",
+								"message": "\"ToggleRegisterComponent called isRegister: \" & isRegister"
 							}
 						}
 					],
+					"sid": 779932337052332,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 688557589785765,
+									"parameters": {
+										"first-value": "isRegister",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ConfirmPasswordInput",
+									"sid": 497399439715559,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "DisplayNameTitle",
+									"sid": 335653045746784,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "DisplayNameInput",
+									"sid": 740458002519548,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "UsernameTitle",
+									"sid": 193446714842663,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "UsernameInput",
+									"sid": 126291578258969,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "RegisterLoginTitle",
+									"sid": 289276543578899,
+									"parameters": {
+										"text": "\"Login\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "RecoverPassword",
+									"sid": 328288292605347,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 862804705098400
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 520651670341173
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ConfirmPasswordInput",
+									"sid": 666376519531036,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "DisplayNameTitle",
+									"sid": 300405046958040,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "DisplayNameInput",
+									"sid": 688893205037115,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "UsernameTitle",
+									"sid": 192237147268285,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "UsernameInput",
+									"sid": 208259957107604,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "RegisterLoginTitle",
+									"sid": 848555760783808,
+									"parameters": {
+										"text": "\"Register\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "RecoverPassword",
+									"sid": 698413663666948,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 427286868964791
+						}
+					]
+				},
+				{
+					"functionName": "ShowErrorDialog",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "errorMsg",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 703146485102974
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 951107947875460,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 739615114453325,
+									"parameters": {
+										"object": "Text",
+										"expression": "Text.Type",
+										"comparison": 0,
+										"value": "\"playfabErrorText\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 741551923257715,
+									"parameters": {
+										"text": "errorMsg"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 258421647128962,
+									"parameters": {
+										"layer": "\"UI\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 762274570259259,
+									"parameters": {
+										"layer": "\"Error\"",
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 226386257348979
+						}
+					]
+				},
+				{
+					"functionName": "GoPreviousLayout",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
 					"actions": [
 						{
-							"id": "set-text",
-							"objectClass": "Text",
-							"sid": 927791492945436,
+							"id": "go-to-nextprevious-layout",
+							"objectClass": "System",
+							"sid": 105319879861857,
 							"parameters": {
-								"text": "errorMsg"
+								"which": "previous"
 							}
-						},
+						}
+					],
+					"sid": 666516066297878
+				},
+				{
+					"functionName": "ShowEmailSent",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 830010231451986,
+							"sid": 392900524256894,
 							"parameters": {
 								"layer": "\"UI\"",
 								"visibility": "invisible"
@@ -672,37 +913,17 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 858372514367613,
+							"sid": 713717186768084,
 							"parameters": {
-								"layer": "\"Error\"",
+								"layer": "\"EmailSent\"",
 								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 526594793819766
-				}
-			]
-		},
-		{
-			"functionName": "GoPreviousLayout",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "go-to-nextprevious-layout",
-					"objectClass": "System",
-					"sid": 260145059744112,
-					"parameters": {
-						"which": "previous"
-					}
+					"sid": 366765441836998
 				}
 			],
-			"sid": 831446944775879
+			"sid": 773431344703787
 		}
 	],
 	"sid": 955479893279808

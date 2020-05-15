@@ -1,0 +1,15 @@
+{
+	"name": "CloseEmailSent",
+	"plugin-id": "Button",
+	"sid": 441892141635809,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"sid": 386929968817517
+		}
+	],
+	"behaviorTypes": []
+}

@@ -1,0 +1,15 @@
+{
+	"name": "RegisterCheckbox",
+	"plugin-id": "Button",
+	"sid": 506867865285666,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"sid": 536816427242784
+		}
+	],
+	"behaviorTypes": []
+}
