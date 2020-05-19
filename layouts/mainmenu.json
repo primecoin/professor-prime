@@ -389,7 +389,7 @@
 						"character-height": 268,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
 						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
-						"scale": 0.15,
+						"scale": 0.1,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
@@ -422,10 +422,10 @@
 						}
 					},
 					"world": {
-						"x": 427,
-						"y": 448,
-						"width": 479,
-						"height": 44,
+						"x": 768,
+						"y": 457,
+						"width": 128,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -713,7 +713,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 64,
-						"y": 432,
+						"y": 433,
 						"width": 80,
 						"height": 80,
 						"originX": 0.5,
@@ -744,8 +744,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 680,
-						"y": 432,
+						"x": 688,
+						"y": 368,
 						"width": 144,
 						"height": 32,
 						"originX": 0,
@@ -756,6 +756,108 @@
 							1,
 							1
 						]
+					}
+				},
+				{
+					"type": "SpriteFont",
+					"properties": {
+						"text": "Sign up for leaderboards and prizes!",
+						"enable-bbcode": true,
+						"character-width": 185,
+						"character-height": 268,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[80,\" \"],[13,\"|\"],[28,\"[\"],[29,\"]\"],[31,\"`\"],[42,\"°\"],[44,\",;'\"],[45,\".:\"],[49,\"!\"],[50,\"il\"],[55,\"()\"],[62,\"-\"],[66,\"£\"],[67,\"€\"],[68,\"<>\"],[72,\"~\"],[77,\"1\"],[80,\"+\"],[81,\"=\"],[83,\"*\"],[84,\"\\\"\"],[97,\"t\"],[98,\"I\"],[101,\"s\"],[102,\"Fj2?\"],[103,\"f\"],[104,\"o\"],[106,\"c\"],[108,\"EJu\"],[109,\"hr\"],[110,\"Sn\"],[111,\"akv\"],[112,\"e\"],[114,\"L@\"],[115,\"g\"],[116,\"Zpz5\"],[117,\"BPbd$\"],[118,\"C\"],[120,\"679\"],[124,\"4\"],[126,\"Ky\"],[127,\"q3&\"],[129,\"DHR\\/\"],[131,\"G\"],[132,\"T\"],[133,\"x\"],[134,\"OY0\"],[135,\"ANVX\"],[137,\"#\"],[139,\"U\"],[140,\"8\"],[147,\"Q\"],[157,\"%\"],[159,\"Ww\"],[162,\"_\"],[166,\"m\"],[183,\"M\"]]",
+						"scale": 0.1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 99,
+					"instanceVariables": {
+						"Type": ""
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 156,
+						"y": 441,
+						"width": 368,
+						"height": 32,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LeftArrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 100,
+					"instanceVariables": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 1,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 131,
+						"y": 456,
+						"width": 23.684712286561968,
+						"height": 23.684712286561968,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
 					}
 				}
 			],

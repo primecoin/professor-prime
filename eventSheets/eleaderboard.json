@@ -44,7 +44,7 @@
 					"objectClass": "System",
 					"sid": 644570454905548,
 					"parameters": {
-						"layout": "SocialLogin"
+						"layout": "Authentication"
 					}
 				}
 			],
@@ -66,63 +66,6 @@
 				}
 			],
 			"sid": 544426386945227
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tap-object",
-					"objectClass": "Touch",
-					"sid": 322678709798477,
-					"parameters": {
-						"object": "friends"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 268850026134748,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "has-key",
-							"objectClass": "GameData",
-							"sid": 513512933491564,
-							"parameters": {
-								"key": "\"PlayFabCustomId\""
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 978243693080562,
-							"parameters": {
-								"layout": "SocialLogin"
-							}
-						}
-					],
-					"sid": 607734282578062,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 784677630194421
-						}
-					],
-					"actions": [],
-					"sid": 764615436043407,
-					"disabled": true
-				}
-			]
 		},
 		{
 			"functionName": "LeaderboardDataLoaded",
@@ -152,6 +95,31 @@
 				}
 			],
 			"sid": 451697605167941
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 893482405238182,
+					"parameters": {
+						"object": "Logout"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "PlayFabLogout(runtime);"
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 843157705539910
+				}
+			],
+			"sid": 553036730348079
 		}
 	],
 	"sid": 875530414948720

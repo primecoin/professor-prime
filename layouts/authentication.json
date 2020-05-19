@@ -1,5 +1,5 @@
 {
-	"name": "SocialLogin",
+	"name": "Authentication",
 	"layers": [
 		{
 			"name": "UI",
@@ -1041,7 +1041,7 @@
 				{
 					"type": "Text",
 					"properties": {
-						"text": "IMPORTANT PLEASE READ\n\nProfessor-Prime is a free to play game created by PRIMECOIN, which allows you to win XPM (our native cryptocurrency).\n\nYes the top 3 places on our leaderboards each month will receive some XPM directly into their wallets.\n\nYou can find our telegram channel and other social media links on the front menu, join up and show of your scores!\nThe winner will be contacted via email directly to receive their prize.\n\nPrimecoin \nA new era of consensus. ",
+						"text": "[color=yellow]IMPORTANT PLEASE READ[/color]\n\nProfessor-Prime is a free to play game created by PRIMECOIN, which allows you to win XPM (our native cryptocurrency).\n\nYes the top 3 places on our leaderboards each month will receive some XPM directly into their wallets.\n\nSo make sure to sign up in order to be in with a chance to win each month!\n\nYou can find our telegram channel and other social media links on the front menu, join up and show of your scores!\nThe winner will be contacted via email directly to receive their prize.\n\nPrimecoin \nA new era of consensus.",
 						"enable-bbcode": true,
 						"font": "Big_Bottom_Typeface_Normal",
 						"size": 10,
@@ -1146,5 +1146,5 @@
 	"width": 854,
 	"height": 480,
 	"unboundedScrolling": false,
-	"eventSheet": "eSocialLogin"
+	"eventSheet": "eAuthentication"
 }

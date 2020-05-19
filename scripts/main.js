@@ -62,6 +62,18 @@ function PlayFabDataSession(runtime) {
     this.getCustomGameData = function (key) {
         return this.getGameDataMap().get(key);
     }
+
+    this.resetPlayFabStoredData = function() {
+        debugger;
+        const gameDataMap = this.getGameDataMap();
+
+        gameDataMap.delete(PLAYFAB_SESSION_TICKET_KEY);
+        gameDataMap.delete(PLAYFAB_ENTITY_TOKEN_KEY);
+        gameDataMap.delete(PLAYFAB_ENTITY_CUSTOM_ID_KEY);
+
+        // call Construct local storage save
+        this.runtime.callFunction("save_game_data");
+    }
 }
 
 function getPlayFabSessionTicket(result) {
@@ -140,7 +152,9 @@ function GetLeaderboard(runtime) {
                 console.log(`entryText: ${entryText}`);
             }
             console.log(`final entryText: ${entryText}`);
-            leaderboardText.text = entryText;
+            if(entryText !== null) {
+                leaderboardText.text = entryText;
+            }
         }
         runtime.callFunction("LeaderboardDataLoaded");
     });
@@ -218,6 +232,12 @@ function LoginToPlayFab(runtime) {
             runtime.callFunction("GoPreviousLayout");
         }
     });
+}
+
+function PlayFabLogout(runtime) {
+    // just delete the data in GameData so we don't have customId
+    playFabSessionData.resetPlayFabStoredData();
+    console.log("Resseting PlayFab Stored Data");
 }
 
 function ShowErrorDialog(runtime, error) {
@@ -306,7 +326,7 @@ function RegisterToPlayFab(runtime) {
             const gameDataMap = playFabSessionData.getGameDataMap();
             if(!gameDataMap.has(REGISTRATION_MESSAGE_KEY) || gameDataMap.get(REGISTRATION_MESSAGE_KEY) !== 1) {
                 playFabSessionData.storeCustomGameData(REGISTRATION_MESSAGE_KEY, 1);
-                runtime.callFunction("ShowRegistrationMessage");
+                // runtime.callFunction("ShowRegistrationMessage");
             } else {
                 // exit to the previous layout (?)
                 runtime.callFunction("GoPreviousLayout");

@@ -521,6 +521,30 @@
 					"sid": 633024709486716
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 322678709798477,
+					"parameters": {
+						"object": "friends"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 659494054780812,
+					"parameters": {
+						"layout": "Authentication"
+					}
+				}
+			],
+			"sid": 268850026134748
 		}
 	],
 	"sid": 360384029801467

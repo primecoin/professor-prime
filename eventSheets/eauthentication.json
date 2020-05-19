@@ -1,5 +1,5 @@
 {
-	"name": "eSocialLogin",
+	"name": "eAuthentication",
 	"events": [
 		{
 			"eventType": "include",
@@ -275,133 +275,15 @@
 							}
 						},
 						{
-							"id": "go-to-nextprevious-layout",
+							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 311465231187010,
+							"sid": 295999536456056,
 							"parameters": {
-								"which": "previous"
+								"layout": "MainMenu"
 							}
 						}
 					],
 					"sid": 454198956443988
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Button",
-							"sid": 324014913316430,
-							"parameters": {
-								"instance-variable": "Type",
-								"comparison": 0,
-								"value": "\"isRegisterCheckbox\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"type": "comment",
-							"text": "Register checkbox toggled",
-							"text-color": [
-								0,
-								1,
-								0,
-								1
-							]
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 131385694871200,
-							"parameters": {
-								"type": "log",
-								"message": "\"Register Checkbox Clicked\""
-							}
-						}
-					],
-					"sid": 284030951852344,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-checked",
-									"objectClass": "Button",
-									"sid": 158073245968544
-								}
-							],
-							"actions": [
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 798432664704122,
-									"parameters": {
-										"type": "log",
-										"message": "\"Button is checked\""
-									}
-								},
-								{
-									"callFunction": "ToggleRegisterComponents",
-									"sid": 420866807250520,
-									"parameters": [
-										"1"
-									]
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 622501857660421,
-									"parameters": {
-										"variable": "IsRegistration",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 819777875777445,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 556745074489251
-								}
-							],
-							"actions": [
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 258523146077778,
-									"parameters": {
-										"type": "log",
-										"message": "\"Button is not checked\""
-									}
-								},
-								{
-									"callFunction": "ToggleRegisterComponents",
-									"sid": 961591163808034,
-									"parameters": [
-										"0"
-									]
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 560312811836752,
-									"parameters": {
-										"variable": "IsRegistration",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 518132526079893,
-							"disabled": true
-						}
-					]
 				},
 				{
 					"eventType": "block",
@@ -459,29 +341,6 @@
 					"sid": 424555305959852
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 604031818350580
-				}
-			],
-			"actions": [
-				{
-					"id": "set-css-style",
-					"objectClass": "RegisterCheckbox",
-					"sid": 871533475166202,
-					"parameters": {
-						"property-name": "\"transform\"",
-						"value": "\"scale(1.5)\""
-					}
-				}
-			],
-			"sid": 195924224461112,
-			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -659,7 +518,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "SocialLogin Functions",
+			"title": "Authentication Functions",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -984,12 +843,69 @@
 								"layer": "\"Message\"",
 								"visibility": "visible"
 							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "GameData",
+							"sid": 581748004762978,
+							"parameters": {
+								"key": "\"RegistrationMessage\"",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "save_game_data",
+							"sid": 851363342013783
 						}
 					],
 					"sid": 100499307828242
 				}
 			],
 			"sid": 773431344703787
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 737959172491601
+				}
+			],
+			"actions": [],
+			"sid": 870083727017874,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-key",
+							"objectClass": "GameData",
+							"sid": 260266271071147,
+							"parameters": {
+								"key": "\"PlayFabCustomId\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "has-key",
+							"objectClass": "GameData",
+							"sid": 406578991853901,
+							"parameters": {
+								"key": "\"RegistrationMessage\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ShowRegistrationMessage",
+							"sid": 952578425916065
+						}
+					],
+					"sid": 689896097227740
+				}
+			]
 		}
 	],
 	"sid": 955479893279808
