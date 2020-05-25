@@ -192,7 +192,8 @@
 			"CloseEmailSent",
 			"CloseMessage",
 			"LeftArrow",
-			"Logout"
+			"Logout",
+			"FullScreen"
 		],
 		"subfolders": [
 			{
@@ -454,7 +455,7 @@
 		"appId": "io.primecoin.professorprime",
 		"pixelRounding": true,
 		"useLoaderLayout": true,
-		"fullscreenMode": "letterbox-scale",
+		"fullscreenMode": "scale-outer",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [

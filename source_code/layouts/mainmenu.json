@@ -422,8 +422,8 @@
 						}
 					},
 					"world": {
-						"x": 768,
-						"y": 457,
+						"x": 48,
+						"y": 26,
 						"width": 128,
 						"height": 32,
 						"originX": 0.5,
@@ -744,8 +744,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 688,
-						"y": 368,
+						"x": 705,
+						"y": 229,
 						"width": 144,
 						"height": 32,
 						"originX": 0,
@@ -848,6 +848,35 @@
 						"y": 456,
 						"width": 23.684712286561968,
 						"height": 23.684712286561968,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "FullScreen",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 101,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 824,
+						"y": 450,
+						"width": 40,
+						"height": 40,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

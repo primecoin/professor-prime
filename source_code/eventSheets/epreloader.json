@@ -124,6 +124,33 @@
 					"parameters": {
 						"key": "\"GameData\""
 					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "PrimeLogo",
+					"sid": 727871178647627,
+					"parameters": {
+						"width": "LayoutWidth",
+						"height": "LayoutHeight"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 905805724948138,
+					"parameters": {
+						"type": "log",
+						"message": "\"Layout width: \" & LayoutWidth & \" Layout height; \" & LayoutHeight"
+					}
+				},
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 863172742431600,
+					"parameters": {
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "auto"
+					}
 				}
 			],
 			"sid": 211545487968375
@@ -353,6 +380,37 @@
 				}
 			],
 			"sid": 994728741843744
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-resized",
+					"objectClass": "Browser",
+					"sid": 729590542914662
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 829063829204724,
+					"parameters": {
+						"type": "log",
+						"message": "\"On Resized\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 774920249798312,
+					"parameters": {
+						"type": "log",
+						"message": "\"Layout width: \" & LayoutWidth & \" Layout height; \" & LayoutHeight"
+					}
+				}
+			],
+			"sid": 472673553949970
 		}
 	],
 	"sid": 664330847084391

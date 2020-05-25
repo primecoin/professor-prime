@@ -2,6 +2,16 @@
 	"name": "eMainMenu",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "CanToggleFullScreen",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 181016334215049
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "eSocialLinks"
 		},
@@ -76,6 +86,185 @@
 								}
 							],
 							"sid": 558748274834576
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-android",
+									"objectClass": "PlatformInfo",
+									"sid": 973729791137763,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "FullScreen",
+									"sid": 999309704673703,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 445708744975078,
+									"parameters": {
+										"type": "log",
+										"message": "\"Show full screen button\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 448760205931866,
+									"parameters": {
+										"variable": "CanToggleFullScreen",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 263581612261663
+						}
+					]
+				},
+				{
+					"functionName": "ToggleFullScreenButton",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "FullScreen",
+							"sid": 804332782893237,
+							"parameters": {
+								"frame-number": "FullScreen.AnimationFrame = 0 ? 1 : 0"
+							}
+						}
+					],
+					"sid": 332660793158890
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 967601474509380,
+							"parameters": {
+								"object": "FullScreen"
+							}
+						},
+						{
+							"id": "is-on-android",
+							"objectClass": "PlatformInfo",
+							"sid": 736273279605434,
+							"isInverted": true
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 471523556019368,
+							"parameters": {
+								"first-value": "CanToggleFullScreen",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ToggleFullScreenButton",
+							"sid": 282191798685031
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 240784050016457,
+							"parameters": {
+								"type": "log",
+								"message": "\"Click full screen\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 963437298476646,
+							"parameters": {
+								"variable": "CanToggleFullScreen",
+								"value": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 423861657304405,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 866311113682371,
+							"parameters": {
+								"variable": "CanToggleFullScreen",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 239523959447320,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 624858068647695,
+									"parameters": {
+										"first-value": "FullScreen.AnimationFrame",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "request-fullscreen",
+									"objectClass": "Browser",
+									"sid": 140433151142385,
+									"parameters": {
+										"mode": "stretch-scale-inner",
+										"navigation-ui": "auto"
+									}
+								}
+							],
+							"sid": 454300975791496
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 803593730323223
+								}
+							],
+							"actions": [
+								{
+									"id": "cancel-fullscreen",
+									"objectClass": "Browser",
+									"sid": 449151924627958
+								}
+							],
+							"sid": 294896538265615
 						}
 					]
 				}
