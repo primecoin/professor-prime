@@ -126,15 +126,6 @@
 					}
 				},
 				{
-					"id": "set-size",
-					"objectClass": "PrimeLogo",
-					"sid": 727871178647627,
-					"parameters": {
-						"width": "LayoutWidth",
-						"height": "LayoutHeight"
-					}
-				},
-				{
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 905805724948138,

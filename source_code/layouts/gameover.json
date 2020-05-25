@@ -20,8 +20,8 @@
 					"world": {
 						"x": 427,
 						"y": 240,
-						"width": 854,
-						"height": 479.99999999999994,
+						"width": 1000,
+						"height": 565,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -78,7 +78,7 @@
 					"world": {
 						"x": 427,
 						"y": 240,
-						"width": 854,
+						"width": 1000,
 						"height": 151,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -502,6 +502,6 @@
 	"effectTypes": [],
 	"width": 854,
 	"height": 480,
-	"unboundedScrolling": false,
+	"unboundedScrolling": true,
 	"eventSheet": "eGameOver"
 }

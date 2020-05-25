@@ -252,6 +252,24 @@
 								"volume": "0",
 								"tag-optional": "\"Sounds\""
 							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "DeadlyCog",
+							"sid": 147371779441444,
+							"parameters": {
+								"x": "32",
+								"y": "32"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Spikes",
+							"sid": 237056720325939,
+							"parameters": {
+								"x": "62",
+								"y": "448"
+							}
 						}
 					],
 					"sid": 891310828017803

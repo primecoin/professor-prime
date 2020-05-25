@@ -126,9 +126,40 @@
 								}
 							],
 							"sid": 263581612261663
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-fullscreen",
+									"objectClass": "Browser",
+									"sid": 488911543640779
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "FullScreen",
+									"sid": 362729512720316,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 831655672612431
 						}
 					]
-				},
+				}
+			],
+			"sid": 300913924374451
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ToggleFullscreen",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
 					"functionName": "ToggleFullScreenButton",
 					"functionDescription": "",
@@ -142,13 +173,13 @@
 						{
 							"id": "set-animation-frame",
 							"objectClass": "FullScreen",
-							"sid": 804332782893237,
+							"sid": 612632647000012,
 							"parameters": {
 								"frame-number": "FullScreen.AnimationFrame = 0 ? 1 : 0"
 							}
 						}
 					],
-					"sid": 332660793158890
+					"sid": 527551524965722
 				},
 				{
 					"eventType": "block",
@@ -156,7 +187,7 @@
 						{
 							"id": "is-touching-object",
 							"objectClass": "Touch",
-							"sid": 967601474509380,
+							"sid": 215566419154001,
 							"parameters": {
 								"object": "FullScreen"
 							}
@@ -164,13 +195,13 @@
 						{
 							"id": "is-on-android",
 							"objectClass": "PlatformInfo",
-							"sid": 736273279605434,
+							"sid": 491472852610225,
 							"isInverted": true
 						},
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 471523556019368,
+							"sid": 617880225101306,
 							"parameters": {
 								"first-value": "CanToggleFullScreen",
 								"comparison": 0,
@@ -181,12 +212,12 @@
 					"actions": [
 						{
 							"callFunction": "ToggleFullScreenButton",
-							"sid": 282191798685031
+							"sid": 495951820184103
 						},
 						{
 							"id": "log",
 							"objectClass": "Browser",
-							"sid": 240784050016457,
+							"sid": 792370409620916,
 							"parameters": {
 								"type": "log",
 								"message": "\"Click full screen\""
@@ -195,7 +226,7 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 963437298476646,
+							"sid": 979542350212273,
 							"parameters": {
 								"variable": "CanToggleFullScreen",
 								"value": "0"
@@ -204,7 +235,7 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 423861657304405,
+							"sid": 878381888934415,
 							"parameters": {
 								"seconds": "1"
 							}
@@ -212,14 +243,14 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 866311113682371,
+							"sid": 978891709731851,
 							"parameters": {
 								"variable": "CanToggleFullScreen",
 								"value": "1"
 							}
 						}
 					],
-					"sid": 239523959447320,
+					"sid": 191196558275892,
 					"children": [
 						{
 							"eventType": "block",
@@ -227,7 +258,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 624858068647695,
+									"sid": 868059022363175,
 									"parameters": {
 										"first-value": "FullScreen.AnimationFrame",
 										"comparison": 0,
@@ -239,14 +270,14 @@
 								{
 									"id": "request-fullscreen",
 									"objectClass": "Browser",
-									"sid": 140433151142385,
+									"sid": 760718527389262,
 									"parameters": {
-										"mode": "stretch-scale-inner",
+										"mode": "stretch-scale-outer",
 										"navigation-ui": "auto"
 									}
 								}
 							],
-							"sid": 454300975791496
+							"sid": 238362920302398
 						},
 						{
 							"eventType": "block",
@@ -254,22 +285,49 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 803593730323223
+									"sid": 163884422056974
 								}
 							],
 							"actions": [
 								{
 									"id": "cancel-fullscreen",
 									"objectClass": "Browser",
-									"sid": 449151924627958
+									"sid": 605940110892408
 								}
 							],
-							"sid": 294896538265615
+							"sid": 558621876856673
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 708047114885219,
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 879717161342144
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "FullScreen",
+							"sid": 528455293074405,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 339629495418857
 				}
 			],
-			"sid": 300913924374451
+			"sid": 537276674674590
 		},
 		{
 			"eventType": "group",
@@ -626,114 +684,134 @@
 			"sid": 345993740869628
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tap-object",
-					"objectClass": "Touch",
-					"sid": 502088053521471,
-					"parameters": {
-						"object": "Ranking"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 987206880147641,
-					"parameters": {
-						"layout": "Leaderboard"
-					}
-				}
-			],
-			"sid": 462329663243500
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 990396598685530,
-					"parameters": {
-						"variable": "DEBUG"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "ClearStorage",
-					"sid": 450761641027686
-				}
-			],
-			"sid": 689757628226726
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 468968170771362
-				}
-			],
-			"actions": [],
-			"sid": 922283387031891,
+			"eventType": "group",
+			"disabled": false,
+			"title": "Leaderboard",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-clicked",
-							"objectClass": "ClearStorage",
-							"sid": 412763366359352
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 820951104612697,
+							"parameters": {
+								"object": "Ranking"
+							}
 						}
 					],
 					"actions": [
 						{
-							"callFunction": "ResetGameData",
-							"sid": 285936035799488
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 180668379447877,
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 316202713457955,
 							"parameters": {
-								"type": "log",
-								"message": "\"LocalStorage Cleared!\""
+								"layout": "Leaderboard"
 							}
 						}
 					],
-					"sid": 633024709486716
+					"sid": 811549131681905
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 593650924957446,
+							"parameters": {
+								"object": "friends"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 139618882499416,
+							"parameters": {
+								"layout": "Authentication"
+							}
+						}
+					],
+					"sid": 564168863947346
 				}
-			]
+			],
+			"sid": 705310318007904
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Clear Local Storage",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-tap-object",
-					"objectClass": "Touch",
-					"sid": 322678709798477,
-					"parameters": {
-						"object": "friends"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 629080123659379,
+							"parameters": {
+								"variable": "DEBUG"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "ClearStorage",
+							"sid": 692437122599357
+						}
+					],
+					"sid": 288250053062598
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 827053803005937
+						}
+					],
+					"actions": [],
+					"sid": 941545740909452,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-clicked",
+									"objectClass": "ClearStorage",
+									"sid": 275575083510111
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "ResetGameData",
+									"sid": 689488794211981
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 371651994612603,
+									"parameters": {
+										"type": "log",
+										"message": "\"LocalStorage Cleared!\""
+									}
+								}
+							],
+							"sid": 892471650571243
+						}
+					]
 				}
 			],
-			"actions": [
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 659494054780812,
-					"parameters": {
-						"layout": "Authentication"
-					}
-				}
-			],
-			"sid": 268850026134748
+			"sid": 206697502244541
 		}
 	],
 	"sid": 360384029801467

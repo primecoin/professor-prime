@@ -321,50 +321,6 @@
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "Spikes",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Default",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 24,
-					"instanceVariables": {
-						"Speed": 40,
-						"EnemyType": "Spikes"
-					},
-					"behaviors": {
-						"Bullet": {
-							"properties": {
-								"speed": 40,
-								"acceleration": 0,
-								"gravity": 0,
-								"bounce-off-solids": false,
-								"set-angle": false,
-								"step": false,
-								"enabled": false
-							}
-						}
-					},
-					"world": {
-						"x": 120,
-						"y": 456,
-						"width": 123.99999999999999,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "Player",
 					"properties": {
 						"initially-visible": true,
@@ -458,50 +414,6 @@
 					}
 				},
 				{
-					"type": "DeadlyCog",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 8,
-					"instanceVariables": {
-						"Speed": 40,
-						"EnemyType": "DeadlyCog"
-					},
-					"behaviors": {
-						"Bullet": {
-							"properties": {
-								"speed": 40,
-								"acceleration": 0,
-								"gravity": 0,
-								"bounce-off-solids": false,
-								"set-angle": false,
-								"step": false,
-								"enabled": false
-							}
-						}
-					},
-					"world": {
-						"x": 96,
-						"y": 32,
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "Spikes",
 					"properties": {
 						"initially-visible": true,
@@ -529,8 +441,8 @@
 						}
 					},
 					"world": {
-						"x": 40,
-						"y": 456,
+						"x": 62,
+						"y": 448,
 						"width": 123.99999999999999,
 						"height": 64,
 						"originX": 0.5,
@@ -851,10 +763,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 0,
-						"y": 0,
-						"width": 854,
-						"height": 480,
+						"x": -180.34683425809783,
+						"y": -101.3659021591182,
+						"width": 1214.6936685161957,
+						"height": 682.7318043182364,
 						"originX": 0,
 						"originY": 0,
 						"color": [

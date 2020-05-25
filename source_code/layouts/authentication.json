@@ -124,7 +124,17 @@
 					"instanceVariables": {
 						"Type": "SocialLoginTitle"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 294,
 						"y": 54,
@@ -168,7 +178,17 @@
 					"instanceVariables": {
 						"Type": "SocialLoginTitle"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 294,
 						"y": 137,
@@ -694,7 +714,17 @@
 					"instanceVariables": {
 						"Type": "SocialLoginTitle"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 294,
 						"y": 67,
@@ -738,7 +768,17 @@
 					"instanceVariables": {
 						"Type": "playfabErrorText"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 427,
 						"y": 265.6693293612366,
@@ -843,7 +883,17 @@
 					"instanceVariables": {
 						"Type": "EmailSent"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 0,
 						"y": 171.5,
@@ -1064,7 +1114,17 @@
 					"instanceVariables": {
 						"Type": "SocialLoginTitle"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 132,
 						"y": 83.5,
@@ -1145,6 +1205,6 @@
 	"effectTypes": [],
 	"width": 854,
 	"height": 480,
-	"unboundedScrolling": false,
+	"unboundedScrolling": true,
 	"eventSheet": "eAuthentication"
 }
