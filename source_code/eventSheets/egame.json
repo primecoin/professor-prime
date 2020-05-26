@@ -254,21 +254,30 @@
 							}
 						},
 						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 426824690287369,
+							"parameters": {
+								"type": "log",
+								"message": "\"VieportLeft: \" & ViewportLeft(0) & \" top: \" & ViewportTop(0) & \" bottom: \" & ViewportBottom(0) "
+							}
+						},
+						{
 							"id": "set-position",
 							"objectClass": "DeadlyCog",
-							"sid": 147371779441444,
+							"sid": 520649993164544,
 							"parameters": {
-								"x": "32",
-								"y": "32"
+								"x": "ViewportLeft(3)",
+								"y": "ViewportTop(3) + 32"
 							}
 						},
 						{
 							"id": "set-position",
 							"objectClass": "Spikes",
-							"sid": 237056720325939,
+							"sid": 646996375636814,
 							"parameters": {
-								"x": "62",
-								"y": "448"
+								"x": "ViewportLeft(3)",
+								"y": "ViewportBottom(3) - 32"
 							}
 						}
 					],
@@ -798,11 +807,11 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 902746053041816,
+											"sid": 616714292943424,
 											"parameters": {
 												"first-value": "DeadlyCog(-1).X + (DeadlyCog.Width / 2)",
 												"comparison": 3,
-												"second-value": "LayoutWidth"
+												"second-value": "ViewportRight(3)"
 											}
 										},
 										{
@@ -912,10 +921,10 @@
 										{
 											"id": "compare-x",
 											"objectClass": "DeadlyCog",
-											"sid": 712910047054184,
+											"sid": 164180440077606,
 											"parameters": {
 												"comparison": 3,
-												"x-co-ordinate": "-(DeadlyCog.Width/2)"
+												"x-co-ordinate": "ViewportLeft(3)-(DeadlyCog.Width/2)"
 											}
 										}
 									],
@@ -961,11 +970,11 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 100809590396490,
+									"sid": 959916291559894,
 									"parameters": {
 										"first-value": "Spikes(-1).X + (Spikes.Width / 2)",
 										"comparison": 3,
-										"second-value": "LayoutWidth"
+										"second-value": "ViewportRight(3)"
 									}
 								}
 							],
@@ -1063,13 +1072,12 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 151007163280241,
+									"id": "compare-x",
+									"objectClass": "Spikes",
+									"sid": 774685337386104,
 									"parameters": {
-										"first-value": "Spikes.X + Spikes.Width",
 										"comparison": 3,
-										"second-value": "0"
+										"x-co-ordinate": "ViewportLeft(3) - (Spikes.Width/2)"
 									}
 								}
 							],
@@ -1558,19 +1566,19 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 384080192436498,
+									"sid": 602624266177739,
 									"parameters": {
 										"variable": "XPosition",
-										"value": "LayoutWidth+50"
+										"value": "ViewportRight(3)+50"
 									}
 								},
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 995618643623022,
+									"sid": 104269954667047,
 									"parameters": {
 										"variable": "YPosition",
-										"value": "random(64, LayoutHeight-64)"
+										"value": "random(64, ViewportHeight(3)-64)"
 									}
 								},
 								{
@@ -1685,10 +1693,10 @@
 							"actions": [
 								{
 									"callFunction": "create_coins",
-									"sid": 184329934507633,
+									"sid": 341083215795206,
 									"parameters": [
-										"LayoutWidth + 50",
-										"random(64, LayoutHeight-64)",
+										"ViewportRight(3)+ 50",
+										"random(64, ViewportHeight(3)-64)",
 										"random(MinSpeed, MaxSpeed)"
 									]
 								}
@@ -1745,11 +1753,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 533042094324579,
+							"sid": 738677814858330,
 							"parameters": {
 								"first-value": "Cloud.X + Cloud.Width",
 								"comparison": 3,
-								"second-value": "0"
+								"second-value": "ViewportLeft(1)"
 							}
 						}
 					],

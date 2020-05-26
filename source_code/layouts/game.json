@@ -48,8 +48,8 @@
 					"world": {
 						"x": 432,
 						"y": 248,
-						"width": 938,
-						"height": 538,
+						"width": 2220,
+						"height": 1273,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -370,50 +370,6 @@
 					}
 				},
 				{
-					"type": "DeadlyCog",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 7,
-					"instanceVariables": {
-						"Speed": 40,
-						"EnemyType": "DeadlyCog"
-					},
-					"behaviors": {
-						"Bullet": {
-							"properties": {
-								"speed": 40,
-								"acceleration": 0,
-								"gravity": 0,
-								"bounce-off-solids": false,
-								"set-angle": false,
-								"step": false,
-								"enabled": false
-							}
-						}
-					},
-					"world": {
-						"x": 32,
-						"y": 32,
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "Spikes",
 					"properties": {
 						"initially-visible": true,
@@ -441,9 +397,53 @@
 						}
 					},
 					"world": {
-						"x": 62,
-						"y": 448,
+						"x": 323,
+						"y": 453,
 						"width": 123.99999999999999,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "DeadlyCog",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 7,
+					"instanceVariables": {
+						"Speed": 40,
+						"EnemyType": "DeadlyCog"
+					},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 40,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
+					"world": {
+						"x": 278,
+						"y": 33,
+						"width": 64,
 						"height": 64,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -763,10 +763,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": -180.34683425809783,
-						"y": -101.3659021591182,
-						"width": 1214.6936685161957,
-						"height": 682.7318043182364,
+						"x": -683.0000000000001,
+						"y": -396.50000000000006,
+						"width": 2220,
+						"height": 1273,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -865,10 +865,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 0,
-						"y": 0,
-						"width": 854,
-						"height": 480,
+						"x": -683,
+						"y": -396.5,
+						"width": 2220,
+						"height": 1273,
 						"originX": 0,
 						"originY": 0,
 						"color": [

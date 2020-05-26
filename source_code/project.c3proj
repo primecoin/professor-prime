@@ -201,7 +201,9 @@
 			"CloseMessage",
 			"LeftArrow",
 			"Logout",
-			"FullScreen"
+			"FullScreen",
+			"Marker",
+			"CheckeredPattern"
 		],
 		"subfolders": [
 			{
@@ -456,7 +458,7 @@
 	},
 	"properties": {
 		"description": "Collect the Prime Coins and avoid being sucked up by the cooling system for the other cryptocoins.",
-		"version": "1.3.2.0",
+		"version": "1.3.2.1",
 		"author": "Primecoin",
 		"authorEmail": "",
 		"authorWebsite": "https://primecoin.io/",
@@ -465,7 +467,7 @@
 		"useLoaderLayout": true,
 		"fullscreenMode": "scale-outer",
 		"fullscreenQuality": "high",
-		"viewportFit": "cover",
+		"viewportFit": "auto",
 		"backgroundColor": [
 			0,
 			0,

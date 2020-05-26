@@ -131,7 +131,7 @@
 								"top-edge": "window-top",
 								"right-edge": "none",
 								"bottom-edge": "none",
-								"enabled": true
+								"enabled": false
 							}
 						}
 					},
@@ -185,7 +185,7 @@
 								"top-edge": "window-top",
 								"right-edge": "none",
 								"bottom-edge": "none",
-								"enabled": true
+								"enabled": false
 							}
 						}
 					},
@@ -1121,7 +1121,7 @@
 								"top-edge": "window-top",
 								"right-edge": "none",
 								"bottom-edge": "none",
-								"enabled": true
+								"enabled": false
 							}
 						}
 					},

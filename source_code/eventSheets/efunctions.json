@@ -231,6 +231,80 @@
 				}
 			],
 			"sid": 559263203019528
+		},
+		{
+			"functionName": "create_markers",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Layer",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 863042897758042
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 566239209872554,
+					"parameters": {
+						"type": "log",
+						"message": "\"Created Markers called\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 376527014041549,
+					"parameters": {
+						"object-to-create": "Marker",
+						"layer": "Layer",
+						"x": "32",
+						"y": "32"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 868684459148267,
+					"parameters": {
+						"object-to-create": "Marker",
+						"layer": "Layer",
+						"x": "LayoutWidth-32",
+						"y": "32"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 961334997952980,
+					"parameters": {
+						"object-to-create": "Marker",
+						"layer": "Layer",
+						"x": "LayoutWidth-32",
+						"y": "LayoutHeight-32"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 417674709715222,
+					"parameters": {
+						"object-to-create": "Marker",
+						"layer": "Layer",
+						"x": "32",
+						"y": "LayoutHeight-32"
+					}
+				}
+			],
+			"sid": 362784444398635
 		}
 	],
 	"sid": 150829195223343

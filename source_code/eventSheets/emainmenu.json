@@ -58,6 +58,15 @@
 							"parameters": {
 								"audio-file": "Main background sound for inngame"
 							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 440367675317998,
+							"parameters": {
+								"type": "log",
+								"message": "\"VieportLeft: \" & ViewportLeft(0) & \" top: \" & ViewportTop(0) & \" bottom: \" & ViewportBottom(0) "
+							}
 						}
 					],
 					"sid": 837743535046832,
@@ -663,18 +672,22 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-outside-layout",
+							"id": "compare-x",
 							"objectClass": "Cloud",
-							"sid": 897475346819429
+							"sid": 107087528247074,
+							"parameters": {
+								"comparison": 4,
+								"x-co-ordinate": "ViewportRight(0)+(Cloud.Width/2)"
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-x",
 							"objectClass": "Cloud",
-							"sid": 439114263479875,
+							"sid": 269555679824687,
 							"parameters": {
-								"x": "0-Cloud.Width"
+								"x": "ViewportLeft(0)-(Cloud.Width/2)"
 							}
 						}
 					],
