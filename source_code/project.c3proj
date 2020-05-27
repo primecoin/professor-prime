@@ -119,6 +119,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r197.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Flash",
 			"name": "Flash",
@@ -203,7 +211,8 @@
 			"Logout",
 			"FullScreen",
 			"Marker",
-			"CheckeredPattern"
+			"CheckeredPattern",
+			"Keyboard"
 		],
 		"subfolders": [
 			{
@@ -458,7 +467,7 @@
 	},
 	"properties": {
 		"description": "Collect the Prime Coins and avoid being sucked up by the cooling system for the other cryptocoins.",
-		"version": "1.3.2.1",
+		"version": "1.3.2.2",
 		"author": "Primecoin",
 		"authorEmail": "",
 		"authorWebsite": "https://primecoin.io/",

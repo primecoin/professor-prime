@@ -906,6 +906,88 @@
 					"sid": 689896097227740
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-key-released",
+					"objectClass": "Keyboard",
+					"sid": 352027875492090
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 707476685662990,
+					"parameters": {
+						"type": "log",
+						"message": "\"KeyCode: \" & Keyboard.LastKeyCode"
+					}
+				}
+			],
+			"sid": 620153723613389,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 473724842669841,
+							"parameters": {
+								"first-value": "Keyboard.LastKeyCode",
+								"comparison": 0,
+								"second-value": "13"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 915846883549639,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 886592462211045,
+									"parameters": {
+										"first-value": "IsRegistration",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "LoginToPlayFab(runtime);"
+								}
+							],
+							"sid": 972594691614920
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 969858019557602
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": ""
+								}
+							],
+							"sid": 306452408395330
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 955479893279808
